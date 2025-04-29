@@ -1,0 +1,74 @@
+/* src/styles/components/Hero.css */
+.hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 70px; /* Para compensar el header fijo */
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+
+  .hero-logo {
+    max-width: 550px; /* Antes era 600px, mucho más grande de lo necesario */
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* ¡Nuevo! Limita la altura para que no se aplaste */
+    object-fit: contain; /* Asegura que la imagen respete su proporción */
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-logo {
+      max-width: 200px;
+    }
+  }
+  
+  
+  .hero-cta {
+    margin-top: 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .cta-button:hover {
+    background-color: #0055aa;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  }

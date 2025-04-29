@@ -1,0 +1,258 @@
+/* src/styles/components/Features.css */
+.features {
+  background-color: #f9f9f9;
+  padding: 5rem 2rem;
+}
+
+.features-intro {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card.expandable {
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.feature-description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Estilos para la card expandida */
+.expanded-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.expanded-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.expanded-title {
+  font-size: 2rem;
+  color: #0078a9;
+  margin-bottom: 1.5rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: #f0f0f0;
+}
+
+.expanded-content {
+  margin-top: 1rem;
+}
+
+.expanded-main {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.expanded-text {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.expanded-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.expanded-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.expanded-image.full-width {
+  width: 100%;
+}
+
+.expanded-item h3 {
+  color: #0078a9;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.expanded-item h3::before {
+  content: "-";
+  color: #0078a9;
+  margin-right: 10px;
+  transform: rotate(180deg);
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.expanded-item p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* Estilos específicos para la sección de Código de Red 2.0 */
+.codigo-additional-content {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.codigo-info-banner {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #0078a9;
+}
+
+.codigo-info-banner h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.codigo-diagram-container {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .expanded-main {
+    flex-direction: column-reverse;
+  }
+  
+  .expanded-image-container {
+    margin-bottom: 2rem;
+  }
+  
+  .expanded-text {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: 3rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .expanded-text {
+    grid-template-columns: 1fr;
+  }
+  
+  .expanded-card {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .expanded-title {
+    font-size: 1.8rem;
+  }
+  
+  .codigo-info-banner h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-intro {
+    font-size: 1.1rem;
+  }
+}

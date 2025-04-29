@@ -1,0 +1,1463 @@
+/* src/styles/components/Nosotros.css */
+.about {
+  background-color: #ffffff;
+  padding: 5rem 2rem;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.about-text {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.services-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  /* Ocultar la barra de desplazamiento pero mantener la funcionalidad */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+/* Ocultar la barra de desplazamiento para Chrome, Safari y Opera */
+.services-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.services-grid {
+  display: flex;
+  gap: 1.5rem;
+  min-width: max-content;
+  padding: 0.5rem 0.5rem;
+  justify-content: center;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px; /* Ajustado para 4 tarjetas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.about-footer {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-footer p {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Para pantallas más grandes donde podemos mostrar todas las tarjetas sin scroll */
+@media (min-width: 900px) {
+  .services-grid {
+    min-width: auto;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .service-card {
+    flex: 1;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+.diferenciadores-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 3rem auto 1rem;
+  padding: 1rem;
+}
+
+.rombo-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 6rem auto;
+  transform: rotate(45deg);
+}
+
+.diferenciador-item {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+
+.diferenciador-diamond {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.diferenciador-icon {
+  font-size: 2rem;
+  transform: rotate(-45deg);
+  color: white;
+}
+
+.diferenciador-text {
+  position: absolute;
+  width: 200px;
+  text-align: center;
+  transform: rotate(-45deg);
+  white-space: nowrap;
+}
+
+/* Posiciones específicas para cada diamante */
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+/* Posiciones para los textos */
+.diferenciador-text.top-left {
+  top: -60px;
+  left: -30px;
+}
+
+.diferenciador-text.top-right {
+  top: -60px;
+  right: -30px;
+}
+
+.diferenciador-text.bottom-right {
+  bottom: -60px;
+  right: -30px;
+}
+
+.diferenciador-text.bottom-left {
+  bottom: -60px;
+  left: -30px;
+}
+
+.rombo-center {
+  position: absolute;
+  top: 75px;
+  left: 75px;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .rombo-container {
+    width: 240px;
+    height: 240px;
+    margin: 7rem auto;
+  }
+  
+  .diferenciador-item {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .rombo-center {
+    top: 60px;
+    left: 60px;
+    width: 120px;
+    height: 120px;
+  }
+  
+  .diferenciador-text {
+    width: 160px;
+    font-size: 0.9rem;
+  }
+  
+  .diferenciador-text.top-left {
+    top: -50px;
+    left: -25px;
+  }
+  
+  .diferenciador-text.top-right {
+    top: -50px;
+    right: -25px;
+  }
+  
+  .diferenciador-text.bottom-right {
+    bottom: -50px;
+    right: -25px;
+  }
+  
+  .diferenciador-text.bottom-left {
+    bottom: -50px;
+    left: -25px;
+  }
+  
+  .diferenciador-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rombo-container {
+    width: 200px;
+    height: 200px;
+    margin: 8rem auto;
+  }
+  
+  .diferenciador-item {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .rombo-center {
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .diferenciador-text {
+    width: 140px;
+    font-size: 0.8rem;
+  }
+  
+  .diferenciador-icon {
+    font-size: 1.2rem;
+  }
+}
+
+/* Estilos para la sección del sistema eléctrico */
+.electrical-system {
+  background-color: #f9f9f9;
+  padding: 5rem 2rem;
+}
+
+.electrical-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.electrical-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  color: #333;
+  line-height: 1.4;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.electrical-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.electrical-section {
+  flex: 1;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.section-subtitle {
+  font-size: 1.8rem;
+  color: #f57c00;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para las causas */
+.causas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.causas-subtitle {
+  color: #0277bd;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.causas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.causa-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.causa-plus {
+  color: #d32f2f;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.causa-texto {
+  color: #555;
+}
+
+/* Estilos para los efectos */
+.efectos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.efecto-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.efecto-plus {
+  color: #d32f2f;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.efecto-texto {
+  color: #555;
+}
+
+/* Estilos para las consecuencias */
+.consecuencias-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.consecuencias-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding-bottom: 1rem;
+}
+
+.opex-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.opex-definition {
+  color: #555;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  line-height: 1.4;
+}
+
+.bars-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  height: 120px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.opex-bar {
+  width: 40px;
+  background-color: #d32f2f;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.5s ease;
+}
+
+.opex-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Diseño responsive para varias pantallas */
+@media (min-width: 992px) {
+  .electrical-content {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 991px) {
+  .electrical-content {
+    flex-direction: column;
+  }
+  
+  .electrical-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .electrical-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .opex-bar {
+    width: 30px;
+  }
+  
+  .opex-text {
+    font-size: 1.8rem;
+  }
+  
+  .opex-definition {
+    font-size: 0.8rem;
+  }
+}
+/* Añade estos estilos a tu archivo Nosotros.css */
+
+.power-quality-section {
+  background-color: #f5f5f5;
+  padding: 5rem 2rem;
+  margin-top: 2rem;
+}
+
+.power-quality-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.power-quality-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a4680;
+  font-weight: bold;
+}
+
+.power-quality-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.power-quality-left,
+.power-quality-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.power-quality-equation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.equation-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.water-image-placeholder,
+.contaminated-water-placeholder,
+.drinking-water-placeholder {
+  width: 200px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #aaa;
+  color: #888;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.water-image-placeholder:after {
+  content: "Placeholder para imagen de manos con agua";
+}
+
+.contaminated-water-placeholder:after {
+  content: "Placeholder para imagen de agua contaminada";
+}
+
+.drinking-water-placeholder:after {
+  content: "Placeholder para imagen de persona tomando agua";
+}
+
+.plus-sign {
+  font-size: 3rem;
+  color: #888;
+}
+
+.power-supply-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cfe-logo-placeholder {
+  width: 180px;
+  height: 80px;
+  background-color: #e0e0e0;
+  border: 2px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.cfe-logo-placeholder:after {
+  content: "Placeholder para logo de CFE";
+}
+
+.power-element-title {
+  font-size: 1.8rem;
+  color: #1a4680;
+  text-align: center;
+}
+
+.disturbance-graph {
+  width: 180px;
+  height: 100px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.disturbance-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.power-quality-arrow {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-svg {
+  width: 100%;
+  height: 150px;
+}
+
+.result-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  gap: 2rem;
+}
+
+.factory-icon,
+.warning-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.factory-svg,
+.warning-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.drink-water-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.drink-water-text {
+  font-size: 2rem;
+  color: #d32f2f;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Diseño responsive para cambiar de horizontal a vertical */
+@media (max-width: 992px) {
+  .power-quality-grid {
+    flex-direction: column;
+  }
+  
+  .power-quality-left,
+  .power-quality-right {
+    width: 100%;
+  }
+  
+  .power-quality-arrow {
+    transform: rotate(90deg);
+    margin: 2rem 0;
+  }
+  
+  .arrow-svg {
+    transform: rotate(90deg);
+    height: 80px;
+  }
+  .water-image-placeholder,
+  .contaminated-water-placeholder,
+  .drinking-water-placeholder {
+    width: 150px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .power-quality-title {
+    font-size: 1.8rem;
+  }
+  
+  .equation-item {
+    flex-direction: column;
+  }
+  
+  .plus-sign {
+    font-size: 2rem;
+  }
+  
+  .power-element-title,
+  .drink-water-text {
+    font-size: 1.5rem;
+  }
+  
+  .water-image-placeholder,
+  .contaminated-water-placeholder,
+  .drinking-water-placeholder {
+    width: 120px;
+    height: 100px;
+  }
+  
+  .factory-icon,
+  .warning-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
+.image-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.oval-image {
+  width: 200px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50% / 40%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-image {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.power-label {
+  font-size: 1.2rem;
+  color: #1a4680;
+  font-weight: bold;
+  text-align: center;
+}
+.small-about {
+  padding: 2rem 1rem; /* Mucho más pequeño que el .about normal */
+}
+/* Reemplaza los estilos del rombo con estos estilos para el cuadrado */
+.diferenciadores-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 3rem auto 1rem;
+  padding: 1rem;
+}
+
+.cuadrado-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 300px;
+  height: 300px;
+  margin: 2rem auto;
+  gap: 2px;
+}
+
+.diferenciador-cuadrado {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.diferenciador-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.diferenciador-tooltip {
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  width: 180px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Posicionamiento de tooltips para cada cuadrante */
+.top-left .diferenciador-tooltip {
+  top: 100%;
+  left: 0;
+}
+
+.top-right .diferenciador-tooltip {
+  top: 100%;
+  right: 0;
+}
+
+.bottom-left .diferenciador-tooltip {
+  bottom: 100%;
+  left: 0;
+}
+
+.bottom-right .diferenciador-tooltip {
+  bottom: 100%;
+  right: 0;
+}
+
+.diferenciador-tooltip h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.diferenciador-tooltip p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+  .cuadrado-container {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .diferenciador-icon {
+    font-size: 1.5rem;
+  }
+  
+  .diferenciador-tooltip {
+    width: 150px;
+    padding: 0.8rem;
+  }
+  
+  .diferenciador-tooltip h3 {
+    font-size: 1rem;
+  }
+  
+  .diferenciador-tooltip p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cuadrado-container {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .diferenciador-icon {
+    font-size: 1.2rem;
+  }
+  
+  .diferenciador-tooltip {
+    width: 130px;
+    padding: 0.6rem;
+  }
+}
+/* Agregar estos estilos al final del archivo Nosotros.css */
+
+.service-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  height: 80px; /* Altura fija para todas las tarjetas */
+}
+
+.service-image {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Mantiene la proporción de la imagen */
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+/* Asegurarnos de que las tarjetas de servicio tengan un tamaño adecuado en móvil */
+@media (max-width: 768px) {
+  .service-icon {
+    height: 70px; /* Un poco más pequeño en pantallas móviles */
+  }
+  
+  .service-card {
+    min-width: 160px; /* Reducir un poco el ancho mínimo en móviles */
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-icon {
+    height: 60px; /* Aún más pequeño en pantallas muy pequeñas */
+  }
+  
+  .service-card {
+    min-width: 140px;
+    padding: 1rem;
+  }
+}
+/* Añadir estos estilos al archivo Nosotros.css */
+
+/* Estilos para el contenedor de las columnas de servicio */
+.service-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+}
+
+/* Nuevo estilo para el contenedor del icono circular */
+.service-icon-container {
+  background-color: white;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cada uno con su propio borde de color */
+.service-column:nth-child(1) .service-icon-container {
+  border: 3px solid #0088ce;
+}
+
+.service-column:nth-child(2) .service-icon-container {
+  border: 3px solid #0088ce;
+}
+
+.service-column:nth-child(3) .service-icon-container {
+  border: 3px solid #183a7e;
+}
+
+.service-column:nth-child(4) .service-icon-container {
+  border: 3px solid #7652a1;
+}
+
+/* Estilo para el contenedor del icono */
+.service-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+}
+
+/* Estilo para la imagen del servicio */
+.service-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Estilo para el título del servicio ahora está fuera de la tarjeta */
+.service-title-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.service-label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+/* Quitar estilos anteriores de las tarjetas que ya no se necesitan */
+.service-card {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  transition: none;
+  min-width: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Hacer el service-grid más flexible para dispositivos móviles */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 10px;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 992px) {
+  .service-icon-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .service-icon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .service-label {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .service-column {
+    flex-basis: calc(50% - 30px);
+  }
+  
+  .service-icon-container {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .service-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-icon-container {
+    width: 120px;
+    height: 120px;
+    border-width: 2px;
+  }
+  
+  .service-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .service-label {
+    font-size: 1rem;
+  }
+}
+/* Estilos optimizados para el contenedor de servicios */
+.services-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.services-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 10px;
+}
+
+/* Estilos simplificados para las tarjetas de servicio */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-icon-container {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Colores para cada servicio */
+.service-column:nth-child(1) .service-icon-container {
+  border: 3px solid #0088ce;
+}
+.service-column:nth-child(2) .service-icon-container {
+  border: 3px solid #0088ce;
+}
+.service-column:nth-child(3) .service-icon-container {
+  border: 3px solid #183a7e;
+}
+.service-column:nth-child(4) .service-icon-container {
+  border: 3px solid #7652a1;
+}
+
+.service-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.service-label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+/* Media queries optimizadas */
+@media (max-width: 992px) {
+  .service-icon-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .service-label {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    gap: 20px;
+  }
+  
+  .service-column {
+    flex-basis: calc(50% - 20px);
+  }
+  
+  .service-icon-container {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-icon-container {
+    width: 120px;
+    height: 120px;
+    border-width: 2px;
+  }
+  
+  .service-label {
+    font-size: 1rem;
+  }
+}
+/* Estilos base para la sección de Código Red */
+.codigo-red-section {
+  background-color: #f8f8f8;
+  padding: 5rem 2rem;
+}
+
+.section-title {
+  color: #183a7e;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* Estilos para el contenido principal */
+.codigo-red-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.codigo-red-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.codigo-red-block {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.codigo-red-question {
+  color: #0088ce;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.codigo-red-text {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+.codigo-red-text:last-child {
+  margin-bottom: 0;
+}
+
+.codigo-red-text strong {
+  color: #183a7e;
+  font-weight: 600;
+}
+
+/* Contenedor de sanciones - Nueva implementación sin SVG */
+.codigo-red-sanciones-container {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.codigo-red-sanciones-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #0088ce;
+}
+
+.sanciones-title {
+  color: #183a7e;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Grid para las sanciones */
+.sanciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sancion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+/* Círculo para las fracciones */
+.sancion-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #f1eaf8;
+  border: 2px solid #7652a1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sancion-circle-content {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #183a7e;
+  line-height: 1.4;
+}
+
+/* Descripciones de sanciones */
+.sancion-description {
+  background-color: #e8f4fd;
+  border: 1px solid #0088ce;
+  border-radius: 5px;
+  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sancion-description-title {
+  color: #0088ce;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sancion-description-text {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Mensaje de advertencia */
+.sanciones-warning {
+  background-color: #fdf2f2;
+  border: 1.5px solid #e53e3e;
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.warning-title {
+  color: #e53e3e;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.warning-text {
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Diseño responsivo para tabletas */
+@media (max-width: 992px) {
+  .codigo-red-content {
+    flex-direction: column;
+  }
+  
+  .sanciones-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .sancion-item {
+    flex-direction: row;
+    text-align: left;
+    gap: 1.5rem;
+  }
+  
+  .sancion-circle {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  
+  .sancion-circle-content {
+    font-size: 1.2rem;
+  }
+}
+
+/* Diseño responsivo para móviles */
+@media (max-width: 768px) {
+  .codigo-red-section {
+    padding: 3rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .codigo-red-question {
+    font-size: 1.3rem;
+  }
+  
+  .codigo-red-text {
+    font-size: 1rem;
+  }
+  
+  .sanciones-title {
+    font-size: 1.5rem;
+  }
+  
+  .sancion-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .sancion-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .sancion-circle-content {
+    font-size: 1rem;
+  }
+  
+  .sancion-description-title {
+    font-size: 1rem;
+  }
+  
+  .sancion-description-text {
+    font-size: 0.9rem;
+  }
+  
+  .warning-title {
+    font-size: 1.1rem;
+  }
+  
+  .warning-text {
+    font-size: 0.9rem;
+  }
+  
+  .codigo-red-sanciones-wrapper {
+    padding: 1rem;
+  }
+}
+
+/* Ajustes específicos para móviles pequeños */
+@media (max-width: 480px) {
+  .sancion-description {
+    padding: 1rem;
+  }
+  
+  .sanciones-warning {
+    padding: 0.75rem;
+  }
+}

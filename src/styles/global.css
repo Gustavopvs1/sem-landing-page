@@ -1,0 +1,27 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    scroll-behavior: smooth;
+    font-family: 'Orienta', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+  
+  /* Media queries básicas */
+  @media (max-width: 768px) {
+    .section {
+      padding: 1rem;
+    }
+  }
