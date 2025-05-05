@@ -1,0 +1,523 @@
+/* src/styles/components/EquiposElectricos.css */
+.equipos-electricos {
+  background: linear-gradient(135deg, #ffffff 0%, #dddddd 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.equipos-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.equipos-title {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+.equipos-title:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 80px;
+  height: 4px;
+  background-color: #5e2987; /* Color similar al del logo */
+  transform: translateX(-50%);
+}
+
+.equipos-content {
+  margin-top: 2rem;
+  min-height: 300px;
+}
+
+.equipos-placeholder {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+}
+
+/* Estilos para el producto destacado - Merus A2 */
+.producto-destacado {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.producto-destacado-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.producto-info {
+  flex: 1;
+}
+
+.producto-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto-imagen img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.producto-destacado:hover .producto-imagen img {
+  transform: scale(1.05);
+}
+
+.producto-title {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #5e2987;
+  margin-bottom: 0.5rem;
+}
+
+.producto-subtitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.producto-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.producto-beneficios {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+  line-height: 1.6;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-left: 4px solid #5e2987;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Estilos para el carrusel de características */
+.caracteristicas-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.carousel-btn {
+  background-color: #5e2987;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background-color: #4a1d6e;
+}
+
+.caracteristicas-slide {
+  flex: 1;
+  padding: 0 1.5rem;
+}
+
+.caracteristica-titulo {
+  font-size: 1.4rem;
+  color: #5e2987;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.caracteristica-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.caracteristica-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.caracteristica-imagen img {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.caracteristica-descripcion {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #5e2987;
+}
+
+/* Grid para los equipos no destacados */
+.equipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.equipo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equipo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.equipo-image {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.equipo-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.equipo-item:hover .equipo-image img {
+  transform: scale(1.1);
+}
+
+.equipo-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.equipo-description {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* NUEVOS ESTILOS PARA BANCOS DE CAPACITORES */
+.bancos-capacitores-section {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.bancos-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #5e2987;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.bancos-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60px;
+  height: 3px;
+  background-color: #5e2987;
+  transform: translateX(-50%);
+}
+
+.bancos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.banco-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banco-image-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.banco-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.banco-item:hover .banco-image {
+  transform: scale(1.05);
+}
+
+.banco-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Modal para información detallada */
+.banco-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.banco-modal-content {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.modal-close-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.banco-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.banco-modal-image {
+  max-width: 300px;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+
+.banco-modal-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #5e2987;
+  text-align: center;
+}
+
+.banco-modal-body {
+  padding: 0 1rem;
+}
+
+.banco-info-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.banco-info-item {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.banco-info-item:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.8rem;
+  width: 8px;
+  height: 8px;
+  background-color: #5e2987;
+  border-radius: 50%;
+}
+
+/* Estilos responsive */
+@media (max-width: 992px) {
+  .producto-destacado-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .caracteristica-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .bancos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .equipos-title {
+    font-size: 2.2rem;
+  }
+  
+  .equipos-container {
+    padding: 1rem;
+  }
+  
+  .producto-name {
+    font-size: 1.8rem;
+  }
+  
+  .producto-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .caracteristica-titulo {
+    font-size: 1.2rem;
+  }
+  
+  .bancos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .banco-modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .banco-modal-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .equipos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .producto-destacado {
+    padding: 1.5rem;
+  }
+  
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -92,6 +92,24 @@ const Header = () => {
           </Link>
           <Link
             activeClass="active"
+            to="equipos"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => setMenuOpen(false)}
+            className="nav-item"
+          >
+            <div className="nav-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z"/>
+                <path d="M7 2v11h3v9l7-12h-4l3-8z"/>
+              </svg>
+            </div>
+            <span>Eq. Eléctricos</span>
+          </Link>
+          <Link
+            activeClass="active"
             to="contacto"
             spy={true}
             smooth={true}

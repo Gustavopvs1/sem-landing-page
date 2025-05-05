@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Nosotros from './components/Nosotros';
 import Contacto from './components/Contacto';
+import EquiposElectricos from './components/EquiposElectricos';
 import './styles/global.css';
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
 
       <Element name="features">
         <Features />
+      </Element>
+
+      <Element name="equipos">
+        <EquiposElectricos />
       </Element>
 
       <Element name="contacto">

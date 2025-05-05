@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { Award, BookOpen, Briefcase, TrendingUp } from 'lucide-react';
+import { FaRegLightbulb, FaBrain, FaBalanceScale, FaChartBar } from 'react-icons/fa';
 import '../styles/components/Nosotros.css';
 import ElectricalSystem from './ElectricalSystem'; // Importamos el componente
 import PowerQuality from './PowerQuality'; // Importamos el componente
@@ -109,38 +110,38 @@ const DiferenciadoresCuadrado = () => {
       <h2 className="section-title">Nuestros diferenciadores</h2>
       
       <div className="cuadrado-container">
-        <DiferenciadorItem 
-          color="#FFD700" 
-          hoverColor="#FFCC00"
-          icon={<Award size={24} color="#000" />}
-          title="Experiencia"
-          description="Amplia trayectoria profesional en el sector"
-          position="top-left"
-        />
-        <DiferenciadorItem 
-          color="#DC143C" 
-          hoverColor="#C01234"
-          icon={<BookOpen size={24} color="#FFF" />}
-          title="Conocimiento"
-          description="Expertise técnico especializado"
-          position="top-right"
-        />
-        <DiferenciadorItem 
-          color="#C0C0C0" 
-          hoverColor="#A0A0A0"
-          icon={<Briefcase size={24} color="#000" />}
-          title="Accountability"
-          description="Responsabilidad en resultados"
-          position="bottom-left"
-        />
-        <DiferenciadorItem 
-          color="#00308F" 
-          hoverColor="#002570"
-          icon={<TrendingUp size={24} color="#FFF" />}
-          title="Resultados"
-          description="Soluciones con impacto medible"
-          position="bottom-right"
-        />
+      <DiferenciadorItem 
+        color="#FFD700"
+        hoverColor="#FFCC00"
+        icon={<FaRegLightbulb size={28} />}
+        title="Experiencia"
+        description="Amplia trayectoria profesional en el sector"
+        position="top-left"
+      />
+      <DiferenciadorItem 
+        color="#DC143C"
+        hoverColor="#C01234"
+        icon={<FaBrain size={28} />}
+        title="Conocimiento"
+        description="Expertise técnico especializado"
+        position="top-right"
+      />
+      <DiferenciadorItem 
+        color="#C0C0C0"
+        hoverColor="#A0A0A0"
+        icon={<FaBalanceScale size={28} />}
+        title="Accountability"
+        description="Responsabilidad en resultados"
+        position="bottom-left"
+      />
+      <DiferenciadorItem 
+        color="#00308F"
+        hoverColor="#002570"
+        icon={<FaChartBar size={28} />}
+        title="Resultados"
+        description="Soluciones con impacto medible"
+        position="bottom-right"
+      />
       </div>
     </motion.div>
   );
@@ -243,9 +244,6 @@ const Nosotros = () => {
       {/* Sección del sistema eléctrico */}
       <ElectricalSystem />
 
-      {/* Sección de calidad de potencia */}
-      <PowerQuality />
-
       {/* Sección de mala calidad de potencia */}
       <motion.section 
         className="section small-about"
@@ -270,6 +268,10 @@ const Nosotros = () => {
           </p>
         </div>
       </motion.section>
+
+      
+      {/* Sección de calidad de potencia */}
+      <PowerQuality />
 
       {/* Nueva sección de Código de Red 2.0 */}
       <CodigoRed />
