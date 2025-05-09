@@ -111,32 +111,32 @@ const DiferenciadoresCuadrado = () => {
       
       <div className="cuadrado-container">
       <DiferenciadorItem 
-        color="#FFD700"
-        hoverColor="#FFCC00"
+        color="#ffffff"
+        hoverColor="#ffffff"
         icon={<FaRegLightbulb size={28} />}
         title="Experiencia"
         description="Amplia trayectoria profesional en el sector"
         position="top-left"
       />
       <DiferenciadorItem 
-        color="#DC143C"
-        hoverColor="#C01234"
+        color="#ffffff"
+        hoverColor="#ffffff"
         icon={<FaBrain size={28} />}
         title="Conocimiento"
         description="Expertise técnico especializado"
         position="top-right"
       />
       <DiferenciadorItem 
-        color="#C0C0C0"
-        hoverColor="#A0A0A0"
+        color="#ffffff"
+        hoverColor="#ffffff"
         icon={<FaBalanceScale size={28} />}
         title="Accountability"
         description="Responsabilidad en resultados"
         position="bottom-left"
       />
       <DiferenciadorItem 
-        color="#00308F"
-        hoverColor="#002570"
+        color="#ffffff"
+        hoverColor="#ffffff"
         icon={<FaChartBar size={28} />}
         title="Resultados"
         description="Soluciones con impacto medible"
@@ -152,23 +152,23 @@ const Nosotros = () => {
     {
       imageUrl: "/capacitacion.png",
       title: "Capacitación",
-      borderColor: "#0088ce"
+      borderColor: "#0078a9"
     },
     {
       imageUrl: "/consultoria.png",
       title: "Consultoría",
-      borderColor: "#0088ce"
+      borderColor: "#0078a9"
     },
     {
       imageUrl: "/e2e.png",
       title: "Soluciones E2E", 
-      borderColor: "#183a7e" 
+      borderColor: "#0078a9" 
     },
     {
       imageUrl: "/venta.png",
       // Aquí cambiamos el título para incluir un salto de línea
       title: "Venta de\nequipos eléctricos",
-      borderColor: "#7652a1" 
+      borderColor: "#0078a9" 
     }
   ];
 

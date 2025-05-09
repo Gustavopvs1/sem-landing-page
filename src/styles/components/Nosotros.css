@@ -790,18 +790,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  background-color: white; /* Fondo blanco */
+  border: 3px solid; /* Borde con el color que se asignará dinámicamente */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .diferenciador-cuadrado:hover {
   transform: scale(1.1);
   z-index: 2;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.top-left .diferenciador-icon {
+  color: #FFD700; /* Amarillo */
+}
+.top-right .diferenciador-icon {
+  color: #DC143C; /* Rojo */
 }
 
+.bottom-left .diferenciador-icon {
+  color: #C0C0C0; /* Plata */
+}
+
+.bottom-right .diferenciador-icon {
+  color: #00308F; /* Azul */
+}
+.top-left.diferenciador-cuadrado {
+  border-color: #FFD700;
+}
+
+.top-right.diferenciador-cuadrado {
+  border-color: #DC143C;
+}
+
+.bottom-left.diferenciador-cuadrado {
+  border-color: #C0C0C0;
+}
+
+.bottom-right.diferenciador-cuadrado {
+  border-color: #00308F;
+}
 .diferenciador-icon {
   font-size: 2rem;
-  color: white;
   transition: transform 0.3s ease;
 }
 
@@ -970,19 +1001,19 @@
 
 /* Cada uno con su propio borde de color */
 .service-column:nth-child(1) .service-icon-container {
-  border: 3px solid #0088ce;
+  border: 3px solid #0078a9;
 }
 
 .service-column:nth-child(2) .service-icon-container {
-  border: 3px solid #0088ce;
+  border: 3px solid #0078a9;
 }
 
 .service-column:nth-child(3) .service-icon-container {
-  border: 3px solid #183a7e;
+  border: 3px solid #0078a9;
 }
 
 .service-column:nth-child(4) .service-icon-container {
-  border: 3px solid #7652a1;
+  border: 3px solid #0078a9;
 }
 
 /* Estilo para el contenedor del icono */
@@ -1012,6 +1043,7 @@
   font-weight: 600;
   margin: 0;
   padding: 0;
+  color: #0078a9; /* Añadir esta línea para establecer el color */
 }
 
 /* Quitar estilos anteriores de las tarjetas que ya no se necesitan */
@@ -1029,6 +1061,9 @@
 .service-card:hover {
   transform: none;
   box-shadow: none;
+}
+.service-card .service-label {
+  color: getColorForService(index); /* Este método está definido en JSX y asigna diferentes colores */
 }
 
 /* Hacer el service-grid más flexible para dispositivos móviles */
@@ -1137,16 +1172,16 @@
 
 /* Colores para cada servicio */
 .service-column:nth-child(1) .service-icon-container {
-  border: 3px solid #0088ce;
+  border: 3px solid #0078a9;
 }
 .service-column:nth-child(2) .service-icon-container {
-  border: 3px solid #0088ce;
+  border: 3px solid #0078a9;
 }
 .service-column:nth-child(3) .service-icon-container {
-  border: 3px solid #183a7e;
+  border: 3px solid #0078a9;
 }
 .service-column:nth-child(4) .service-icon-container {
-  border: 3px solid #7652a1;
+  border: 3px solid #0078a9;
 }
 
 .service-image {
@@ -1160,6 +1195,7 @@
   font-weight: 600;
   margin: 0;
   padding: 0;
+  color: #0078a9; /* Añadir esta línea para establecer el color */
 }
 
 /* Media queries optimizadas */

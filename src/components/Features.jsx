@@ -123,7 +123,7 @@ const FeatureCard = ({ title, description, icon, index, parentInView, isExpandab
                 <div className="pqbarcon-logo">
                   <a href="https://pqbarcon.com" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src="/pq.png" 
+                      src="/pq2.png" 
                       alt="PQBarcon Distribuidor Autorizado" 
                       className="pqbarcon-image"
                     />
