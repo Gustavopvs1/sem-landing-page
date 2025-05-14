@@ -132,6 +132,7 @@
   background-color: #f5f5f5;
   border-left: 4px solid #0078a9;
   border-radius: 0 4px 4px 0;
+  text-align: justify;
 }
 .producto-tooltip {
   position: fixed;
@@ -279,6 +280,7 @@
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
+  text-align: justify;
 }
 
 /* Indicadores del carrusel */

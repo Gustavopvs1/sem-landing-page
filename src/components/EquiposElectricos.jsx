@@ -253,7 +253,12 @@ const EquiposElectricos = () => {
         'Alargue la vida útil de sus equipos.',
         'Ahorre espacio con equipos compactos.',
       ]
-    },
+    }
+  ];
+  
+    // Nuevos productos adicionales
+  const productosAdicionales = [
+,
     {
       id: 'tableros',
       name: 'Tableros de distribución NBAR 4000',
@@ -281,7 +286,6 @@ const EquiposElectricos = () => {
       ]
     }
   ];
-  
 
   const handleBancoClick = (id) => {
     if (selectedBanco === id) {
@@ -392,24 +396,24 @@ const EquiposElectricos = () => {
                   
                   {/* Carrusel de características */}
                   <div className="caracteristicas-carousel">
-  <button className="carousel-btn prev" onClick={prevSlide}>
-    <ChevronLeft size={24} />
-  </button>
-  
-  <div className="caracteristicas-slide">
-    <h4 className="caracteristica-titulo">{merusFeatures[activeSlide].title}</h4>
-    <div className="caracteristica-content">
-      <div className="caracteristica-imagen">
-        <img src={merusFeatures[activeSlide].image} alt={merusFeatures[activeSlide].title} />
-      </div>
+                    <button className="carousel-btn prev" onClick={prevSlide}>
+                      <ChevronLeft size={24} />
+                    </button>
+                    
+                    <div className="caracteristicas-slide">
+                      <h4 className="caracteristica-titulo">{merusFeatures[activeSlide].title}</h4>
+                      <div className="caracteristica-content">
+                        <div className="caracteristica-imagen">
+                          <img src={merusFeatures[activeSlide].image} alt={merusFeatures[activeSlide].title} />
+                        </div>
 
-      {/* ✅ Aquí está el nuevo renderizado con HTML permitido */}
-      <p 
-        className="caracteristica-descripcion"
-        dangerouslySetInnerHTML={{ __html: merusFeatures[activeSlide].description }}
-      ></p>
-    </div>
-  </div>
+                        {/* ✅ Aquí está el nuevo renderizado con HTML permitido */}
+                        <p 
+                          className="caracteristica-descripcion"
+                          dangerouslySetInnerHTML={{ __html: merusFeatures[activeSlide].description }}
+                        ></p>
+                      </div>
+                    </div>
   
   <button className="carousel-btn next" onClick={nextSlide}>
     <ChevronRight size={24} />
@@ -551,6 +555,192 @@ const EquiposElectricos = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
+              </motion.div>
+
+                            {/* NUEVA SECCIÓN: Productos adicionales */}
+              <motion.div 
+                className="productos-adicionales-section"
+                variants={itemVariants}
+              >
+                <h3 className="productos-adicionales-title">Equipos eléctricos para la distribución de energía</h3>
+                {/* Componente para Electroducto Zucchini */}
+<div className="producto-destacado">
+                <div className="producto-destacado-content">
+                  <div className="producto-info">
+                    <h3 className="producto-title">
+                      <span className="producto-name">Electroducto Zucchini</span>
+                      <span className="producto-subtitle">Sistema de distribución de energía</span>
+                    </h3>
+                    <p className="producto-description">
+                      El sistema de Electroducto Zucchini es ampliamente recomendado para realizar la alimentación y derivación de energía eléctrica en diferentes topologías de cargas.
+                    </p>
+                    <p className="producto-beneficios">
+                      Ahorre tiempo, dinero y espacio con el sistema de electroducto. Reduzca riesgos con mayor resistencia al fuego, mejor aislamiento eléctrico y mayor resistencia a eventos sísmicos.
+                    </p>
+                    <a 
+                      href="" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="ficha-link"
+                    >
+                      Descargar ficha técnica
+                    </a>
+                  </div>
+                  <div className="mas-info-flecha"></div>
+                  <div 
+                    className="producto-imagen"
+                    onMouseEnter={() => setShowTooltip(true)}
+                    onMouseLeave={() => setShowTooltip(false)}
+                  >
+                    <div className="imagen-tooltip-container">
+                      <img src="electroducto.jpg" alt="Electroducto Zucchini" />
+                      
+                      {/* Tooltip para mostrar información técnica detallada */}
+                      <AnimatePresence>
+                        {showTooltip && (
+                          <motion.div 
+                            className="producto-tooltip"
+                            variants={tooltipVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="hidden"
+                          >
+                            <h4 className="tooltip-title">Beneficios del Electroducto Zucchini</h4>
+                            <div className="tooltip-content">
+                              <div className="tooltip-feature-group">
+                                <h5 className="tooltip-category">Ahorre tiempo</h5>
+                                <ul className="tooltip-list">
+                                  <li className="tooltip-item">Mayor facilidad de proyectar/cuantificar volumetría.</li>
+                                  <li className="tooltip-item">Mayor facilidad de instalación</li>
+                                </ul>
+                              </div>
+                              <div className="tooltip-feature-group">
+                                <h5 className="tooltip-category">Ahorre dinero/ Maximice su inversión</h5>
+                                <ul className="tooltip-list">
+                                  <li className="tooltip-item">Mayor durabilidad</li>
+                                  <li className="tooltip-item">Mayor eficiencia</li>
+                                  <li className="tooltip-item">Reutilice componentes sin riesgo (cambios lay out)</li>
+                                  <li className="tooltip-item">Reduzca las dimensiones de los tableros alimentadores.</li>
+                                </ul>
+                              </div>
+                              <div className="tooltip-feature-group">
+                                <h5 className="tooltip-category">Reduzca riesgos</h5>
+                                <ul className="tooltip-list">
+                                  <li className="tooltip-item">Mayor resistencia al fuego</li>
+                                  <li className="tooltip-item">Mayor nivel de aislamiento eléctrico</li>
+                                  <li className="tooltip-item">Mayor resistencia a eventos sísmicos</li>
+                                  <li className="tooltip-item">Distribuya las protecciones cercanas a las cargas</li>
+                                  <li className="tooltip-item">Evite contaminación electromagnética</li>
+                                </ul>
+                              </div>
+                              <div className="tooltip-feature-group">
+                                <h5 className="tooltip-category">Ahorre espacio</h5>
+                                <ul className="tooltip-list">
+                                  <li className="tooltip-item">Zucchini distribuye la misma potencia en espacios reducidos, liberando espacio.</li>
+                                  <li className="tooltip-item">Reduzca las dimensiones de los tableros alimentadores.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <div className="productos-adicionales-grid">
+                  {productosAdicionales.map((producto) => (
+                    <motion.div
+                      key={producto.id}
+                      className="producto-adicional-item"
+                      variants={cardVariants}
+                      initial="initial"
+                      whileHover="hover"
+                      onClick={() => handleAdicionalClick(producto.id)}
+                    >
+                      <motion.div 
+                        className="producto-adicional-image-container"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <img src={producto.image} alt={producto.name} className="producto-adicional-image" />
+                      </motion.div>
+                      <h3 className="producto-adicional-name">{producto.name}</h3>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                {/* Modal para productos adicionales - Por ahora sin información */}
+                <AnimatePresence>
+                  {selectedAdicional && (
+                    <motion.div 
+                      className="banco-modal-overlay"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onClick={closeModal}
+                    >
+                      <motion.div 
+                        className={`banco-modal-content ${selectedAdicional === 'tableros' ? 'hpq-modal' : ''}`}
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 50, opacity: 0 }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <button className="modal-close-btn" onClick={closeModal}>
+                          <X size={24} />
+                        </button>
+
+                        {productosAdicionales.filter(producto => producto.id === selectedAdicional).map(producto => (
+                          <div key={producto.id} className="banco-modal-info">
+                            <div className="banco-modal-header">
+                              <img 
+                                src={producto.id === 'tableros' ? 'nbar.png' : producto.image} 
+                                alt={producto.name} 
+                                className="banco-modal-image" 
+                              />
+                              <h3 className="banco-modal-title">{producto.name}</h3>
+                            </div>
+                            <div className="banco-modal-body">
+                              {producto.id === 'tableros' ? (
+                                <ul className="banco-info-list">
+                                  {producto.info.map((item, index) => {
+                                    const isSubtitle = [
+                                      'Marca Bticino',
+                                      'Acometida',
+                                      'Interruptores derivados enchufables',
+                                      'Columnas acoplables tipo NEMA 1',
+                                      'Montaje'
+                                    ].includes(item);
+
+                                    const isFirstParagraphs = index <= 2;
+
+                                    return (
+                                      <li
+                                        key={index}
+                                        className={`banco-info-item ${
+                                          isFirstParagraphs ? 'normal-text' :
+                                          isSubtitle ? 'subtitle' :
+                                          'normal-text'
+                                        }`}
+                                      >
+                                        {item}
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              ) : (
+                                <p className="info-pendiente">Información detallada próximamente.</p>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
               </motion.div>
               
 
