@@ -314,7 +314,7 @@ const EquiposElectricos = () => {
         className="equipos-container"
         variants={containerVariants}
         initial="hidden"
-        animate={controls}
+        animate="visible"
       >
         <motion.h2 
           className="equipos-title"
@@ -557,97 +557,267 @@ const EquiposElectricos = () => {
                 </AnimatePresence>
               </motion.div>
 
-                            {/* NUEVA SECCIÓN: Productos adicionales */}
+              {/* NUEVA SECCIÓN: Productos adicionales */}
               <motion.div 
                 className="productos-adicionales-section"
                 variants={itemVariants}
               >
                 <h3 className="productos-adicionales-title">Equipos eléctricos para la distribución de energía</h3>
                 {/* Componente para Electroducto Zucchini */}
-<div className="producto-destacado">
-                <div className="producto-destacado-content">
-                  <div className="producto-info">
-                    <h3 className="producto-title">
-                      <span className="producto-name">Electroducto Zucchini</span>
-                      <span className="producto-subtitle">Sistema de distribución de energía</span>
-                    </h3>
-                    <p className="producto-description">
-                      El sistema de Electroducto Zucchini es ampliamente recomendado para realizar la alimentación y derivación de energía eléctrica en diferentes topologías de cargas.
-                    </p>
-                    <p className="producto-beneficios">
-                      Ahorre tiempo, dinero y espacio con el sistema de electroducto. Reduzca riesgos con mayor resistencia al fuego, mejor aislamiento eléctrico y mayor resistencia a eventos sísmicos.
-                    </p>
-                    <a 
-                      href="" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="ficha-link"
+                <div className="producto-destacado">
+                  <div className="producto-destacado-content">
+                    <div className="producto-info">
+                      <h3 className="producto-title">
+                        <span className="producto-name">Electroducto Zucchini</span>
+                        <span className="producto-subtitle">Sistema de distribución de energía</span>
+                      </h3>
+                      <p className="producto-description">
+                        El sistema de Electroducto Zucchini es ampliamente recomendado para realizar la alimentación y derivación de energía eléctrica en diferentes topologías de cargas.
+                      </p>
+                      <p className="producto-beneficios">
+                        Ahorre tiempo, dinero y espacio con el sistema de electroducto. Reduzca riesgos con mayor resistencia al fuego, mejor aislamiento eléctrico y mayor resistencia a eventos sísmicos.
+                      </p>
+                      <a 
+                        href="" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="ficha-link"
+                      >
+                        Descargar ficha técnica
+                      </a>
+                    </div>
+                    <div className="mas-info-flecha"></div>
+                    <div 
+                      className="producto-imagen"
+                      onMouseEnter={() => setShowTooltip(true)}
+                      onMouseLeave={() => setShowTooltip(false)}
                     >
-                      Descargar ficha técnica
-                    </a>
-                  </div>
-                  <div className="mas-info-flecha"></div>
-                  <div 
-                    className="producto-imagen"
-                    onMouseEnter={() => setShowTooltip(true)}
-                    onMouseLeave={() => setShowTooltip(false)}
-                  >
-                    <div className="imagen-tooltip-container">
-                      <img src="electroducto.jpg" alt="Electroducto Zucchini" />
-                      
-                      {/* Tooltip para mostrar información técnica detallada */}
-                      <AnimatePresence>
-                        {showTooltip && (
-                          <motion.div 
-                            className="producto-tooltip"
-                            variants={tooltipVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="hidden"
-                          >
-                            <h4 className="tooltip-title">Beneficios del Electroducto Zucchini</h4>
-                            <div className="tooltip-content">
-                              <div className="tooltip-feature-group">
-                                <h5 className="tooltip-category">Ahorre tiempo</h5>
-                                <ul className="tooltip-list">
-                                  <li className="tooltip-item">Mayor facilidad de proyectar/cuantificar volumetría.</li>
-                                  <li className="tooltip-item">Mayor facilidad de instalación</li>
-                                </ul>
+                      <div className="imagen-tooltip-container">
+                        <img src="electroducto.jpg" alt="Electroducto Zucchini" />
+                        
+                        {/* Tooltip para mostrar información técnica detallada */}
+                        <AnimatePresence>
+                          {showTooltip && (
+                            <motion.div 
+                              className="producto-tooltip"
+                              variants={tooltipVariants}
+                              initial="hidden"
+                              animate="visible"
+                              exit="hidden"
+                            >
+                              <h4 className="tooltip-title">Beneficios del Electroducto Zucchini</h4>
+                              <div className="tooltip-content">
+                                <div className="tooltip-feature-group">
+                                  <h5 className="tooltip-category">Ahorre tiempo</h5>
+                                  <ul className="tooltip-list">
+                                    <li className="tooltip-item">Mayor facilidad de proyectar/cuantificar volumetría.</li>
+                                    <li className="tooltip-item">Mayor facilidad de instalación</li>
+                                  </ul>
+                                </div>
+                                <div className="tooltip-feature-group">
+                                  <h5 className="tooltip-category">Ahorre dinero/ Maximice su inversión</h5>
+                                  <ul className="tooltip-list">
+                                    <li className="tooltip-item">Mayor durabilidad</li>
+                                    <li className="tooltip-item">Mayor eficiencia</li>
+                                    <li className="tooltip-item">Reutilice componentes sin riesgo (cambios lay out)</li>
+                                    <li className="tooltip-item">Reduzca las dimensiones de los tableros alimentadores.</li>
+                                  </ul>
+                                </div>
+                                <div className="tooltip-feature-group">
+                                  <h5 className="tooltip-category">Reduzca riesgos</h5>
+                                  <ul className="tooltip-list">
+                                    <li className="tooltip-item">Mayor resistencia al fuego</li>
+                                    <li className="tooltip-item">Mayor nivel de aislamiento eléctrico</li>
+                                    <li className="tooltip-item">Mayor resistencia a eventos sísmicos</li>
+                                    <li className="tooltip-item">Distribuya las protecciones cercanas a las cargas</li>
+                                    <li className="tooltip-item">Evite contaminación electromagnética</li>
+                                  </ul>
+                                </div>
+                                <div className="tooltip-feature-group">
+                                  <h5 className="tooltip-category">Ahorre espacio</h5>
+                                  <ul className="tooltip-list">
+                                    <li className="tooltip-item">Zucchini distribuye la misma potencia en espacios reducidos, liberando espacio.</li>
+                                    <li className="tooltip-item">Reduzca las dimensiones de los tableros alimentadores.</li>
+                                  </ul>
+                                </div>
                               </div>
-                              <div className="tooltip-feature-group">
-                                <h5 className="tooltip-category">Ahorre dinero/ Maximice su inversión</h5>
-                                <ul className="tooltip-list">
-                                  <li className="tooltip-item">Mayor durabilidad</li>
-                                  <li className="tooltip-item">Mayor eficiencia</li>
-                                  <li className="tooltip-item">Reutilice componentes sin riesgo (cambios lay out)</li>
-                                  <li className="tooltip-item">Reduzca las dimensiones de los tableros alimentadores.</li>
-                                </ul>
-                              </div>
-                              <div className="tooltip-feature-group">
-                                <h5 className="tooltip-category">Reduzca riesgos</h5>
-                                <ul className="tooltip-list">
-                                  <li className="tooltip-item">Mayor resistencia al fuego</li>
-                                  <li className="tooltip-item">Mayor nivel de aislamiento eléctrico</li>
-                                  <li className="tooltip-item">Mayor resistencia a eventos sísmicos</li>
-                                  <li className="tooltip-item">Distribuya las protecciones cercanas a las cargas</li>
-                                  <li className="tooltip-item">Evite contaminación electromagnética</li>
-                                </ul>
-                              </div>
-                              <div className="tooltip-feature-group">
-                                <h5 className="tooltip-category">Ahorre espacio</h5>
-                                <ul className="tooltip-list">
-                                  <li className="tooltip-item">Zucchini distribuye la misma potencia en espacios reducidos, liberando espacio.</li>
-                                  <li className="tooltip-item">Reduzca las dimensiones de los tableros alimentadores.</li>
-                                </ul>
-                              </div>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+                
+                {/* Electroductos de alta potencia */}
+                <div className="electroductos-seccion">
+                  <h3 className="electroductos-title">Electroductos de alta potencia</h3>
+                  
+                  <div className="electroductos-grid">
+                    {/* XCP-HP */}
+                    <div className="electroducto-card">
+                      <div className="electroducto-header">
+                        <h4 className="electroducto-name">
+                          Electroducto alta potencia <span className="electroducto-highlight">XCP-HP</span>
+                        </h4>
+                        
+                        {/* Descripción movida después del título */}
+                        <div className="electroducto-description">
+                          <p>XCP-HP se caracteriza por su alta eficiencia dado su bajo nivel de pérdidas por efecto Joule y su capacidad para operar a temperatura ambiente de hasta 50°C. La sección de las barras internas permite ofrecer un tamaño compacto.</p>
+                          <p>Una línea de alto desempeño y confiabilidad para instalaciones con alta demanda de corriente, altas temperaturas o bajo requerimientos de eficiencia de energía.</p>
+                        </div>
+                      </div>
+                      
+                      <div className="electroducto-content">
+                        {/* Especificaciones movidas arriba de las imágenes */}
+                        <div className="electroducto-specs">
+                          <span className="electroducto-spec">630 – 6300 A</span>
+                          <span className="electroducto-spec">Mayor eficiencia (bajas pérdidas por efecto Joule)</span>
+                          <span className="electroducto-spec">Aislamiento clase B(130°C) o clase F(155°C)</span>
+                          <span className="electroducto-spec">Autoextinguible Grado V1 (UL94)</span>
+                          <span className="electroducto-spec">Icw = 36 – 150 kA</span>
+                        </div>
+                        
+                        <div className="electroducto-images">
+                          <div className="electroducto-main-image">
+                            <img src="ducto.jpg" alt="Electroducto XCP-HP" />
+                          </div>
+                          <div className="electroducto-additional-image">
+                            <img src="xcp.png" alt="Detalle Electroducto XCP-HP" />
+                          </div>
+                        </div>
+                        
+                        <div className="electroducto-brand">
+                          <img src="bticino.jpg" alt="Bticino" />
+                        </div>
+                      </div>
+                    </div>
+                  
+                    {/* XCP-S */}
+                    <div className="electroducto-card">
+                      <div className="electroducto-header">
+                        <h4 className="electroducto-name">
+                          Electroducto alta potencia <span className="electroducto-highlight-orange">XCP-S</span>
+                        </h4>
+                        
+                        {/* Descripción movida después del título */}
+                        <div className="electroducto-description">
+                          <p>XCP-S optimiza su diseño ofreciendo grandes capacidades de corriente en condiciones de espacio reducido. La sección de las barras internas permite ofrecer un tamaño más compacto con un peso más ligero.</p>
+                          <p>Los materiales conductores y aislantes le otorgan un alto desempeño y confiabilidad para distribuir la energía en Industria, Edificios, Hospitales, Centros comerciales, Data Centers, etc.</p>
+                        </div>
+                      </div>
+                      
+                      <div className="electroducto-content">
+                        {/* Especificaciones movidas arriba de las imágenes */}
+                        <div className="electroducto-specs">
+                          <span className="electroducto-spec">630 – 6300 A</span>
+                          <span className="electroducto-spec">Compacta y ligera</span>
+                          <span className="electroducto-spec">Aislamiento clase B(130°C) o clase F(155°C)</span>
+                          <span className="electroducto-spec">Autoextinguible Grado V1 (UL94)</span>
+                          <span className="electroducto-spec">Icw = 25 – 120 kA</span>
+                        </div>
+                        
+                        <div className="electroducto-images">
+                          <div className="electroducto-main-image">
+                            <img src="ducto.jpg" alt="Electroducto XCP-S" />
+                          </div>
+                          <div className="electroducto-additional-image">
+                            <img src="xcps.png" alt="Detalle Electroducto XCP-S" />
+                          </div>
+                        </div>
+                        
+                        <div className="electroducto-brand">
+                          <img src="bticino.jpg" alt="Bticino" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Configuración de barras */}
+                  <div className="configuracion-barras">
+                    <h4 className="config-title">Configuración de barras XCP-HP y XCP-S</h4>
+                    <div className="config-content">
+                      <div className="config-item">
+                        <div className="config-image">
+                          <img src="barras.png" alt="Configuración barras" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                  {/* Accesorios compatibles */}
+                  <div className="accesorios-compatibles">
+                    <h4 className="accesorios-title">Accesorios compatibles XCP-S y XCP-HP</h4>
+                    <div className="accesorios-content">
+                      <div className="accesorios-column">
+                        <h5 className="accesorios-subtitle">Cajas de derivación</h5>
+                        <div className="accesorio-item">
+                          <div className="accesorio-image">
+                            <img src="fibra.jpg" alt="Caja de fibra de vidrio" />
+                          </div>
+                          <div className="accesorio-info">
+                            <h6>Fibra de vidrio</h6>
+                            <p>Acepta interruptores de 63 hasta 250 A.</p>
+                          </div>
+                        </div>
+                        <div className="accesorio-item">
+                          <div className="accesorio-image">
+                            <img src="lamina.jpg" alt="Caja de lámina" />
+                          </div>
+                          <div className="accesorio-info">
+                            <h6>Lámina</h6>
+                            <p>Acepta interruptores de 63 hasta 1250 A.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="accesorios-column">
+                        <h5 className="accesorios-subtitle">Amplia gama de accesorios</h5>
+                        <div className="accesorios-grid">
+                          <img src="accesorios.png" alt="Accesorios compatibles" className="accesorios-grid-image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Electroductos de baja potencia */}
+                <div className="electroductos-seccion">
+                  <div className="electroductos-grid">
+                    <div className="electroducto-card">
+                      <div className="electroducto-header">
+                        <h4 className="electroducto-name">
+                          Electroducto media potencia <span className="electroducto-highlight-green">XCM</span>
+                        </h4>
+                        <div className="electroducto-description">
+                          <p>XCM es una gama con alta funcionalidad, facilidad de instalación y notable robustez, por lo que es ampliamente utilizada para la distribución de energía en Industria, Data Centers, Edificios de servicios (bancos, oficinas, etc). </p>
+                        </div>
+                      </div>
+
+                      <div className="electroducto-content">
+                        <div className="electroducto-specs">
+                          <span className="electroducto-spec">160 – 1000 A</span>
+                          <span className="electroducto-spec">Notable flexibilidad y robustez</span>
+                          <span className="electroducto-spec">Autoextinguible Grado V0 , V2(UL94)</span>
+                          <span className="electroducto-spec">Icw = 15– 36 kA (*)</span>
+                        </div>
+
+                        <div className="electroducto-images">
+                          <div className="electroducto-main-image">
+                            <img src="ducto2.jpg" alt="Electroducto XCM" />
+                          </div>
+                          <div className="electroducto-additional-image">
+                            <img src="xcm.png" alt="Detalle Electroducto XCM" />
+                          </div>
+                        </div>
+
+                        <div className="electroducto-brand">
+                          <img src="bticino.jpg" alt="Bticino" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="productos-adicionales-grid">
                   {productosAdicionales.map((producto) => (
