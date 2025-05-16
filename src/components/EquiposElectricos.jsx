@@ -10,6 +10,7 @@ const EquiposElectricos = () => {
   const isInView = useInView(ref, { amount: 0.2 });
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeProduct, setActiveProduct] = useState('merus');
+  const [activeZucchiniSlide, setActiveZucchiniSlide] = useState(0);
   const [selectedBanco, setSelectedBanco] = useState(null);
   const [selectedAdicional, setSelectedAdicional] = useState(null);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -256,37 +257,6 @@ const EquiposElectricos = () => {
     }
   ];
   
-    // Nuevos productos adicionales
-  const productosAdicionales = [
-,
-    {
-      id: 'tableros',
-      name: 'Tableros de distribución NBAR 4000',
-      image: 'tablero1.jpg',
-      info: [
-        'NBAR 4000 es una línea de tableros de distribución autosoportados tipo NEMA 1 con barras principales de cobre de 1250 a 4000 A, Icc= 65kA.',
-        'El interruptor principal (MEGABREAK) esta disponible para 800, 1000, 1250,1600, 2000, 2500, 3200 y 4000 A con protecciones LI, LSI, LSIG.',
-        'Los interruptores derivados en caja moldeada (MEGATIKER) se instalan de forma enchufable y están disponibles en versión termomagnético o con relé de disparo electrónico.',
-        'Marca Bticino.',
-        'Acometida',
-        'Interruptor principal de 800 -4000 A, relé (LI, LSI,LSIG), Icu =65kA, montaje fijo',
-        'Zapatas principales :1250 -4000 A, Icw =65kA (Solicitar bornes de acuerdo a cantidad y calibre de cables).',
-        'Interruptores derivados enchufables',
-        'Interruptor en caja moldeada (MCCB) 16 - 1000 A, relé de disparo termomagnético o electrónico',
-        '5 marcas a elegir.',
-        'Columnas acoplables tipo NEMA 1',
-        'Acometida ',
-        'Acometida distribución',
-        'Distribución',
-        'Transferencia',
-        'Acoplamiento',
-        'Alimentadores',
-        'Montaje',
-        'Autosoportado'
-      ]
-    }
-  ];
-
   const handleBancoClick = (id) => {
     if (selectedBanco === id) {
       setSelectedBanco(null);
@@ -564,7 +534,7 @@ const EquiposElectricos = () => {
               >
                 <h3 className="productos-adicionales-title">Equipos eléctricos para la distribución de energía</h3>
                 {/* Componente para Electroducto Zucchini */}
-                <div className="producto-destacado">
+               <div className="producto-destacado">
                   <div className="producto-destacado-content">
                     <div className="producto-info">
                       <h3 className="producto-title">
@@ -646,6 +616,59 @@ const EquiposElectricos = () => {
                         </AnimatePresence>
                       </div>
                     </div>
+                  </div>
+                  
+                  {/* Carrusel de comparativa */}
+                  <div className="caracteristicas-carousel">
+                    <button className="carousel-btn prev" onClick={() => setActiveZucchiniSlide((prev) => prev === 0 ? 1 : 0)}>
+                      <ChevronLeft size={24} />
+                    </button>
+                    
+                    <div className="caracteristicas-slide">
+                      {activeZucchiniSlide === 0 ? (
+                        <>
+                          <h4 className="caracteristica-titulo">Sistema tradicional con cable en charola</h4>
+                          <div className="caracteristica-content">
+                            <div className="caracteristica-imagen">
+                              <img src="tradicional.png" alt="Sistema tradicional con cable en charola" />
+                            </div>
+                            <div className="caracteristica-descripcion">
+                              <p>Una gran cantidad de espacio es requerido cuando se lleva más de un conductor por fase, ya que se debe cumplir los radios de curvatura en cambios de dirección a 90°.</p>
+                              <p>Tan solo el tiempo y los recursos para montar solo la charola, es el mismo que se requiere para instalar electroducto.</p>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <h4 className="caracteristica-titulo">Sistema electroducto Zucchini</h4>
+                          <div className="caracteristica-content">
+                            <div className="caracteristica-imagen">
+                              <img src="zucchini2.png" alt="Sistema electroducto Zucchini" />
+                            </div>
+                            <div className="caracteristica-descripcion">
+                              <p>Zucchini distribuye la misma potencia en espacios reducidos, liberando espacio.</p>
+                              <p>En cuanto al peso, para una misma capacidad del circuito, la solución con Zucchini en aluminio será más ligera que la solución de cable de cobre en charola.</p>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    
+                    <button className="carousel-btn next" onClick={() => setActiveZucchiniSlide((prev) => prev === 0 ? 1 : 0)}>
+                      <ChevronRight size={24} />
+                    </button>
+                  </div>
+
+                  {/* Indicadores de slide */}
+                  <div className="carousel-indicators">
+                    <span 
+                      className={`indicator ${activeZucchiniSlide === 0 ? 'active' : ''}`}
+                      onClick={() => setActiveZucchiniSlide(0)}
+                    />
+                    <span 
+                      className={`indicator ${activeZucchiniSlide === 1 ? 'active' : ''}`}
+                      onClick={() => setActiveZucchiniSlide(1)}
+                    />
                   </div>
                 </div>
                 
@@ -819,97 +842,154 @@ const EquiposElectricos = () => {
                   </div>
                 </div>
 
-                <div className="productos-adicionales-grid">
-                  {productosAdicionales.map((producto) => (
-                    <motion.div
-                      key={producto.id}
-                      className="producto-adicional-item"
-                      variants={cardVariants}
-                      initial="initial"
-                      whileHover="hover"
-                      onClick={() => handleAdicionalClick(producto.id)}
-                    >
-                      <motion.div 
-                        className="producto-adicional-image-container"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        <img src={producto.image} alt={producto.name} className="producto-adicional-image" />
-                      </motion.div>
-                      <h3 className="producto-adicional-name">{producto.name}</h3>
-                    </motion.div>
-                  ))}
-                </div>
-                
-                {/* Modal para productos adicionales - Por ahora sin información */}
-                <AnimatePresence>
-                  {selectedAdicional && (
-                    <motion.div 
-                      className="banco-modal-overlay"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      onClick={closeModal}
-                    >
-                      <motion.div 
-                        className={`banco-modal-content ${selectedAdicional === 'tableros' ? 'hpq-modal' : ''}`}
-                        initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: 50, opacity: 0 }}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <button className="modal-close-btn" onClick={closeModal}>
-                          <X size={24} />
-                        </button>
-
-                        {productosAdicionales.filter(producto => producto.id === selectedAdicional).map(producto => (
-                          <div key={producto.id} className="banco-modal-info">
-                            <div className="banco-modal-header">
-                              <img 
-                                src={producto.id === 'tableros' ? 'nbar.png' : producto.image} 
-                                alt={producto.name} 
-                                className="banco-modal-image" 
-                              />
-                              <h3 className="banco-modal-title">{producto.name}</h3>
-                            </div>
-                            <div className="banco-modal-body">
-                              {producto.id === 'tableros' ? (
-                                <ul className="banco-info-list">
-                                  {producto.info.map((item, index) => {
-                                    const isSubtitle = [
-                                      'Marca Bticino',
-                                      'Acometida',
-                                      'Interruptores derivados enchufables',
-                                      'Columnas acoplables tipo NEMA 1',
-                                      'Montaje'
-                                    ].includes(item);
-
-                                    const isFirstParagraphs = index <= 2;
-
-                                    return (
-                                      <li
-                                        key={index}
-                                        className={`banco-info-item ${
-                                          isFirstParagraphs ? 'normal-text' :
-                                          isSubtitle ? 'subtitle' :
-                                          'normal-text'
-                                        }`}
-                                      >
-                                        {item}
-                                      </li>
-                                    );
-                                  })}
-                                </ul>
-                              ) : (
-                                <p className="info-pendiente">Información detallada próximamente.</p>
-                              )}
-                            </div>
+                                 {/* Accesorios compatibles XCM */}
+                  <div className="accesorios-compatibles">
+                    <h4 className="accesorios-title">Accesorios compatibles XCM</h4>
+                    <div className="accesorios-content">
+                      <div className="accesorios-column">
+                        <div className="accesorio-item">
+                          <div className="accesorio-image">
+                            <img src="tramo.jpg" alt="Tramos rectos" />
                           </div>
-                        ))}
-                      </motion.div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                          <div className="accesorio-info">
+                            <h6>Tramos rectos</h6>
+                            <p>Con ventanas de derivación espaciadas a 1 m, fabricados en acero zincado (disponible en aluminio o acero galvanizado bajo especificación).</p>
+                          </div>
+                        </div>
+                        <div className="accesorio-item">
+                          <div className="accesorio-image">
+                            <img src="alimentadora.jpg" alt="Caja alimentadora" />
+                          </div>
+                          <div className="accesorio-info">
+                            <h6>Caja alimentadora</h6>
+                            <p>Permite alimentar los circuitos de electroducto XCM a través de un cable o bien directamente de un tablero de distribución.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="accesorios-column">
+                        <div className="accesorio-item">
+                          <div className="accesorio-image">
+                            <img src="angulos.jpg" alt="Ángulos" />
+                          </div>
+                          <div className="accesorio-info">
+                            <h6>Ángulos</h6>
+                            <p>Utilizados para realizar cualquier cambio de dirección, cuentan con monoblock de unión preensamblado en fábrica.</p>
+                          </div>
+                        </div>
+                        <div className="accesorio-item">
+                          <div className="accesorio-image">
+                            <img src="soporteria.jpg" alt="Soportería" />
+                          </div>
+                          <div className="accesorio-info">
+                            <h6>Soportería</h6>
+                            <p>Para montaje de la línea en posición horizontal o vertical.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="accesorios-content" style={{ marginTop: "1.5rem" }}>
+                      <div className="accesorios-column">
+                        <div className="accesorio-item">
+                          <div className="accesorio-image">
+                            <img src="caja1.png" alt="Cajas de derivación enchufables" />
+                          </div>
+                          <div className="accesorio-info">
+                            <h6>Cajas de derivación enchufables</h6>
+                            <p>Para interruptores de 32 a 630 A.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="accesorios-column">
+                        <div className="accesorio-item">
+                          <div className="accesorio-image">
+                            <img src="caja2.jpg" alt="Cajas de derivación atornillables" />
+                          </div>
+                          <div className="accesorio-info">
+                            <h6>Cajas de derivación atornillables</h6>
+                            <p>Para interruptores de 630 a 1000 A, su conexión eléctrica se realiza a través de monoblock.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="electroducto-brand" style={{ marginTop: "1rem", display: "flex", justifyContent: "flex-end" }}>
+                      <img src="bticino.jpg" alt="Bticino" style={{ maxWidth: "120px" }} />
+                    </div>
+                  </div>
+
+{/* Tableros de distribución NBAR 4000 */}
+<div className="electroductos-seccion" style={{ marginTop: "2rem" }}>
+  <div className="electroductos-grid">
+    <div className="electroducto-card">
+      <div className="electroducto-header">
+        <h4 className="electroducto-name">
+          Tableros de distribución <span className="electroducto-highlight">NBAR 4000</span>
+        </h4>
+        <div className="electroducto-description">
+          <p>NBAR 4000 es una línea de tableros de distribución autosoportados tipo NEMA 1 con barras principales de cobre de 1250 a 4000 A, Icc = 65kA.</p>
+          <p>El interruptor principal (MEGABREAK) está disponible con protecciones LI, LSI, LSIG. Los derivados (MEGATIKER) son enchufables con disparo termomagnético o electrónico.</p>
+          <p>Los interruptores derivados en caja moldeada (MEGATIKER) se instalan de forma enchufable y están disponibles en versión termomagnético o con relé de disparo electrónico.</p>
+          <p>Marca Bticino.</p>
+        </div>
+      </div>
+
+      <div className="electroducto-content">
+        <div className="electroducto-specs-container">
+          {/* Columna 1 */}
+          <div className="electroducto-specs-column">
+            <div className="electroducto-specs-group">
+              <h5 className="electroducto-specs-title">Acometida</h5>
+              <ul className="electroducto-specs-list">
+                <li>Interruptor principal de 800-4000 A, relé (LI, LSI, LSIG), Icu=65kA, montaje fijo</li>
+                <li>Zapatas principales: 1250-4000 A, Icw=65kA (Solicitar bornes de acuerdo a cantidad y calibre de cables)</li>
+              </ul>
+            </div>
+            
+            <div className="electroducto-specs-group">
+              <h5 className="electroducto-specs-title">Interruptores derivados enchufables</h5>
+              <ul className="electroducto-specs-list">
+                <li>Interruptor en caja moldeada (MCCB) 16-1000 A, relé de disparo termomagnético o electrónico</li>
+                <li>5 marcas a elegir</li>
+              </ul>
+            </div>
+          </div>
+          
+          {/* Columna 2 */}
+          <div className="electroducto-specs-column">
+            <div className="electroducto-specs-group">
+              <h5 className="electroducto-specs-title">Columnas acoplables tipo NEMA 1</h5>
+              <ul className="electroducto-specs-list">
+                <li>Acometida</li>
+                <li>Acometida distribución</li>
+                <li>Distribución</li>
+                <li>Transferencia</li>
+                <li>Acoplamiento</li>
+                <li>Alimentadores</li>
+              </ul>
+            </div>
+            
+            <div className="electroducto-specs-group">
+              <h5 className="electroducto-specs-title">Montaje</h5>
+              <ul className="electroducto-specs-list">
+                <li>Autosoportado</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="electroducto-images">
+          <div className="electroducto-image-container">
+            <img src="tablero1.jpg" alt="Tablero NBAR imagen 1" className="electroducto-image" />
+          </div>
+          <div className="electroducto-image-container">
+            <img src="nbar.png" alt="Tablero NBAR imagen 2" className="electroducto-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
               </motion.div>
               
