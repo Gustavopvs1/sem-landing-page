@@ -1329,7 +1329,7 @@
 /* Grid para las sanciones */
 .sanciones-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -1344,8 +1344,8 @@
 
 /* Círculo para las fracciones */
 .sancion-circle {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   background-color: #f1eaf8;
   border: 2px solid #7652a1;
@@ -1376,7 +1376,7 @@
 }
 
 .sancion-description-title {
-  color: #0088ce;
+  color: #e53e3e;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -1390,12 +1390,12 @@
 
 /* Mensaje de advertencia */
 .sanciones-warning {
-  background-color: #fdf2f2;
+  background-color: #ffffff;
   border: 1.5px solid #e53e3e;
   border-radius: 8px;
   padding: 1rem;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   text-align: center;
 }
 
@@ -1418,25 +1418,8 @@
   }
   
   .sanciones-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-  }
-  
-  .sancion-item {
-    flex-direction: row;
-    text-align: left;
-    gap: 1.5rem;
-  }
-  
-  .sancion-circle {
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
-    margin-bottom: 0;
-  }
-  
-  .sancion-circle-content {
-    font-size: 1.2rem;
   }
 }
 
@@ -1462,18 +1445,23 @@
     font-size: 1.5rem;
   }
   
+  .sanciones-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .sancion-item {
     flex-direction: column;
     text-align: center;
+    margin-bottom: 1.5rem;
   }
   
   .sancion-circle {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
   
   .sancion-circle-content {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   
   .sancion-description-title {
@@ -1483,9 +1471,61 @@
   .sancion-description-text {
     font-size: 0.9rem;
   }
+}
+
+/* Ajustes específicos para móviles pequeños */
+@media (max-width: 480px) {
+  .codigo-red-section {
+    padding: 2rem 0.75rem;
+  }
+  
+  .codigo-red-block {
+    padding: 1.25rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .codigo-red-question {
+    font-size: 1.2rem;
+  }
+  
+  .codigo-red-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .sancion-circle {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .sancion-circle-content {
+    font-size: 1rem;
+  }
+  
+  .sancion-description {
+    padding: 1.25rem;
+  }
+  
+  .sancion-description-title {
+    font-size: 0.95rem;
+  }
+  
+  .sancion-description-text {
+    font-size: 0.85rem;
+  }
+  
+  .sanciones-warning {
+    padding: 0.75rem;
+    max-width: 90%;
+  }
   
   .warning-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .warning-text {
@@ -1493,17 +1533,7 @@
   }
   
   .codigo-red-sanciones-wrapper {
-    padding: 1rem;
-  }
-}
-
-/* Ajustes específicos para móviles pequeños */
-@media (max-width: 480px) {
-  .sancion-description {
-    padding: 1rem;
-  }
-  
-  .sanciones-warning {
-    padding: 0.75rem;
+    padding: 1.25rem;
+    border-width: 1px;
   }
 }

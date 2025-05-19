@@ -45,7 +45,7 @@ const Hero = () => {
         animate={controls}
       >
         <motion.img 
-          src="/sem.png" 
+          src="/sem3.png" 
           alt="SEM Logo" 
           className="hero-logo"
           variants={itemVariants}
@@ -56,7 +56,7 @@ const Hero = () => {
           variants={itemVariants}
           className="hero-subtitle"
         >
-          Servicios Empresariales a la medida
+          
         </motion.p>
         
         <motion.div 

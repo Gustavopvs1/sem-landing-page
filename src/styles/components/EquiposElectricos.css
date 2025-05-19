@@ -966,6 +966,19 @@
   margin-bottom: 1rem;
   flex-grow: 1;
 }
+/* Estilos específicos para la imagen nbar.png */
+.nbar-specific-image {
+  object-fit: contain !important;
+  max-height: 450px !important; /* Ajusta este valor según necesites */
+  width: auto !important;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Si es necesario, ajusta también el contenedor */
+.nbar-specific-image + .electroducto-image-container {
+  padding-bottom: 60%; /* Ajusta según necesites */
+}
 
 @media (min-width: 768px) {
   .electroducto-images {

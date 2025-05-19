@@ -29,7 +29,7 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
       <div className="logo">
-        <img src="/sem.png" alt="Logo SEM" className="logo-image" />
+        <img src="/sem2.png" alt="Logo SEM" className="logo-image" />
       </div>  
         <div className="mobile-menu-button" onClick={toggleMenu}>
           <div className={`hamburger ${menuOpen ? 'open' : ''}`}></div>

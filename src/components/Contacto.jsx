@@ -217,7 +217,7 @@ const Contacto = () => {
         <div className="contact-content-modified">
           <div className="contact-info-full">
             <div className="logo-container">
-              <img src="/sem.png" alt="SEM Logo" className="sem-logo" />
+              <img src="/sem4.png" alt="SEM Logo" className="sem-logo" />
             </div>
             
             <div className="contact-details">

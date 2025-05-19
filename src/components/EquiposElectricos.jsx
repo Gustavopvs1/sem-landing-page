@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView, useAnimation, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import '../styles/components/EquiposElectricos.css';
+import { FaEnvelope } from 'react-icons/fa';
 
 const EquiposElectricos = () => {
   const controls = useAnimation();
@@ -187,7 +188,7 @@ const EquiposElectricos = () => {
     {
       id: 'banco-fijo',
       name: 'Banco de capacitores fijo con reactores de rechazo',
-      image: 'imagen1.png',
+      image: 'fijo.png',
       ficha: '/Ficha técnica Banco-de-Capacitores-Fijo-con-Reactor-de-Rechazo.pdf',
       info: [
         'Los bancos de capacitores fijos con reactor de rechazo son ampliamente utilizados para corregir el factor de potencia en instalaciones con demanda de kVAr constante y presencia de contaminación armónica.',
@@ -200,7 +201,7 @@ const EquiposElectricos = () => {
     {
       id: 'banco-automatico',
       name: 'Banco de capacitores automático con reactor de rechazo',
-      image: 'imagen2.png',
+      image: 'rechazo.png',
       ficha: '/Ficha técnica Banco-de-Capacitores-Automatico-con-Reactor de Rechazo.pdf',
       info: [
         'Los bancos automáticos de capacitores con reactor de rechazo son ideales para corregir el factor de potencia en instalaciones con demanda de kVAr variable y presencia de contaminación armónica.',
@@ -213,7 +214,7 @@ const EquiposElectricos = () => {
     {
       id: 'banco-tiristorizado',
       name: 'Banco de capacitores automático tiristorizado',
-      image: 'imagen3.png',
+      image: 'tristo.png',
       ficha: '/Ficha técnica Banco-de Capacitores Automatico-Tiristorizado.pdf',
       info: [
         'El control eléctrico a base de tiristores permiten una conmutación rápida y con bajas perturbaciones en la red.',
@@ -630,7 +631,7 @@ const EquiposElectricos = () => {
                           <h4 className="caracteristica-titulo">Sistema tradicional con cable en charola</h4>
                           <div className="caracteristica-content">
                             <div className="caracteristica-imagen">
-                              <img src="tradicional.png" alt="Sistema tradicional con cable en charola" />
+                              <img src="tradicional.pngq" alt="Sistema tradicional con cable en charola" />
                             </div>
                             <div className="caracteristica-descripcion">
                               <p>Una gran cantidad de espacio es requerido cuando se lleva más de un conductor por fase, ya que se debe cumplir los radios de curvatura en cambios de dirección a 90°.</p>
@@ -927,10 +928,7 @@ const EquiposElectricos = () => {
           Tableros de distribución <span className="electroducto-highlight">NBAR 4000</span>
         </h4>
         <div className="electroducto-description">
-          <p>NBAR 4000 es una línea de tableros de distribución autosoportados tipo NEMA 1 con barras principales de cobre de 1250 a 4000 A, Icc = 65kA.</p>
-          <p>El interruptor principal (MEGABREAK) está disponible con protecciones LI, LSI, LSIG. Los derivados (MEGATIKER) son enchufables con disparo termomagnético o electrónico.</p>
-          <p>Los interruptores derivados en caja moldeada (MEGATIKER) se instalan de forma enchufable y están disponibles en versión termomagnético o con relé de disparo electrónico.</p>
-          <p>Marca Bticino.</p>
+          <p>NBAR 4000 es una línea de tableros de distribución autosoportados tipo NEMA 1 con barras principales de cobre de 1250 a 4000 A, Icc = 65kA. El interruptor principal (MEGABREAK) está disponible con protecciones LI, LSI, LSIG. Los derivados (MEGATIKER) son enchufables con disparo termomagnético o electrónico.</p>
         </div>
       </div>
 
@@ -941,16 +939,15 @@ const EquiposElectricos = () => {
             <div className="electroducto-specs-group">
               <h5 className="electroducto-specs-title">Acometida</h5>
               <ul className="electroducto-specs-list">
-                <li>Interruptor principal de 800-4000 A, relé (LI, LSI, LSIG), Icu=65kA, montaje fijo</li>
-                <li>Zapatas principales: 1250-4000 A, Icw=65kA (Solicitar bornes de acuerdo a cantidad y calibre de cables)</li>
+                <li>Interruptor principal de 800-4000 A, relé (LI, LSI, LSIG), Icu=65kA</li>
+                <li>Zapatas principales: 1250-4000 A, Icw=65kA</li>
               </ul>
             </div>
             
             <div className="electroducto-specs-group">
-              <h5 className="electroducto-specs-title">Interruptores derivados enchufables</h5>
+              <h5 className="electroducto-specs-title">Interruptores derivados</h5>
               <ul className="electroducto-specs-list">
-                <li>Interruptor en caja moldeada (MCCB) 16-1000 A, relé de disparo termomagnético o electrónico</li>
-                <li>5 marcas a elegir</li>
+                <li>MCCB 16-1000 A, relé termomagnético o electrónico</li>
               </ul>
             </div>
           </div>
@@ -958,14 +955,10 @@ const EquiposElectricos = () => {
           {/* Columna 2 */}
           <div className="electroducto-specs-column">
             <div className="electroducto-specs-group">
-              <h5 className="electroducto-specs-title">Columnas acoplables tipo NEMA 1</h5>
+              <h5 className="electroducto-specs-title">Columnas acoplables NEMA 1</h5>
               <ul className="electroducto-specs-list">
-                <li>Acometida</li>
-                <li>Acometida distribución</li>
-                <li>Distribución</li>
-                <li>Transferencia</li>
-                <li>Acoplamiento</li>
-                <li>Alimentadores</li>
+                <li>Acometida / Distribución / Transferencia</li>
+                <li>Acoplamiento / Alimentadores</li>
               </ul>
             </div>
             
@@ -977,19 +970,98 @@ const EquiposElectricos = () => {
             </div>
           </div>
         </div>
-
-        <div className="electroducto-images">
-          <div className="electroducto-image-container">
-            <img src="tablero1.jpg" alt="Tablero NBAR imagen 1" className="electroducto-image" />
+        
+          <div className="electroducto-images">
+            <div className="electroducto-image-container">
+              <img src="tablero1.jpg" alt="Tablero NBAR imagen 1" className="electroducto-image" />
+            </div>
+            <div className="electroducto-image-container">
+              <img src="nbar.png" alt="Tablero NBAR imagen 2" className="electroducto-image nbar-specific-image" />
+            </div>
           </div>
-          <div className="electroducto-image-container">
-            <img src="nbar.png" alt="Tablero NBAR imagen 2" className="electroducto-image" />
-          </div>
+        
+        <div className="electroducto-brand">
+          <img src="bticino.jpg" alt="Bticino" />
         </div>
       </div>
     </div>
   </div>
 </div>
+ <div className="electroductos-seccion" style={{ marginTop: "2rem" }}>
+      <div className="electroductos-grid">
+        <div className="electroducto-card">
+          <div className="electroducto-header">
+            <h4 className="electroducto-name">
+              Servicios <span className="electroducto-highlight">adicionales</span>
+            </h4>
+            <div className="electroducto-description">
+              <p>Ofrecemos una gama completa de servicios para el diseño y planificación de sus proyectos eléctricos.</p>
+            </div>
+          </div>
+
+          <div className="electroducto-content">
+            <div className="servicios-grid" style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2rem" }}>
+              {/* Trazado de trayectorias */}
+              <div className="servicio-item" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <h5 className="electroducto-specs-title" style={{ borderBottom: "2px solid #0056b3", paddingBottom: "0.5rem", marginBottom: "1rem" }}>Trazado de trayectorias</h5>
+                <div style={{ display: "flex", flexDirection: "row", gap: "2rem", alignItems: "center" }}>
+                  <div style={{ flex: "1" }}>
+                    <p>Diseño y planificación de rutas óptimas para la instalación de electroductos y sistemas de distribución eléctrica.</p>
+                  </div>
+                  <div style={{ flex: "1", maxWidth: "400px" }}>
+                    <img src="trazado.png" alt="Trazado de trayectorias" style={{ width: "70%", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Volumetría de materiales */}
+              <div className="servicio-item" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <h5 className="electroducto-specs-title" style={{ borderBottom: "2px solid #0056b3", paddingBottom: "0.5rem", marginBottom: "1rem" }}>Volumetría de materiales (BOM)</h5>
+                <div style={{ display: "flex", flexDirection: "row", gap: "2rem", alignItems: "center" }}>
+                  <div style={{ flex: "1" }}>
+                    <p>Cálculo detallado de todos los materiales necesarios para la implementación de proyectos, optimizando recursos y minimizando desperdicios.</p>
+                  </div>
+                  <div style={{ flex: "1", maxWidth: "400px" }}>
+                    <img src="bom.png" alt="Volumetría de materiales" style={{ width: "80%", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Cotizaciones */}
+              <div className="servicio-item" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <h5 className="electroducto-specs-title" style={{ borderBottom: "2px solid #0056b3", paddingBottom: "0.5rem", marginBottom: "1rem" }}>Cotizaciones</h5>
+                <div style={{ display: "flex", flexDirection: "row", gap: "2rem", alignItems: "center" }}>
+                  <div style={{ flex: "1" }}>
+                    <p>Presupuestos detallados para proyectos de cualquier escala, incluyendo materiales, mano de obra y tiempos de ejecución.</p>
+                    <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center" }}>
+                      <FaEnvelope style={{ fontSize: "1.5rem", color: "#e74c3c", marginRight: "0.75rem" }} />
+                        <a 
+                          href="https://mail.google.com/mail/?view=cm&fs=1&to=cotizaciones@semservicios.com.mx" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={{ 
+                            color: "#e74c3c", 
+                            fontWeight: "bold", 
+                            textDecoration: "none",
+                            fontSize: "1.2rem"
+                          }}
+                          onMouseOver={(e) => e.target.style.textDecoration = "underline"}
+                          onMouseOut={(e) => e.target.style.textDecoration = "none"}
+                        >
+                          cotizaciones@semservicios.com.mx
+                        </a>
+                    </div>
+                  </div>
+                  <div style={{ flex: "1", maxWidth: "400px" }}>
+                    <img src="cotizaciones.png" alt="Cotizaciones" style={{ width: "85%", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
               </motion.div>
               
