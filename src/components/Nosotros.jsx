@@ -8,7 +8,7 @@ import PowerQuality from './PowerQuality'; // Importamos el componente
 import CodigoRed from './CodigoRed'; // Importamos el nuevo componente
 
 const getColorForService = (index) => {
-  const colors = ['#0088ce', '#0088ce', '#183a7e', '#7652a1'];
+  const colors = ['#0078a9', '#0078a9', '#0078a9', '#0078a9'];
   return colors[index] || colors[0];
 };
 

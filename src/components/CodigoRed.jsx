@@ -21,7 +21,7 @@ const CodigoRed = () => {
       animate={isInView ? 'visible' : 'hidden'}
     >
       <div className="about-container">
-        <h2 className="section-title">Código de Red 2.0</h2>
+        <h2 className="red-title">Código de Red 2.0</h2>
         
         <div className="codigo-red-content">
           <div className="codigo-red-info">
@@ -47,7 +47,7 @@ const CodigoRed = () => {
                 seguridad y sustentabilidad del Sistema Eléctrico Nacional <strong>(SEN)</strong>.
               </p>
               <p className="codigo-red-text">
-                Debemos ser conscientes que mantener al SEN sano y robusto es un tema de seguridad nacional
+                Debemos ser conscientes que mantener al <strong>SEN</strong> sano y robusto es un tema de seguridad nacional
                 y es responsabilidad de todos los que lo conforman.
               </p>
             </div>

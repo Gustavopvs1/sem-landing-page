@@ -357,28 +357,24 @@ const Features = () => {
     {
       icon: <FaChartBar className="feature-icon-svg" />,
       title: "Estudios especializados",
-      description: "Análisis detallados y estudios técnicos para optimizar sus sistemas eléctricos.",
       expandable: true,
       cardType: "estudios"
     },
     {
       icon: <FaClipboardList className="feature-icon-svg" />,
       title: "Código de Red 2.0",
-      description: "Implementación y cumplimiento de las normativas actuales del Código de Red.",
       expandable: true,
       cardType: "codigo"
     },
     {
       icon: <FaPlug className="feature-icon-svg" />,
       title: "Proyecto / Instalaciones eléctricas",
-      description: "Diseño y planificación integral de proyectos eléctricos a medida.",
       expandable: true,
       cardType: "proyecto"
     },
     {
       icon: <FaUserGraduate className="feature-icon-svg" />,
       title: "Cursos de capacitación especializados",
-      description: "Formación técnica para profesionales del sector eléctrico.",
       expandable: true,
       cardType: "cursos"
     }
