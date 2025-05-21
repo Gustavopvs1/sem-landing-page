@@ -181,8 +181,9 @@
 
 .expanded-item p {
   color: #555;
-  line-height: 1.5;
+  line-height: 1.1;
   margin-bottom: 0.5rem;
+  text-align: justify;
 }
 
 /* Estilos específicos para la sección de Código de Red 2.0 */

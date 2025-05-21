@@ -27,7 +27,7 @@ const OpexChart = () => {
   return (
     <div className="opex-chart">
       <div className="opex-definition">
-        OPEX (Gastos Operacionales): Costos continuos para mantener el funcionamiento del negocio
+        
       </div>
       <div className="bars-container">
         {barHeights.map((height, index) => (
@@ -42,6 +42,9 @@ const OpexChart = () => {
         ))}
       </div>
       <div className="opex-text">OPEX</div>
+            <div className="opex-definition">
+        Costos continuos para mantener el funcionamiento del negocio
+      </div>
     </div>
   );
 };

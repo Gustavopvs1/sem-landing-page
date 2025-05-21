@@ -47,17 +47,17 @@ const FeatureCard = ({ title, description, icon, index, parentInView, isExpandab
               
               <div className="expanded-item">
                 <h3>Cortocircuito</h3>
-                <p>Estudios de cortocircuito para evaluar la capacidad de sus sistemas.</p>
+                <p>Cálculo de la magnitud de corrientes esperadas ante fallas de la instalación eléctrica. Normas aplicables NOM-001SEDE-2012, ANSI/IEC C37, UL 489</p>
               </div>
               
               <div className="expanded-item">
                 <h3>Coordinación de protecciones</h3>
-                <p>Garantizamos la correcta coordinación de los dispositivos de protección.</p>
+                <p>Determinar el esquema de protecciones contra sobrecorrientes, el ajuste de los parámetros de estos para garantizar selectividad de disparo así como la protección de equipos y personas. NOM-001-SEDE-2012</p>
               </div>
               
               <div className="expanded-item">
                 <h3>Flujo de potencia</h3>
-                <p>Optimización del flujo de potencia para mejorar la eficiencia energética.</p>
+                <p>Para cada nodo, se calculan los flujos de potencia en diferentes estados de operación, se verifica que no se excedan las capacidades nominales de los circuitos. Normas aplicables IEEE 399-1980</p>
               </div>
               
               <div className="expanded-item">
@@ -67,7 +67,7 @@ const FeatureCard = ({ title, description, icon, index, parentInView, isExpandab
               
               <div className="expanded-item">
                 <h3>Arc Flash</h3>
-                <p>Estudios de Arc Flash para garantizar la seguridad del personal.</p>
+                <p>Se determina el nivel de riesgo de falla de arco eléctrico (quemaduras, electrocución) las distancias seguras y el EPP requerido. Normas aplicables : NOM-001-SEDE-2012, NOM-017-STPS-2008, NOM-029-STPS-2011, NFPA-70E</p>
               </div>
             </div>
             
@@ -149,22 +149,22 @@ const FeatureCard = ({ title, description, icon, index, parentInView, isExpandab
             <div className="expanded-text">
               <div className="expanded-item">
                 <h3>Ampliaciones, cambios de layout</h3>
-                <p>Adaptación de instalaciones existentes a nuevas necesidades operativas.</p>
+                <p></p>
               </div>
               
               <div className="expanded-item">
                 <h3>Elaboración/actualización de diagramas unifilares</h3>
-                <p>Desarrollo y modernización de documentación técnica esencial.</p>
+                <p></p>
               </div>
               
               <div className="expanded-item">
                 <h3>Desarrollo de proyecto eléctrico E2E</h3>
-                <p>Gestión completa desde el diseño hasta la implementación final.</p>
+                <p></p>
               </div>
               
               <div className="expanded-item">
                 <h3>Servicios de auditoría de instalaciones eléctricas UVIE</h3>
-                <p>Verificación especializada de cumplimiento normativo y seguridad.</p>
+                <p></p>
               </div>
             </div>
             

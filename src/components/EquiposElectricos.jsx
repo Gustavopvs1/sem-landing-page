@@ -12,9 +12,12 @@ const EquiposElectricos = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeProduct, setActiveProduct] = useState('merus');
   const [activeZucchiniSlide, setActiveZucchiniSlide] = useState(0);
+  const [activeHPQSlide, setActiveHPQSlide] = useState(0);
   const [selectedBanco, setSelectedBanco] = useState(null);
   const [selectedAdicional, setSelectedAdicional] = useState(null);
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [showTooltipMerus, setShowTooltipMerus] = useState(false);
+  const [showTooltipZucchini, setShowTooltipZucchini] = useState(false);
+  const [showTooltipHPQ, setShowTooltipHPQ] = useState(false);
   
   React.useEffect(() => {
     if (isInView) {
@@ -176,8 +179,8 @@ const EquiposElectricos = () => {
       name: 'Merus A2',
       subtitle: 'Filtro activo de armónicas',
       description: 'Merus®A2 es una línea de filtros activos de armónicos que destaca por su rápida operación, robustez, versatilidad y tamaño compacto.',
-      beneficios: 'Alcance mayor productividad, reduzca tiempos muertos de producción, extienda la vida útil de sus equipos y componentes, reduzca el costo de mantenimiento y ahorre energía con Merus®A2.',
-      image: 'merus2.png',
+      beneficios: 'Características generales',
+      image: 'merus5.png',
       featured: true
     },
     // Espacio para futuros productos
@@ -323,15 +326,15 @@ const EquiposElectricos = () => {
                     <div className="mas-info-flecha"></div>
                     <div 
                       className="producto-imagen"
-                      onMouseEnter={() => setShowTooltip(true)}
-                      onMouseLeave={() => setShowTooltip(false)}
+                        onMouseEnter={() => setShowTooltipMerus(true)}
+                        onMouseLeave={() => setShowTooltipMerus(false)}
                     >
                       <div className="imagen-tooltip-container">
                         <img src={producto.image} alt={producto.name} />
                         
                         {/* Tooltip para mostrar información técnica detallada */}
                         <AnimatePresence>
-                          {showTooltip && (
+                          {showTooltipMerus  && (
                             <motion.div 
                               className="producto-tooltip"
                               variants={tooltipVariants}
@@ -386,10 +389,10 @@ const EquiposElectricos = () => {
                       </div>
                     </div>
   
-  <button className="carousel-btn next" onClick={nextSlide}>
-    <ChevronRight size={24} />
-  </button>
-</div>
+                <button className="carousel-btn next" onClick={nextSlide}>
+                  <ChevronRight size={24} />
+                </button>
+              </div>
 
 
                   {/* Indicadores de slide */}
@@ -404,6 +407,91 @@ const EquiposElectricos = () => {
                   </div>
                 </div>
               ))}
+
+                <div className="producto-destacado">
+                  <div className="producto-destacado-content">
+                    <div className="producto-info">
+                      <h3 className="producto-title">
+                        <span className="producto-name">HPQ</span>
+                        <span className="producto-subtitle">Compensador híbrido</span>
+                      </h3>
+                      <p className="producto-description">
+                        HPQ integra en un solo equipo filtros activos y banco de capacitores desintonizados.
+                      </p>
+                      <a 
+                        href="" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="ficha-link"
+                      >
+                        Descargar ficha técnica
+                      </a>
+                    </div>
+                    <div className="mas-info-flecha"></div>
+                    <div 
+                      className="producto-imagen"
+                      onMouseEnter={() => setShowTooltipHPQ(true)}
+                      onMouseLeave={() => setShowTooltipHPQ(false)}
+                    >
+                      <div className="imagen-tooltip-container">
+                        <img src="hpq.png" alt="Electroducto Zucchini" />
+                        
+                        {/* Tooltip para mostrar información técnica detallada */}
+                        <AnimatePresence>
+                          {showTooltipHPQ && (
+                            <motion.div 
+                              className="producto-tooltip"
+                              variants={tooltipVariants}
+                              initial="hidden"
+                              animate="visible"
+                              exit="hidden"
+                            >
+                              <h4 className="tooltip-title">HPQ es un compensador híbrido de calidad de la energía. </h4>
+                              <div className="tooltip-content">
+                                <div className="tooltip-feature-group">
+                                  <h5 className="tooltip-category">Esta solución confiable que garantiza:</h5>
+                                  <ul className="tooltip-list">
+                                    <li className="tooltip-item">Instantánea corrección del factor de potencia</li>
+                                    <li className="tooltip-item">Mitigación de corrientes armónicas</li>
+                                    <li className="tooltip-item">Corrección de desequilibrios.</li>
+                                  </ul>
+                                </div>
+                                <div className="tooltip-feature-group">
+                                  <h5 className="tooltip-category">HPQ Dispone de dos modos de operación:</h5>
+                                  <ul className="tooltip-list">
+                                    <li className="tooltip-item">Modo corrección de factor de potencia (FP) : es el modo tradicional en donde Las mediciones se realizan en el secundario del transformador y el equipo se configura para múltiples cargas. La velocidad de conmutación de los condensadores es menor a 1s.</li>
+                                    <li className="tooltip-item">Modo Ultra –Fast (UF) : diseñado para cargas individuales que cambian rápidamente, en modo UF, los capacitores se conectan a los tiristores asegurando una conmutación menor a 20ms. Esta versión se recomienda para aplicaciones de grúas, ascensores y soldadoras.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Carrusel de comparativa */}
+                  <div className="caracteristicas-carousel">
+                    
+                    <div className="caracteristicas-slide">
+                        <>
+                          <h4 className="caracteristica-titulo">HPQ integra en un solo equipo filtros activos y banco de capacitores desintonizados.</h4>
+                          <div className="caracteristica-content">
+                            <div className="caracteristica-imagen">
+                              <img src="hpq.jpg" alt="Sistema tradicional con cable en charola" />
+                            </div>
+                            <div className="caracteristica-descripcion">
+                              <p>✔ Ahorre dinero</p>
+                              <p>✔ Minimice el número de interrupciones y fallos.</p>
+                              <p>✔ Alargue la vida útil de sus equipos.</p>
+                              <p>✔ Ahorre espacio con equipos compactos.</p>
+                            </div>
+                          </div>
+                        </>
+                    </div>
+                  </div>
+                </div>
 
               {/* Sección de bancos de capacitores */}
               <motion.div 
@@ -528,7 +616,7 @@ const EquiposElectricos = () => {
                 </AnimatePresence>
               </motion.div>
 
-              {/* NUEVA SECCIÓN: Productos adicionales */}
+             
               <motion.div 
                 className="productos-adicionales-section"
                 variants={itemVariants}
@@ -557,15 +645,15 @@ const EquiposElectricos = () => {
                     <div className="mas-info-flecha"></div>
                     <div 
                       className="producto-imagen"
-                      onMouseEnter={() => setShowTooltip(true)}
-                      onMouseLeave={() => setShowTooltip(false)}
+                      onMouseEnter={() => setShowTooltipZucchini(true)}
+                      onMouseLeave={() => setShowTooltipZucchini(false)}
                     >
                       <div className="imagen-tooltip-container">
                         <img src="electroducto.jpg" alt="Electroducto Zucchini" />
                         
                         {/* Tooltip para mostrar información técnica detallada */}
                         <AnimatePresence>
-                          {showTooltip && (
+                          {showTooltipZucchini && (
                             <motion.div 
                               className="producto-tooltip"
                               variants={tooltipVariants}
@@ -1007,12 +1095,12 @@ const EquiposElectricos = () => {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            <img src="trazado.png" alt="Trazado de trayectorias" style={{ maxWidth: "200px", height: "auto" }} />
+            <img src="trazado.png" alt="Trazado de trayectorias" style={{ maxWidth: "200px", height: "auto", borderRadius: "12px" }} />
             <img src="bom.png" alt="Volumetría de materiales" style={{ maxWidth: "200px", height: "auto" }} />
           </div>
 
           <div>
-            <img src="cotizaciones.png" alt="Cotizaciones" style={{ maxWidth: "335px", height: "auto" }} />
+            <img src="cotizaciones.png" alt="Cotizaciones" style={{ maxWidth: "335px", height: "auto", borderRadius: "12px"}} />
           </div>
         </div>
       </div>

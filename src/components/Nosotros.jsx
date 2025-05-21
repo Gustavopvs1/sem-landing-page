@@ -1,14 +1,15 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import { Award, BookOpen, Briefcase, TrendingUp } from 'lucide-react';
-import { FaRegLightbulb, FaBrain, FaBalanceScale, FaChartBar } from 'react-icons/fa';
+import { TbTargetArrow } from "react-icons/tb";
+import { FaUserGraduate, FaGears, FaBullseye, FaUserCheck } from "react-icons/fa6";
 import '../styles/components/Nosotros.css';
 import ElectricalSystem from './ElectricalSystem'; // Importamos el componente
 import PowerQuality from './PowerQuality'; // Importamos el componente
 import CodigoRed from './CodigoRed'; // Importamos el nuevo componente
+import ReduceCostos from './ReduceCostos'; // Importamos el componente de reducción de costos
 
 const getColorForService = (index) => {
-  const colors = ['#0078a9', '#0078a9', '#0078a9', '#0078a9'];
+  const colors = ['#0032bd', '#0032bd', '#0032bd', '#0032bd'];
   return colors[index] || colors[0];
 };
 
@@ -113,7 +114,7 @@ const DiferenciadoresCuadrado = () => {
       <DiferenciadorItem 
         color="#ffffff"
         hoverColor="#ffffff"
-        icon={<FaRegLightbulb size={28} />}
+        icon={<FaUserGraduate size={35} />}
         title="Experiencia"
         description="Amplia trayectoria profesional en el sector"
         position="top-left"
@@ -121,7 +122,7 @@ const DiferenciadoresCuadrado = () => {
       <DiferenciadorItem 
         color="#ffffff"
         hoverColor="#ffffff"
-        icon={<FaBrain size={28} />}
+        icon={<FaUserCheck size={35} />}
         title="Conocimiento"
         description="Expertise técnico especializado"
         position="top-right"
@@ -129,7 +130,7 @@ const DiferenciadoresCuadrado = () => {
       <DiferenciadorItem 
         color="#ffffff"
         hoverColor="#ffffff"
-        icon={<FaBalanceScale size={28} />}
+        icon={<FaGears size={35} />}
         title="Accountability"
         description="Responsabilidad en resultados"
         position="bottom-left"
@@ -137,7 +138,7 @@ const DiferenciadoresCuadrado = () => {
       <DiferenciadorItem 
         color="#ffffff"
         hoverColor="#ffffff"
-        icon={<FaChartBar size={28} />}
+        icon={<TbTargetArrow  size={35} />}
         title="Resultados"
         description="Soluciones con impacto medible"
         position="bottom-right"
@@ -244,37 +245,44 @@ const Nosotros = () => {
       {/* Sección del sistema eléctrico */}
       <ElectricalSystem />
 
-      {/* Sección de mala calidad de potencia */}
-      <motion.section 
-        className="section small-about"
-        ref={smallTextRef}
-        variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: { 
-            opacity: 1, 
-            y: 0,
-            transition: { duration: 0.6 }
-          }
-        }}
-        initial="hidden"
-        animate={smallTextControls}
-      >
-        <div className="about-container">
-          <h2 className="section-title">Mala calidad de la potencia</h2>
-          <p className="about-description">
-            Se tiene un problema de calidad de potencia cuando debido a algún disturbio en los sistemas eléctricos, 
-            se provocan alteraciones en los valores nominales en la Tensión, Corriente o Frecuencia, 
-            lo que terminará afectando a la operación y vida útil de los equipos conectados.
-          </p>
-        </div>
-      </motion.section>
-
+        {/* Sección de mala calidad de potencia */}
+        <motion.section 
+          className="power-quality-section2"
+          ref={smallTextRef}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 0.6 }
+            }
+          }}
+          initial="hidden"
+          animate={smallTextControls}
+        >
+          <div className="power-quality-container2">
+            <h2 className="power-quality-title2">Mala calidad de<br />la potencia</h2>
+            <div className="power-quality-content2">
+              <p>
+                Se tiene un problema de <span className="text-blue">calidad de potencia </span> 
+                cuando <span className="text-blue">debido a algún</span> <span className="text-red">disturbio</span> <span className="text-blue">en los 
+                sistemas eléctricos, se</span> <span className="text-blue">provocan 
+                alteraciones en los valores nominales en la </span> 
+                <span className="text-red">Tensión, Corriente o Frecuencia,</span> <span className="text-blue">lo que 
+                terminará afectando a la operación y vida útil 
+                de los equipos conectados.</span>
+              </p>
+            </div>
+          </div>
+        </motion.section>
       
       {/* Sección de calidad de potencia */}
       <PowerQuality />
 
       {/* Nueva sección de Código de Red 2.0 */}
       <CodigoRed />
+
+      <ReduceCostos />
 
     </div>
   );

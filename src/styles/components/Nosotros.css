@@ -152,7 +152,6 @@
 
 .diferenciador-icon {
   font-size: 2rem;
-  transform: rotate(-45deg);
   color: white;
 }
 
@@ -359,6 +358,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .causa-item {
@@ -405,6 +405,7 @@
 
 .efecto-texto {
   color: #555;
+    font-size: 1.2rem;
 }
 
 /* Estilos para las consecuencias */
@@ -432,7 +433,7 @@
 
 .opex-definition {
   color: #555;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   text-align: center;
   margin-bottom: 1rem;
   padding: 0 1rem;
@@ -457,7 +458,7 @@
 }
 
 .opex-text {
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   margin-top: 0.5rem;
@@ -502,8 +503,72 @@
     font-size: 0.8rem;
   }
 }
-/* Añade estos estilos a tu archivo Nosotros.css */
+/* Estilos para la sección de mala calidad de potencia */
+.power-quality-section2 {
+  display: flex;
+  margin: 2rem 0;
+  padding: 1rem;
+  max-width: 100%;
+}
 
+.power-quality-container2 {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Nuevo: limita el ancho igual que otras secciones */
+  margin: 0 auto;     /* Nuevo: centra horizontalmente */
+  align-items: flex-start;
+}
+
+.power-quality-title2 {
+  color: #0078a9;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  min-width: 150px;
+  line-height: 1.3;
+}
+
+.power-quality-content2 {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 1px solid #e0e0e0;
+  flex: 1;
+}
+
+.power-quality-content2 p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Colores para el texto */
+.text-blue {
+  color: #1976d2; /* Color azul para partes del texto */
+}
+
+.text-red {
+  color: #d32f2f; /* Color rojo para partes del texto */
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+  .power-quality-container2 {
+    flex-direction: column;
+  }
+  
+  .power-quality-title2 {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .power-quality-content2 {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+  }
+}
+/*///*/
 .power-quality-section {
   background-color: #f5f5f5;
   padding: 5rem 2rem;
@@ -675,7 +740,17 @@
   text-align: center;
   font-weight: bold;
 }
-
+.horizontal-pair {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 576px) {
+  .horizontal-pair {
+    flex-direction: column;
+  }
+}
 /* Diseño responsive para cambiar de horizontal a vertical */
 @media (max-width: 992px) {
   .power-quality-grid {
@@ -776,25 +851,27 @@
 }
 
 .cuadrado-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  grid-template-rows: repeat(2, 130px);
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
+  align-items: center;
+  gap: 0;
+  margin: 2rem auto;
+  position: relative;
 }
 
 .diferenciador-cuadrado {
   width: 130px;
   height: 130px;
-  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  background-color: white; /* Fondo blanco */
-  border: 3px solid; /* Borde con el color que se asignará dinámicamente */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
 .diferenciador-cuadrado:hover {
@@ -803,33 +880,33 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 .top-left .diferenciador-icon {
-  color: #FFD700; /* Amarillo */
+  color: #25a3b9;
 }
 .top-right .diferenciador-icon {
-  color: #DC143C; /* Rojo */
+  color: #680c9e; 
 }
 
 .bottom-left .diferenciador-icon {
-  color: #C0C0C0; /* Plata */
+  color: #00753b; 
 }
 
 .bottom-right .diferenciador-icon {
-  color: #00308F; /* Azul */
+  color: #1976d2;
 }
 .top-left.diferenciador-cuadrado {
-  border-color: #FFD700;
+  border-color: #074f97;
 }
 
 .top-right.diferenciador-cuadrado {
-  border-color: #DC143C;
+  border-color: #074f97;
 }
 
 .bottom-left.diferenciador-cuadrado {
-  border-color: #C0C0C0;
+  border-color: #074f97;
 }
 
 .bottom-right.diferenciador-cuadrado {
-  border-color: #00308F;
+  border-color: #074f97;
 }
 .diferenciador-icon {
   font-size: 2rem;
@@ -891,12 +968,19 @@
 }
 
 /* Diseño responsive */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .cuadrado-container {
-    width: 260px;
-    height: 260px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 1rem;
   }
-  
+
+  .diferenciador-cuadrado {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
   .diferenciador-icon {
     font-size: 1.5rem;
   }
@@ -914,23 +998,6 @@
     font-size: 0.8rem;
   }
 }
-
-@media (max-width: 480px) {
-  .cuadrado-container {
-    width: 220px;
-    height: 220px;
-  }
-  
-  .diferenciador-icon {
-    font-size: 1.2rem;
-  }
-  
-  .diferenciador-tooltip {
-    width: 130px;
-    padding: 0.6rem;
-  }
-}
-/* Agregar estos estilos al final del archivo Nosotros.css */
 
 .service-icon {
   display: flex;

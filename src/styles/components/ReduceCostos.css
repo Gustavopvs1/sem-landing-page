@@ -1,0 +1,142 @@
+/* Estilos para las secciones de Reduce Costos */
+
+/* Estilos comunes para ambas secciones */
+.reduce-costos-section,
+.reduce-riesgos-section {
+  padding: 4rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.reduce-costos-container,
+.reduce-riesgos-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Estilos para la sección 1: Deja de administrar síntomas */
+.reduce-costos-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #0078a9;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Estilos para la sección 2: Reduce los riesgos */
+.reduce-riesgos-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #0078a9;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.reduce-riesgos-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.reduce-riesgos-imagen {
+  flex: 0 0 auto;
+  width: 25%;
+  max-width: 250px;
+}
+
+.riesgo-imagen {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.reduce-riesgos-lista {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lista-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.check-icon {
+  font-size: 1.5rem;
+  color: #4CAF50;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lista-item p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c5282;
+  line-height: 1.4;
+}
+
+.text-red {
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+/* Responsive para móviles */
+@media screen and (max-width: 768px) {
+  .reduce-costos-title,
+  .reduce-riesgos-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .reduce-riesgos-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .reduce-riesgos-imagen {
+    width: 60%;
+    margin-bottom: 2rem;
+  }
+  
+  .lista-item {
+    align-items: flex-start;
+  }
+  
+  .lista-item p {
+    font-size: 1rem;
+  }
+}
+
+/* Estilos específicos para pantallas más pequeñas */
+@media screen and (max-width: 480px) {
+  .reduce-costos-section,
+  .reduce-riesgos-section {
+    padding: 2rem 0;
+  }
+  
+  .reduce-costos-container,
+  .reduce-riesgos-container {
+    padding: 0 1rem;
+  }
+  
+  .reduce-costos-title,
+  .reduce-riesgos-title {
+    font-size: 1.5rem;
+  }
+  
+  .check-icon {
+    font-size: 1.2rem;
+    min-width: 25px;
+  }
+}

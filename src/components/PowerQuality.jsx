@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { FaPlus, FaAngleRight } from 'react-icons/fa';
 import '../styles/components/Nosotros.css';
 
 const PowerQuality = () => {
@@ -15,7 +16,7 @@ const PowerQuality = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          La Mala Calidad de Potencia es como...
+          La Mala Calidad de Potencia es como.....
         </motion.h2>
 
         <div className="power-quality-grid">
@@ -26,27 +27,35 @@ const PowerQuality = () => {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="image-block">
+            {/* Fuente */}
+            <div className="power-supply-element horizontal-pair">
               <img src="/manos.jpg" alt="Manos con agua limpia" className="oval-image" />
-              <div className="power-label">Fuente</div>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <img src="/cfe.png" alt="Logo CFE" style={{ maxWidth: '120px' }} />
+                <div className="power-element-title">Fuente</div>
+              </div>
             </div>
 
-            <div className="image-block">
+            <FaPlus className="plus-sign" />
+
+            {/* Disturbio */}
+            <div className="power-supply-element horizontal-pair">
               <img src="/agua.png" alt="Agua contaminada" className="oval-image" />
-              <div className="power-label">Disturbio</div>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <img src="/disturbio.png" alt="Disturbio" style={{ maxWidth: '100px' }} />
+                <div className="power-element-title">Disturbio</div>
+              </div>
             </div>
           </motion.div>
 
           {/* Flecha */}
           <motion.div 
             className="power-quality-arrow"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 1, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 0.8 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-{/*             <svg viewBox="0 0 50 150" className="arrow-svg">
-              <path d="M 25,0 L 50,75 L 35,75 L 35,150 L 15,150 L 15,75 L 0,75 Z" fill="#ccc" stroke="#999" />
-            </svg> */}
+            <FaAngleRight size={60} color="#ccc" />
           </motion.div>
 
           {/* Derecha */}
@@ -56,10 +65,15 @@ const PowerQuality = () => {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="image-block">
-              <img src="/vaso.png" alt="Persona tomando agua contaminada" className="rounded-image" />
+            <div className="result-container">
+              <img src="/fab.png" alt="Fábrica" className="factory-icon" />
+              <img src="/warning.png" alt="Advertencia" className="warning-icon" />
             </div>
-            <h3 className="drink-water-text">Tomar agua contaminada</h3>
+
+            <div className="drink-water-container">
+              <img src="/vaso.png" alt="Persona tomando agua contaminada" className="rounded-image" />
+              <h3 className="drink-water-text">Tomar agua contaminada...</h3>
+            </div>
           </motion.div>
         </div>
       </div>
