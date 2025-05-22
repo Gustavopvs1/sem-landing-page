@@ -238,26 +238,6 @@ const EquiposElectricos = () => {
         'Los bancos de capacitores fijos se utilizan en instalaciones eléctricas en donde la demanda de potencia reactiva en constante a través del tiempo.',
         'La gama comprende capacidades desde 5 hasta 100 kVARs , acometida con o sin interruptor principal y voltajes de operación de 240,480 y 600Vca.',
       ]
-    },
-    {
-      id: 'hpq',
-      name: 'HPQ',
-      image: 'hpq.jpg',
-      info: [
-        'HPQ es un compensador híbrido de calidad de la energía.',
-        'Esta solución única y confiable garantiza:',
-        'Instantánea corrección del factor de potencia',
-        'Mitigación de corrientes armónicas.',
-        'Corrección de desequilibrios.',
-        'HPQ Dispone de dos modos de operación:',
-        'Modo corrección de factor de potencia (FP) : es el modo tradicional en donde Las mediciones se realizan en el secundario del transformador y el equipo se configura para múltiples cargas. La velocidad de conmutación de los condensadores es <1s.',
-        'Modo Ultra –Fast (UF) : diseñado para cargas individuales que cambian rápidamente, en modo UF, los capacitores se conectan a los tiristores asegurando una conmutación < 20ms. Esta versión se recomienda para aplicaciones de grúas, ascensores y soldadoras.',
-        'Sustituye los bancos de capacitores tradicionales y mejora la calidad de la energía.',
-        'Ahorre dinero',
-        'Minimice el número de interrupciones y fallos.',
-        'Alargue la vida útil de sus equipos.',
-        'Ahorre espacio con equipos compactos.',
-      ]
     }
   ];
   

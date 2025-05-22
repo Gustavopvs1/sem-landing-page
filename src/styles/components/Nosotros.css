@@ -53,11 +53,12 @@
 .services-grid {
   display: flex;
   gap: 1.5rem;
-  min-width: max-content;
+  flex-wrap: nowrap;
   padding: 0.5rem 0.5rem;
   justify-content: center;
+  min-width: 100%;
+  box-sizing: border-box;
 }
-
 .service-card {
   background-color: white;
   border-radius: 8px;
@@ -96,6 +97,13 @@
   color: #666;
   line-height: 1.8;
 }
+.nosotros-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
 
 /* Para pantallas más grandes donde podemos mostrar todas las tarjetas sin scroll */
 @media (min-width: 900px) {
@@ -118,179 +126,6 @@
   
   .section-title {
     font-size: 2rem;
-  }
-}
-.diferenciadores-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 3rem auto 1rem;
-  padding: 1rem;
-}
-
-.rombo-container {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 6rem auto;
-  transform: rotate(45deg);
-}
-
-.diferenciador-item {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-}
-
-.diferenciador-diamond {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.diferenciador-icon {
-  font-size: 2rem;
-  color: white;
-}
-
-.diferenciador-text {
-  position: absolute;
-  width: 200px;
-  text-align: center;
-  transform: rotate(-45deg);
-  white-space: nowrap;
-}
-
-/* Posiciones específicas para cada diamante */
-.top-left {
-  top: 0;
-  left: 0;
-}
-
-.top-right {
-  top: 0;
-  right: 0;
-}
-
-.bottom-right {
-  bottom: 0;
-  right: 0;
-}
-
-.bottom-left {
-  bottom: 0;
-  left: 0;
-}
-
-/* Posiciones para los textos */
-.diferenciador-text.top-left {
-  top: -60px;
-  left: -30px;
-}
-
-.diferenciador-text.top-right {
-  top: -60px;
-  right: -30px;
-}
-
-.diferenciador-text.bottom-right {
-  bottom: -60px;
-  right: -30px;
-}
-
-.diferenciador-text.bottom-left {
-  bottom: -60px;
-  left: -30px;
-}
-
-.rombo-center {
-  position: absolute;
-  top: 75px;
-  left: 75px;
-  width: 150px;
-  height: 150px;
-  background-color: white;
-  border-radius: 10px;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .rombo-container {
-    width: 240px;
-    height: 240px;
-    margin: 7rem auto;
-  }
-  
-  .diferenciador-item {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .rombo-center {
-    top: 60px;
-    left: 60px;
-    width: 120px;
-    height: 120px;
-  }
-  
-  .diferenciador-text {
-    width: 160px;
-    font-size: 0.9rem;
-  }
-  
-  .diferenciador-text.top-left {
-    top: -50px;
-    left: -25px;
-  }
-  
-  .diferenciador-text.top-right {
-    top: -50px;
-    right: -25px;
-  }
-  
-  .diferenciador-text.bottom-right {
-    bottom: -50px;
-    right: -25px;
-  }
-  
-  .diferenciador-text.bottom-left {
-    bottom: -50px;
-    left: -25px;
-  }
-  
-  .diferenciador-icon {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .rombo-container {
-    width: 200px;
-    height: 200px;
-    margin: 8rem auto;
-  }
-  
-  .diferenciador-item {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .rombo-center {
-    top: 50px;
-    left: 50px;
-    width: 100px;
-    height: 100px;
-  }
-  
-  .diferenciador-text {
-    width: 140px;
-    font-size: 0.8rem;
-  }
-  
-  .diferenciador-icon {
-    font-size: 1.2rem;
   }
 }
 

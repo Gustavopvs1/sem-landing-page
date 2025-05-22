@@ -291,9 +291,16 @@
 
 .cursos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.5fr 2.5fr; /* Personal ocupa más */
   gap: 2rem;
   margin-bottom: 2rem;
+  align-items: start;
+}
+
+.cursos-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
 .cursos-grid.second-row {
@@ -374,6 +381,7 @@
 
 .dirigidos-column {
   border-left: 4px solid #285e31;
+  
 }
 
 .desarrollo-column {
@@ -411,12 +419,13 @@
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .cursos-grid, 
-  .cursos-grid.second-row {
+  .cursos-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
   
+  .cursos-subgrid {
+    grid-template-columns: 1fr;
+  }
   .codigo-partner-logos {
     flex-direction: column;
     gap: 1rem;
@@ -428,9 +437,14 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 576px) {
   .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr; /* Una columna para móviles chicos */
+    padding: 0 1rem;
+  }
+
+  .feature-card {
+    width: 100%;
   }
 }
 
@@ -449,5 +463,144 @@
   
   .expanded-card {
     padding: 1.5rem;
+  }
+}
+.codigo-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+
+.codigo-header h2 {
+  font-size: 2.2rem;
+  color: #0078a9;
+  margin: 0;
+  font-weight: 400;
+}
+
+.codigo-header h2 .codigo-red-text {
+  color: #c00505;
+  font-weight: 600;
+  font-size: 2.0rem;
+}
+
+.codigo-main-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.codigo-services-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.codigo-service-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.codigo-service-icon {
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.codigo-service-icon svg {
+  font-size: 1.5rem;
+  color: #0078a9;
+}
+
+.codigo-service-text {
+  font-size: 1.3rem;
+  color: #0078a9;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.codigo-logos-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.codigo-red-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.codigo-red-image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+
+}
+
+.pqbarcon-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.pqbarcon-image {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.pqbarcon-logo a:hover .pqbarcon-image {
+  transform: scale(1.05);
+}
+
+/* Responsive para Código de Red */
+@media (max-width: 992px) {
+  .codigo-main-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .codigo-logos-container {
+    width: 100%;
+  }
+  
+  .codigo-service-text {
+    font-size: 1.1rem;
+  }
+  
+  .codigo-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .codigo-service-item {
+    gap: 1rem;
+  }
+  
+  .codigo-service-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0.6rem;
+  }
+  
+  .codigo-service-icon svg {
+    font-size: 1.2rem;
+  }
+  
+  .codigo-service-text {
+    font-size: 1rem;
   }
 }
