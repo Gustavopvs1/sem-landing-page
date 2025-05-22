@@ -1189,6 +1189,7 @@
   line-height: 1.7;
   margin-bottom: 1rem;
   font-size: 1.15rem;
+  text-align: justify;
 }
 
 .codigo-red-text:last-child {

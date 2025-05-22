@@ -1057,31 +1057,31 @@ const EquiposElectricos = () => {
 <div className="electroductos-seccion">
   <div className="electroductos-grid">
     <div className="electroducto-card">
-      <div className="electroducto-content">
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "flex-start", gap: "2rem" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            <div style={{ fontSize: "1.5rem", color: "#0d4b81", fontWeight: "500" }}>Trazado de trayectorias</div>
-            <div style={{ fontSize: "1.5rem", color: "#0d4b81", fontWeight: "500" }}>Volumetría de materiales (BOM)</div>
-            <div style={{ fontSize: "1.5rem", color: "#0d4b81", fontWeight: "500" }}>Cotizaciones</div>
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=cotizaciones@semservicios.com.mx"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "1.5rem", color: "#d35400", fontWeight: "600", textDecoration: "none", marginTop: "1rem" }}
-            >
-              <FaEnvelope size={28} strokeWidth={2.5} />
-              cotizaciones@semservicios.com.mx
-            </a>
-          </div>
+      <div className="servicios-ingenieria-grid">
+        
+        {/* Columna de texto */}
+        <div className="servicios-ingenieria-texto">
+          <p className="servicio-linea">Trazado de trayectorias</p>
+          <p className="servicio-linea">Volumetría de materiales (BOM)</p>
+          <p className="servicio-linea">Cotizaciones</p>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=cotizaciones@semservicios.com.mx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="servicio-correo"
+          >
+            <FaEnvelope size={22} />
+            cotizaciones@semservicios.com.mx
+          </a>
+        </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            <img src="trazado.png" alt="Trazado de trayectorias" style={{ maxWidth: "200px", height: "auto", borderRadius: "12px" }} />
-            <img src="bom.png" alt="Volumetría de materiales" style={{ maxWidth: "200px", height: "auto" }} />
+        {/* Columna de imágenes */}
+        <div className="servicios-ingenieria-imagenes">
+          <div className="servicio-img-stack">
+            <img src="trazado.png" alt="Trazado de trayectorias" className="servicio-img" />
+            <img src="bom.png" alt="Volumetría de materiales" className="servicio-img" />
           </div>
-
-          <div>
-            <img src="cotizaciones.png" alt="Cotizaciones" style={{ maxWidth: "335px", height: "auto", borderRadius: "12px"}} />
-          </div>
+          <img src="cotizaciones.png" alt="Cotizaciones" className="servicio-img-wide" />
         </div>
       </div>
     </div>

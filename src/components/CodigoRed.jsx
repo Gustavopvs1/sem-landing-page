@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 
 const CodigoRed = () => {
   const codigoRedRef = useRef(null);
-  const isInView = useInView(codigoRedRef, { amount: 0.3 });
+  const isInView = useInView(codigoRedRef, { amount: 0.1 });
   
   return (
     <motion.section 
