@@ -70,7 +70,7 @@ const CodigoRed = () => {
         {/* Sección de sanciones mejorada con diseño responsivo */}
         <div className="codigo-red-sanciones-container">
           <div className="codigo-red-sanciones-wrapper">
-            <div className="sanciones-title">SANCIONES POR INCUMPLIMIENTO</div>
+            <div className="sanciones-title">Sanciones por incumplimiento</div>
             
             <div className="sanciones-grid">
               {/* Fracción I con su descripción */}

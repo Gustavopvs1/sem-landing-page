@@ -3,12 +3,13 @@ import React, { useRef, useState } from 'react';
 import { motion, useInView, useAnimation, AnimatePresence } from 'framer-motion';
 import '../styles/components/Features.css';
 import { FaChartBar, FaClipboardList, FaPlug, FaUserGraduate, 
-         FaUserTie, FaTools, FaUserCog, FaCircle, FaBullseye, FaPuzzlePiece, FaUsersCog } from 'react-icons/fa';
+         FaUserTie, FaTools, FaUserCog, FaCircle, FaBullseye, FaPuzzlePiece, FaUsersCog, FaBolt } from 'react-icons/fa';
 import { FaUserGear } from "react-icons/fa6";
 import { BsGearFill, BsLightningFill, BsPeopleFill } from 'react-icons/bs';
+import { scroller } from 'react-scroll';
 
 // Componente de característica individual
-const FeatureCard = ({ title, description, icon, index, parentInView, isExpandable = false, cardType = null }) => {
+const FeatureCard = ({ title, description, icon, index, parentInView, isExpandable = false, cardType = null, onClickRedirect = null }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const controls = useAnimation();
   const ref = useRef(null);
@@ -22,8 +23,16 @@ const FeatureCard = ({ title, description, icon, index, parentInView, isExpandab
     }
   }, [controls, isInView, parentInView]);
   
+
   const handleCardClick = () => {
-    if (isExpandable) {
+    if (onClickRedirect) {
+      scroller.scrollTo(onClickRedirect, {
+        duration: 600,
+        delay: 0,
+        smooth: 'easeInOutQuart',
+        offset: -70
+      });
+    } else if (isExpandable) {
       setIsExpanded(true);
     }
   };
@@ -390,6 +399,12 @@ const Features = () => {
       title: "Cursos de capacitación especializados",
       expandable: true,
       cardType: "cursos"
+    },
+    {
+      icon: <FaBolt className="feature-icon-svg" />,
+      title: "Venta de equipos eléctricos",
+      expandable: false,
+      onClickRedirect: "equipos"
     }
   ];
 
@@ -430,6 +445,7 @@ const Features = () => {
             parentInView={isInView}
             isExpandable={feature.expandable}
             cardType={feature.cardType}
+            onClickRedirect={feature.onClickRedirect}  // <-- Agrega esta línea
           />
         ))}
       </div>

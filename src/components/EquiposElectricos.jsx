@@ -293,7 +293,10 @@ const EquiposElectricos = () => {
                         <span className="producto-subtitle">{producto.subtitle}</span>
                       </h3>
                       <p className="producto-description">{producto.description}</p>
-                      <p className="producto-beneficios">{producto.beneficios}</p>
+                      <div className="producto-beneficios-box">
+                        <p className="producto-beneficios">{producto.beneficios}</p>
+                        <div className="mas-info-flecha"></div>
+                      </div>
                       <a 
                         href="/01_Filtros-Activos-de-Armonicas- Merus A2.pdf" 
                         target="_blank" 
@@ -303,7 +306,6 @@ const EquiposElectricos = () => {
                         Descargar ficha técnica
                       </a>
                     </div>
-                    <div className="mas-info-flecha"></div>
                     <div 
                       className="producto-imagen"
                         onMouseEnter={() => setShowTooltipMerus(true)}
@@ -321,6 +323,10 @@ const EquiposElectricos = () => {
                               initial="hidden"
                               animate="visible"
                               exit="hidden"
+                              drag
+                              dragConstraints={{ top: -500, left: -1000, right: 500, bottom: 500 }}
+                              dragElastic={0.3}
+                              dragSnapToOrigin
                             >
                               <h4 className="tooltip-title">{merusTooltipData.title}</h4>
                               <div className="tooltip-content">
@@ -398,6 +404,10 @@ const EquiposElectricos = () => {
                       <p className="producto-description">
                         HPQ integra en un solo equipo filtros activos y banco de capacitores desintonizados.
                       </p>
+                      <div className="producto-beneficios-box">
+                        <p className="producto-beneficios">Características generales</p>
+                        <div className="mas-info-flecha"></div>
+                      </div>
                       <a 
                         href="" 
                         target="_blank" 
@@ -407,14 +417,13 @@ const EquiposElectricos = () => {
                         Descargar ficha técnica
                       </a>
                     </div>
-                    <div className="mas-info-flecha"></div>
                     <div 
                       className="producto-imagen"
                       onMouseEnter={() => setShowTooltipHPQ(true)}
                       onMouseLeave={() => setShowTooltipHPQ(false)}
                     >
                       <div className="imagen-tooltip-container">
-                        <img src="hpq.png" alt="Electroducto Zucchini" />
+                        <img src="hpq.png" alt="HPQ" />
                         
                         {/* Tooltip para mostrar información técnica detallada */}
                         <AnimatePresence>
@@ -425,6 +434,10 @@ const EquiposElectricos = () => {
                               initial="hidden"
                               animate="visible"
                               exit="hidden"
+                              drag
+                              dragConstraints={{ top: -500, left: -1000, right: 500, bottom: 500 }}
+                              dragElastic={0.3}
+                              dragSnapToOrigin
                             >
                               <h4 className="tooltip-title">HPQ es un compensador híbrido de calidad de la energía. </h4>
                               <div className="tooltip-content">
@@ -454,22 +467,19 @@ const EquiposElectricos = () => {
                   {/* Carrusel de comparativa */}
                   <div className="caracteristicas-carousel">
                     
-                    <div className="caracteristicas-slide">
-                        <>
-                          <h4 className="caracteristica-titulo">HPQ integra en un solo equipo filtros activos y banco de capacitores desintonizados.</h4>
-                          <div className="caracteristica-content">
-                            <div className="caracteristica-imagen">
-                              <img src="hpq.jpg" alt="Sistema tradicional con cable en charola" />
-                            </div>
-                            <div className="caracteristica-descripcion">
-                              <p>✔ Ahorre dinero</p>
-                              <p>✔ Minimice el número de interrupciones y fallos.</p>
-                              <p>✔ Alargue la vida útil de sus equipos.</p>
-                              <p>✔ Ahorre espacio con equipos compactos.</p>
-                            </div>
-                          </div>
-                        </>
-                    </div>
+                  <div className="caracteristicas-slide caracteristicas-hpq">
+                    <>
+                      <h4 className="caracteristica-titulo"></h4>
+                      <div className="caracteristica-content">
+                        <div className="caracteristica-descripcion">
+                          <p>Ahorre dinero</p>
+                          <p>Minimice el número de interrupciones y fallos.</p>
+                          <p>Alargue la vida útil de sus equipos.</p>
+                          <p>Ahorre espacio con equipos compactos.</p>
+                        </div>
+                      </div>
+                    </>
+                  </div>
                   </div>
                 </div>
 
@@ -608,11 +618,14 @@ const EquiposElectricos = () => {
                     <div className="producto-info">
                       <h3 className="producto-title">
                         <span className="producto-name">Electroducto Zucchini</span>
-                        <span className="producto-subtitle">Sistema de distribución de energía</span>
                       </h3>
                       <p className="producto-description">
                         El sistema de Electroducto Zucchini es ampliamente recomendado para realizar la alimentación y derivación de energía eléctrica en diferentes topologías de cargas.
                       </p>
+                      <div className="producto-beneficios-box">
+                        <p className="producto-beneficios">Características generales</p>
+                        <div className="mas-info-flecha"></div>
+                      </div>
                       <a 
                         href="" 
                         target="_blank" 
@@ -622,7 +635,6 @@ const EquiposElectricos = () => {
                         Descargar ficha técnica
                       </a>
                     </div>
-                    <div className="mas-info-flecha"></div>
                     <div 
                       className="producto-imagen"
                       onMouseEnter={() => setShowTooltipZucchini(true)}
@@ -640,6 +652,10 @@ const EquiposElectricos = () => {
                               initial="hidden"
                               animate="visible"
                               exit="hidden"
+                              drag
+                              dragConstraints={{ top: -500, left: -1000, right: 500, bottom: 500 }}
+                              dragElastic={0.3}
+                              dragSnapToOrigin
                             >
                               <h4 className="tooltip-title">Beneficios del Electroducto Zucchini</h4>
                               <div className="tooltip-content">
@@ -667,13 +683,6 @@ const EquiposElectricos = () => {
                                     <li className="tooltip-item">Mayor resistencia a eventos sísmicos</li>
                                     <li className="tooltip-item">Distribuya las protecciones cercanas a las cargas</li>
                                     <li className="tooltip-item">Evite contaminación electromagnética</li>
-                                  </ul>
-                                </div>
-                                <div className="tooltip-feature-group">
-                                  <h5 className="tooltip-category">Ahorre espacio</h5>
-                                  <ul className="tooltip-list">
-                                    <li className="tooltip-item">Zucchini distribuye la misma potencia en espacios reducidos, liberando espacio.</li>
-                                    <li className="tooltip-item">Reduzca las dimensiones de los tableros alimentadores.</li>
                                   </ul>
                                 </div>
                               </div>
@@ -740,7 +749,7 @@ const EquiposElectricos = () => {
                 
                 {/* Electroductos de alta potencia */}
                 <div className="electroductos-seccion">
-                  <h3 className="electroductos-title">Electroductos de alta potencia</h3>
+                  <h3 className="electroductos-title">Electroductos Zucchini</h3>
                   
                   <div className="electroductos-grid">
                     {/* XCP-HP */}
@@ -908,7 +917,7 @@ const EquiposElectricos = () => {
                   </div>
                 </div>
 
-                                 {/* Accesorios compatibles XCM */}
+                {/* Accesorios compatibles XCM */}
                   <div className="accesorios-compatibles">
                     <h4 className="accesorios-title">Accesorios compatibles XCM</h4>
                     <div className="accesorios-content">
@@ -984,13 +993,49 @@ const EquiposElectricos = () => {
                     </div>
                   </div>
 
+                  {/* Servicios de ingeniería: Trazado, BOM, Cotizaciones */}
+<div className="electroductos-seccion">
+  <div className="electroductos-grid">
+    <div className="electroducto-card">
+      <div className="servicios-ingenieria-grid">
+        
+        {/* Columna de texto */}
+        <div className="servicios-ingenieria-texto">
+          <p className="servicio-linea">Trazado de trayectorias</p>
+          <p className="servicio-linea">Volumetría de materiales (BOM)</p>
+          <p className="servicio-linea">Cotizaciones</p>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=cotizaciones@semservicios.com.mx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="servicio-correo"
+          >
+            <FaEnvelope size={22} />
+            cotizaciones@semservicios.com.mx
+          </a>
+        </div>
+
+        {/* Columna de imágenes */}
+        <div className="servicios-ingenieria-imagenes">
+          <div className="servicio-img-stack">
+            <img src="trazado.png" alt="Trazado de trayectorias" className="servicio-img" />
+            <img src="bom.png" alt="Volumetría de materiales" className="servicio-img" />
+          </div>
+          <img src="cotizaciones.png" alt="Cotizaciones" className="servicio-img-wide" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {/* Tableros de distribución NBAR 4000 */}
 <div className="electroductos-seccion" style={{ marginTop: "2rem" }}>
   <div className="electroductos-grid">
     <div className="electroducto-card">
       <div className="electroducto-header">
         <h4 className="electroducto-name">
-          Tableros de distribución <span className="electroducto-highlight">NBAR 4000</span>
+          Tableros de distribución <span className="electroducto-highlight-blue">NBAR 4000</span>
         </h4>
         <div className="electroducto-description">
           <p>NBAR 4000 es una línea de tableros de distribución autosoportados tipo NEMA 1 con barras principales de cobre de 1250 a 4000 A, Icc = 65kA. El interruptor principal (MEGABREAK) está disponible con protecciones LI, LSI, LSIG. Los derivados (MEGATIKER) son enchufables con disparo termomagnético o electrónico.</p>
@@ -1052,44 +1097,6 @@ const EquiposElectricos = () => {
     </div>
   </div>
 </div>
-
-{/* Servicios de ingeniería: Trazado, BOM, Cotizaciones */}
-<div className="electroductos-seccion">
-  <div className="electroductos-grid">
-    <div className="electroducto-card">
-      <div className="servicios-ingenieria-grid">
-        
-        {/* Columna de texto */}
-        <div className="servicios-ingenieria-texto">
-          <p className="servicio-linea">Trazado de trayectorias</p>
-          <p className="servicio-linea">Volumetría de materiales (BOM)</p>
-          <p className="servicio-linea">Cotizaciones</p>
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=cotizaciones@semservicios.com.mx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="servicio-correo"
-          >
-            <FaEnvelope size={22} />
-            cotizaciones@semservicios.com.mx
-          </a>
-        </div>
-
-        {/* Columna de imágenes */}
-        <div className="servicios-ingenieria-imagenes">
-          <div className="servicio-img-stack">
-            <img src="trazado.png" alt="Trazado de trayectorias" className="servicio-img" />
-            <img src="bom.png" alt="Volumetría de materiales" className="servicio-img" />
-          </div>
-          <img src="cotizaciones.png" alt="Cotizaciones" className="servicio-img-wide" />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
               </motion.div>
               
 

@@ -32,7 +32,7 @@
 .reduce-riesgos-title {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #0078a9;
+  color: #f87925;
   margin-bottom: 2.5rem;
   text-align: center;
   line-height: 1.3;
@@ -49,6 +49,7 @@
   flex: 0 0 auto;
   width: 25%;
   max-width: 250px;
+  margin-top: 9rem; /* 👈 Esto baja la imagen */
 }
 
 .riesgo-imagen {
@@ -71,7 +72,7 @@
 }
 
 .check-icon {
-  font-size: 1.5rem;
+  font-size: 2.1rem;
   color: #4CAF50;
   min-width: 30px;
   display: flex;
@@ -81,7 +82,7 @@
 
 .lista-item p {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #2c5282;
   line-height: 1.4;
 }
@@ -105,8 +106,8 @@
   }
   
   .reduce-riesgos-imagen {
-    width: 60%;
-    margin-bottom: 2rem;
+    width: 80%;
+    margin-bottom: 8rem;
   }
   
   .lista-item {
