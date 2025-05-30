@@ -143,26 +143,21 @@ const Contacto = () => {
           ariaLabel: "SEM Empresarial"
         });
         
-        // Crear marcador personalizado con color azul
-        const marker = new window.google.maps.Marker({
-          position: location,
-          map: map,
-          title: "SEM Empresarial",
-          icon: {
-            path: window.google.maps.SymbolPath.CIRCLE,
-            fillColor: "#0078A9",
-            fillOpacity: 1,
-            strokeColor: "#FFFFFF",
-            strokeWeight: 2,
-            scale: 10
-          }
-        });
-        
-        // Mostrar InfoWindow por defecto
-        infoWindow.open({
-          anchor: marker,
-          map,
-        });
+// Crear marcador con el ícono rojo predeterminado de Google
+          const marker = new window.google.maps.Marker({
+            position: location,
+            map: map,
+            title: "SEM Empresarial"
+          });
+
+          // Mostrar InfoWindow solo al hacer clic
+          marker.addListener("click", () => {
+            infoWindow.open({
+              anchor: marker,
+              map,
+            });
+          });
+
         
         // Evento click para mostrar InfoWindow
         marker.addListener("click", () => {
