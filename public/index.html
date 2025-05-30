@@ -16,16 +16,23 @@
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- ✅ Datos estructurados para Google (logo de empresa) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Servicios Empresariales a la Medida",
-      "url": "https://www.semservicios.com.mx",
-      "logo": "https://www.semservicios.com.mx/logo.png"
-    }
-    </script>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "SEM Servicios",
+          "url": "https://www.semservicios.com.mx",
+          "logo": "https://www.semservicios.com.mx/logo.png",
+          "sameAs": [],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+52-123-456-7890",
+            "contactType": "customer service",
+            "areaServed": "MX",
+            "availableLanguage": "Spanish"
+          }
+        }
+        </script>
 
     <title>Servicios Empresariales a la Medida</title>
   </head>
