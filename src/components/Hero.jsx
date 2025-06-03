@@ -44,27 +44,28 @@ const Hero = () => {
         initial="hidden"
         animate={controls}
       >
-        <motion.img 
-          src="/sem3.png" 
-          alt="SEM Logo" 
-          className="hero-logo"
-          variants={itemVariants}
-        />
+      <motion.img 
+        src="/sem4.png" 
+        alt="Logotipo de Servicios Empresariales a la Medida (SEM)" 
+        className="hero-logo"
+        variants={itemVariants}
+      />
+
 
         
-        <motion.p 
+        <motion.h1 
           variants={itemVariants}
-          className="hero-subtitle"
+          className="hero-title"
         >
-          
-        </motion.p>
+          Servicios Empresariales a la Medida
+        </motion.h1>
         
         <motion.div 
           variants={itemVariants}
           className="hero-cta"
         >
           <Link
-            to="contact"
+            to="nosotros"
             spy={true}
             smooth={true}
             offset={-70}
