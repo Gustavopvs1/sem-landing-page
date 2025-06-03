@@ -1097,6 +1097,123 @@ const EquiposElectricos = () => {
     </div>
   </div>
 </div>
+{/* Transformadores de potencia encapsulados */}
+<div className="transformadores-seccion" style={{ marginTop: "2rem" }}>
+  <h2 className="transformadores-titulo">Transformadores de potencia encapsulados</h2>
+  
+  {/* Primera sección - TPE */}
+  <div className="transformadores-card tpe-card">
+    <div className="transformadores-content">
+      <div className="transformadores-image-container">
+        <img src="tpe.jpg" alt="Transformador de potencia encapsulado" className="transformadores-image" />
+      </div>
+      <div className="transformadores-text">
+        <p>Los transformadores de potencia encapsulados en resina CRT (Cast Resin Transformers) son ampliamente utilizados a nivel mundial para diversas aplicaciones. Durante la última década, en México se cuenta con una tendencia al alza en cuanto a su empleo en sistemas de distribución eléctrica para edificios, hospitales, centros comerciales, escuelas e industria en general..</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Segunda sección - Green T */}
+  <div className="transformadores-card greent-card">
+    <div className="transformadores-header">
+      <h3 className="greent-titulo">Transformadores de potencia Green T</h3>
+    </div>
+    
+    <div className="transformadores-content">
+      <div className="transformadores-image-container">
+        <img src="greent.jpg" alt="Transformador Green T" className="transformadores-image" />
+      </div>
+      <div className="transformadores-text">
+        <p><span className="green-highlight">Green T</span> es una línea de transformadores encapsulados en resina los cuales se diseñan (bajo requerimiento del cliente) y fabrican en Italia. El diseño, la alta calidad de sus componentes, los estrictos controles en la fabricación, así como el cumplimiento con los estándares internacionales, hacen de <span className="green-highlight">Green T</span> un aliado cuando se busca confiabilidad, seguridad, eficiencia con menor tiempo en el retorno de inversión.</p>
+      </div>
+    </div>
+
+    <div className="gama-section">
+      <h4 className="gama-titulo">Gama</h4>
+      <div className="gama-specs">
+        <div className="gama-column">
+          <ul className="gama-list">
+            <li><strong>Potencia nominal :</strong> 300 - 2500 MVA</li>
+            <li><strong>Tensión en el primario:</strong> Hasta 36 kV</li>
+            <li><strong>Tensión en el secundario:</strong> a solicitud del cliente.</li>
+            <li><strong>Taps en MT:</strong> ± 2 x 2.5%</li>
+            <li><strong>Conexión:</strong> Dyn11</li>
+            <li><strong>Z%</strong> = 4 – 6 %</li>
+          </ul>
+        </div>
+        <div className="gama-column">
+          <div className="clase-aislamiento">
+            <div className="clase-item">
+              <h5><span className="green-highlight">Clase de aislamiento 17.5 kV</span></h5>
+              <p>Nivel básico de aislamiento / Primario: BIL a 75 o 95 kV.</p>
+              <p>Clase de aislamiento / Secundario: 1.1 kV.</p>
+            </div>
+            <div className="clase-item">
+              <h5><span className="green-highlight">Clase de aislamiento 24 kV</span></h5>
+              <p>Nivel básico de aislamiento / Primario: BIL a 95 o 125 kV.</p>
+              <p>Clase de aislamiento / Secundario: 1.1 kV.</p>
+            </div>
+            <div className="clase-item">
+              <h5><span className="green-highlight">Clase de aislamiento 36 kV</span></h5>
+              <p>Nivel básico de aislamiento / Primario: BIL a 170 kV.</p>
+              <p>Clase de aislamiento / Secundario: 1.1 kV.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="transformadores-brand">
+      <img src="bticino.jpg" alt="Bticino" />
+    </div>
+  </div>
+
+  {/* Tercera sección - Confiabilidad */}
+  <div className="transformadores-card confiabilidad-card">
+    <div className="transformadores-header">
+      <h3 className="confiabilidad-titulo">Confiabilidad</h3>
+    </div>
+
+    <div className="confiabilidad-section">
+      <div className="confiabilidad-item">
+        <h4 className="confiabilidad-subtitle">✓ Bajo nivel de descargas parciales</h4>
+        <p>Las descargas parciales son pequeñas roturas dieléctricas que se localizan en alguna parte del aislamiento eléctrico (sólido o líquido) entre las espiras de un transformador, este fenómeno provoca el deterioro progresivo de los aislamientos. Las descargas parciales ocupan un alto porcentaje de las fallas en transformadores y son causa de su <strong>final de vida técnico</strong>.</p>
+        <div className="highlight-box">
+          <p>Las pruebas de descargas parciales entre espiras MT de Green T son de menores a 5pC (la norma de producto indica máximo 10pC)</p>
+        </div>
+      </div>
+
+      <div className="confiabilidad-item">
+        <h4 className="confiabilidad-subtitle">✓ Tolerancia a Condiciones ambientales y climáticas</h4>
+        
+        <div className="tolerancia-grid">
+          <div className="tolerancia-item">
+            <div className="tolerancia-image-container">
+              <img src="ambientales.png" alt="Condiciones ambientales" className="tolerancia-image" />
+              <div className="tolerancia-overlay">
+              </div>
+            </div>
+            <div className="tolerancia-text">
+              <p><strong>E2</strong> : Alta tolerancia a la condensación consistente y/o contaminación intensa.</p>
+              <p><strong>E3 y E4</strong> condiciones más severas.</p>
+            </div>
+          </div>
+
+          <div className="tolerancia-item">
+            <div className="tolerancia-image-container">
+              <img src="climaticas.png" alt="Condiciones climáticas" className="tolerancia-image" />
+              <div className="tolerancia-overlay">
+              </div>
+            </div>
+            <div className="tolerancia-text">
+              <p><strong>C2</strong> : Posibilidad de operación, transporte y almacenamiento a -25°C.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
               </motion.div>
               
 

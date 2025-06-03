@@ -1,20 +1,20 @@
 // src/components/Contact.jsx
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import '../styles/components/Contacto.css';
 
 const Contacto = () => {
   const controls = useAnimation();
   const ref = useRef(null);
-  const mapRef = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
-  const [mapLoaded, setMapLoaded] = useState(false);
-  
-  // WhatsApp número con formato internacional (sin + ni espacios)
-  const whatsappNumber = "524423928667"; // 52 es el código de México
+
+  const whatsappNumber = "524423928667";
   const whatsappMessage = "Hola, me gustaría obtener más información sobre sus servicios.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-  
+
   useEffect(() => {
     if (isInView) {
       controls.start('visible');
@@ -22,184 +22,25 @@ const Contacto = () => {
       controls.start('hidden');
     }
   }, [controls, isInView]);
-  
-  // Inicializar el mapa de Google Maps
-  useEffect(() => {
-    // Función para cargar el mapa
-    const initMap = () => {
-      if (mapRef.current && !mapLoaded) {
-        // Coordenadas exactas de Melchor Ocampo #20, San José Iturbide
-        const location = { lat: 20.999124339209285, lng: -100.38845418793261 };
-        
-        // Estilo personalizado para un mapa blanco con elementos en azul #0078A9
-        const mapStyles = [
-          {
-            "elementType": "geometry",
-            "stylers": [{ "color": "#f5f5f5" }]
-          },
-          {
-            "elementType": "labels.icon",
-            "stylers": [{ "visibility": "off" }]
-          },
-          {
-            "elementType": "labels.text.fill",
-            "stylers": [{ "color": "#616161" }]
-          },
-          {
-            "elementType": "labels.text.stroke",
-            "stylers": [{ "color": "#f5f5f5" }]
-          },
-          {
-            "featureType": "administrative.land_parcel",
-            "elementType": "labels.text.fill",
-            "stylers": [{ "color": "#bdbdbd" }]
-          },
-          {
-            "featureType": "road",
-            "elementType": "geometry",
-            "stylers": [{ "color": "#ffffff" }]
-          },
-          {
-            "featureType": "road.arterial",
-            "elementType": "labels.text.fill",
-            "stylers": [{ "color": "#757575" }]
-          },
-          {
-            "featureType": "road.highway",
-            "elementType": "geometry",
-            "stylers": [{ "color": "#dadada" }]
-          },
-          {
-            "featureType": "road.highway",
-            "elementType": "labels.text.fill",
-            "stylers": [{ "color": "#616161" }]
-          },
-          {
-            "featureType": "road.local",
-            "elementType": "labels.text.fill",
-            "stylers": [{ "color": "#9e9e9e" }]
-          },
-          {
-            "featureType": "transit.line",
-            "elementType": "geometry",
-            "stylers": [{ "color": "#e5e5e5" }]
-          },
-          {
-            "featureType": "transit.station",
-            "elementType": "geometry",
-            "stylers": [{ "color": "#eeeeee" }]
-          },
-          {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [{ "color": "#e9e9e9" }]
-          },
-          {
-            "featureType": "water",
-            "elementType": "labels.text.fill",
-            "stylers": [{ "color": "#9e9e9e" }]
-          },
-          {
-            "featureType": "administrative.country",
-            "elementType": "geometry.stroke",
-            "stylers": [{ "color": "#0078A9" }]
-          },
-          {
-            "featureType": "administrative.province",
-            "elementType": "geometry.stroke",
-            "stylers": [{ "color": "#0078A9" }]
-          },
-          {
-            "featureType": "administrative",
-            "elementType": "labels.text.fill",
-            "stylers": [{ "color": "#0078A9" }]
-          }
-        ];
-        
-        const mapOptions = {
-          center: location,
-          zoom: 8,
-          scrollwheel: true,
-          zoomControl: true,
-          mapTypeControl: false,
-          streetViewControl: false,
-          fullscreenControl: false,
-          styles: mapStyles
-        };
-        
-        const map = new window.google.maps.Map(mapRef.current, mapOptions);
-        
-        // Crear contenido personalizado para el InfoWindow
-        const contentString = `
-          <div class="custom-info-window">
-            <h3>SEM Empresarial</h3>
-            <p>Melchor Ocampo #20, Colonia Centro, San José Iturbide Guanajuato, CP 37980</p>
-          </div>
-        `;
-        
-        // Crear InfoWindow
-        const infoWindow = new window.google.maps.InfoWindow({
-          content: contentString,
-          ariaLabel: "SEM Empresarial"
-        });
-        
-// Crear marcador con el ícono rojo predeterminado de Google
-          const marker = new window.google.maps.Marker({
-            position: location,
-            map: map,
-            title: "SEM Empresarial"
-          });
 
-          // Mostrar InfoWindow solo al hacer clic
-          marker.addListener("click", () => {
-            infoWindow.open({
-              anchor: marker,
-              map,
-            });
-          });
+  const location = [20.999124339209285, -100.38845418793261];
 
-        
-        // Evento click para mostrar InfoWindow
-        marker.addListener("click", () => {
-          infoWindow.open({
-            anchor: marker,
-            map,
-          });
-        });
-        
-        setMapLoaded(true);
-      }
-    };
+  const redIcon = new L.Icon({
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png'
+  });
 
-    // Cargar el API de Google Maps si no está cargado
-    if (!window.google) {
-      const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDxJNi1xzi2O7gbygKRDzMlQtrJKgmuELo&callback=initMapCallback`;
-      script.async = true;
-      script.defer = true;
-      
-      // Definir la función de callback en el objeto window
-      window.initMapCallback = initMap;
-      
-      document.head.appendChild(script);
-      
-      return () => {
-        document.head.removeChild(script);
-        delete window.initMapCallback;
-      };
-    } else {
-      initMap();
-    }
-  }, [mapLoaded]);
-  
   return (
     <section className="section contact" ref={ref}>
       <motion.div
         className="contact-container"
         variants={{
           hidden: { opacity: 0, y: 50 },
-          visible: { 
-            opacity: 1, 
+          visible: {
+            opacity: 1,
             y: 0,
             transition: { duration: 0.6 }
           }
@@ -208,13 +49,13 @@ const Contacto = () => {
         animate={controls}
       >
         <h2 className="section-title">Contacto</h2>
-        
+
         <div className="contact-content-modified">
           <div className="contact-info-full">
             <div className="logo-container">
               <img src="/sem4.png" alt="SEM Logo" className="sem-logo" />
             </div>
-            
+
             <div className="contact-details">
               <div className="contact-person-wrapper">
                 <div className="contact-person">
@@ -242,33 +83,36 @@ const Contacto = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="partner-logo-container">
-                {/* Logo PQBARCON con enlace a su sitio web */}
-                <a 
-                  href="https://pqbarcon.com" 
+                <a
+                  href="https://pqbarcon.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pqbarcon-link"
                 >
-                  <img 
-                    src="/pq2.png" 
-                    alt="Logo PQBARCON" 
-                    className="pqbarcon-logo" 
-                  />
+                  <img src="/pq2.png" alt="Logo PQBARCON" className="pqbarcon-logo" />
                 </a>
               </div>
-              
-              {/* Contenedor del mapa */}
+
+              {/* Leaflet map */}
               <div className="map-container">
-                <div 
-                  ref={mapRef} 
-                  className="google-map"
-                  title="Ubicación de SEM Empresarial"
-                ></div>
+                <MapContainer
+                  center={location}
+                  zoom={8}
+                  scrollWheelZoom={false}
+                  style={{ height: "250px", width: "100%", borderRadius: "8px" }}
+                >
+                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                  <Marker position={location} icon={redIcon}>
+                    <Popup>
+                      <b>SEM Empresarial</b><br />
+                      Melchor Ocampo #20, Col. Centro, San José Iturbide
+                    </Popup>
+                  </Marker>
+                </MapContainer>
               </div>
-              
-              {/* Aviso de privacidad */}
+
               <div className="privacy-notice">
                 <p>Aviso de privacidad: Sus datos personales están protegidos y no serán compartidos con terceros.</p>
               </div>

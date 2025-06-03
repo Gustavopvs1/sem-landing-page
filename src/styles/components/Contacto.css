@@ -248,3 +248,5 @@
     height: 180px;
   }
 }
+
+@import "leaflet/dist/leaflet.css";
