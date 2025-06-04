@@ -37,28 +37,9 @@ self.addEventListener('activate', event => {
 
 // Intercepta peticiones y responde con caché si está disponible
 self.addEventListener('fetch', event => {
-  const request = event.request;
-
-  // Si es una imagen, se cachea dinámicamente
-  if (request.destination === 'image') {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(cache =>
-        cache.match(request).then(response => {
-          return (
-            response ||
-            fetch(request).then(networkResponse => {
-              cache.put(request, networkResponse.clone());
-              return networkResponse;
-            })
-          );
-        })
-      )
-    );
-    return;
-  }
-
-  // Para otros recursos
   event.respondWith(
-    caches.match(request).then(response => response || fetch(request))
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
+    })
   );
 });
