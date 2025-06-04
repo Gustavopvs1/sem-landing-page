@@ -469,7 +469,7 @@ const EquiposElectricos = () => {
                     
                   <div className="caracteristicas-slide caracteristicas-hpq">
                     <>
-                      <h4 className="caracteristica-titulo"></h4>
+                      <h4 className="caracteristica-titulo">Beneficios</h4>
                       <div className="caracteristica-content">
                         <div className="caracteristica-descripcion">
                           <p>Ahorre dinero</p>
@@ -620,7 +620,7 @@ const EquiposElectricos = () => {
                         <span className="producto-name">Electroducto Zucchini</span>
                       </h3>
                       <p className="producto-description">
-                        El sistema de Electroducto Zucchini es ampliamente recomendado para realizar la alimentación y derivación de energía eléctrica en diferentes topologías de cargas.
+                        El sistema de Electroducto Zucchini (Bticino) es ampliamente recomendado para realizar la alimentación y derivación de energía eléctrica en diferentes topologías de cargas.
                       </p>
                       <div className="producto-beneficios-box">
                         <p className="producto-beneficios">Características generales</p>
@@ -993,110 +993,138 @@ const EquiposElectricos = () => {
                     </div>
                   </div>
 
-                  {/* Servicios de ingeniería: Trazado, BOM, Cotizaciones */}
-<div className="electroductos-seccion">
-  <div className="electroductos-grid">
-    <div className="electroducto-card">
-      <div className="servicios-ingenieria-grid">
-        
-        {/* Columna de texto */}
-        <div className="servicios-ingenieria-texto">
-          <p className="servicio-linea">Trazado de trayectorias</p>
-          <p className="servicio-linea">Volumetría de materiales (BOM)</p>
-          <p className="servicio-linea">Cotizaciones</p>
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=cotizaciones@semservicios.com.mx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="servicio-correo"
-          >
-            <FaEnvelope size={22} />
-            cotizaciones@semservicios.com.mx
-          </a>
-        </div>
+              {/* Servicios de ingeniería: Trazado, BOM, Cotizaciones */}
+                <div className="electroductos-seccion">
+                  <div className="electroductos-grid">
+                    <div className="electroducto-card">
+                      <div className="servicios-ingenieria-grid">
+                        
+                        {/* Columna de texto */}
+                        <div className="servicios-ingenieria-texto">
+                          <p className="servicio-linea">Trazado de trayectorias</p>
+                          <p className="servicio-linea">Volumetría de materiales (BOM)</p>
+                          <p className="servicio-linea">Cotizaciones</p>
+                          <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=cotizaciones@semservicios.com.mx"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="servicio-correo"
+                          >
+                            <FaEnvelope size={22} />
+                            cotizaciones@semservicios.com.mx
+                          </a>
+                        </div>
 
-        {/* Columna de imágenes */}
-        <div className="servicios-ingenieria-imagenes">
-          <div className="servicio-img-stack">
-            <img src="trazado.png" alt="Trazado de trayectorias" className="servicio-img" />
-            <img src="bom.png" alt="Volumetría de materiales" className="servicio-img" />
-          </div>
-          <img src="cotizaciones.png" alt="Cotizaciones" className="servicio-img-wide" />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                        {/* Columna de imágenes */}
+                        <div className="servicios-ingenieria-imagenes">
+                          <div className="servicio-img-stack">
+                            <img src="trazado.png" alt="Trazado de trayectorias" className="servicio-img" />
+                            <img src="bom.png" alt="Volumetría de materiales" className="servicio-img" />
+                          </div>
+                          <img src="cotizaciones.png" alt="Cotizaciones" className="servicio-img-wide" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
 
 {/* Tableros de distribución NBAR 4000 */}
-<div className="electroductos-seccion" style={{ marginTop: "2rem" }}>
-  <div className="electroductos-grid">
-    <div className="electroducto-card">
-      <div className="electroducto-header">
-        <h4 className="electroducto-name">
-          Tableros de distribución <span className="electroducto-highlight-blue">NBAR 4000</span>
-        </h4>
-        <div className="electroducto-description">
-          <p>NBAR 4000 es una línea de tableros de distribución autosoportados tipo NEMA 1 con barras principales de cobre de 1250 a 4000 A, Icc = 65kA. El interruptor principal (MEGABREAK) está disponible con protecciones LI, LSI, LSIG. Los derivados (MEGATIKER) son enchufables con disparo termomagnético o electrónico.</p>
-        </div>
+<div className="electroductos-seccion" style={{ marginTop: '2rem' }}>
+<div className="electroductos-grid">
+  <div className="electroducto-card">
+    <div className="electroducto-header">
+      <h4 className="electroducto-name">
+        Tableros de distribución <span className="electroducto-highlight-blue">NBAR 4000</span>
+      </h4>
+      <div className="electroducto-description">
+        <p>
+          NBAR 4000 es una línea de tableros de distribución autosoportados tipo NEMA 1 con barras principales de cobre de 1250 a 4000 A, Icc = 65kA. El interruptor principal (MEGABREAK) está disponible con protecciones LI, LSI, LSIG. Los derivados (MEGATIKER) son enchufables con disparo termomagnético o electrónico.
+        </p>
+      </div>
+    </div>
+
+    <div className="electroducto-content electroducto-nbar-layout">
+      <div className="electroducto-nbar-image">
+        <img src="tablero1.jpg" alt="Tablero NBAR 4000" className="electroducto-image" />
       </div>
 
-      <div className="electroducto-content">
-        <div className="electroducto-specs-container">
-          {/* Columna 1 */}
-          <div className="electroducto-specs-column">
-            <div className="electroducto-specs-group">
-              <h5 className="electroducto-specs-title">Acometida</h5>
-              <ul className="electroducto-specs-list">
-                <li>Interruptor principal de 800-4000 A, relé (LI, LSI, LSIG), Icu=65kA</li>
-                <li>Zapatas principales: 1250-4000 A, Icw=65kA</li>
-              </ul>
-            </div>
-            
-            <div className="electroducto-specs-group">
-              <h5 className="electroducto-specs-title">Interruptores derivados</h5>
-              <ul className="electroducto-specs-list">
-                <li>MCCB 16-1000 A, relé termomagnético o electrónico</li>
-              </ul>
-            </div>
+<div className="electroducto-specs-container nbar-grid-specs">
+  {/* Columna izquierda */}
+  <div className="electroducto-specs-column">
+    <div className="electroducto-specs-group">
+      <h5 className="electroducto-specs-title">Acometida</h5>
+      <ul className="electroducto-specs-list">
+        <li>Interruptor principal de 800-4000 A, relé (LI, LSI, LSIG), Icu=65kA</li>
+        <li>Zapatas principales: 1250-4000 A, Icw=65kA</li>
+      </ul>
+    </div>
+
+    <div className="electroducto-specs-group">
+      <h5 className="electroducto-specs-title">Montaje</h5>
+      <ul className="electroducto-specs-list">
+        <li>Autosoportado</li>
+      </ul>
+    </div>
+
+    <div className="electroducto-specs-group">
+      <h5 className="electroducto-specs-title">Gabinete tipo NEMA 1</h5>
+      <ul className="electroducto-specs-list">
+        <li>Acero rolado en frío, color RAL-7035</li>
+      </ul>
+    </div>
+  </div>
+
+  {/* Columna derecha */}
+  <div className="electroducto-specs-column">
+    <div className="electroducto-specs-group">
+      <h5 className="electroducto-specs-title">Columnas acoplables entre sí</h5>
+      <ul className="electroducto-specs-list">
+        <li>Acometida</li>
+        <li>Acoplamiento</li>
+        <li>Transferencia</li>
+        <li>Distribución</li>
+        <li>Alimentadores</li>
+      </ul>
+    </div>
+
+    <div className="electroducto-specs-group">
+      <h5 className="electroducto-specs-title">Equipo de medición (opcional)</h5>
+      <ul className="electroducto-specs-list">
+        <li>Analizador de redes (V, I, FP, F, KVA, KW, THDI, THDV)</li>
+        <li>RS485 Modbus RTU, Ethernet</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div className="electroducto-brand">
+      <img src="bticino.jpg" alt="Bticino" />
+    </div>
+  </div>
+</div>
+
+  <div className="accesorios-compatibles" style={{ marginTop: '2rem' }}>
+    <h4 className="accesorios-title">Bus vertical para conexión rápida</h4>
+    <div className="accesorios-content">
+      <div className="accesorios-column">
+            <img src="nbar.png" alt="Bus vertical conexión rápida" className="nbar-img-custom" />
+      </div>
+      <div className="accesorios-column">
+            <img src="interruptores.png" alt="Interruptores derivados enchufables" className="interruptores-img-custom" />
+          <div className="accesorio-info">
+            <h6>Interruptores derivados enchufables</h6>
+            <p>- Caja moldeada (MCCB) 16-1000 A</p>
+            <p>- Barras estañadas Icw= 50 kA (1s)</p>
           </div>
-          
-          {/* Columna 2 */}
-          <div className="electroducto-specs-column">
-            <div className="electroducto-specs-group">
-              <h5 className="electroducto-specs-title">Columnas acoplables NEMA 1</h5>
-              <ul className="electroducto-specs-list">
-                <li>Acometida / Distribución / Transferencia</li>
-                <li>Acoplamiento / Alimentadores</li>
-              </ul>
-            </div>
-            
-            <div className="electroducto-specs-group">
-              <h5 className="electroducto-specs-title">Montaje</h5>
-              <ul className="electroducto-specs-list">
-                <li>Autosoportado</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-          <div className="electroducto-images">
-            <div className="electroducto-image-container">
-              <img src="tablero1.jpg" alt="Tablero NBAR imagen 1" className="electroducto-image" />
-            </div>
-            <div className="electroducto-image-container">
-              <img src="nbar.png" alt="Tablero NBAR imagen 2" className="electroducto-image nbar-specific-image" />
-            </div>
-          </div>
-        
-        <div className="electroducto-brand">
-          <img src="bticino.jpg" alt="Bticino" />
-        </div>
+
       </div>
     </div>
   </div>
 </div>
+
 {/* Transformadores de potencia encapsulados */}
 <div className="transformadores-seccion" style={{ marginTop: "2rem" }}>
   <h2 className="transformadores-titulo">Transformadores de potencia encapsulados</h2>
@@ -1124,7 +1152,7 @@ const EquiposElectricos = () => {
         <img src="greent.jpg" alt="Transformador Green T" className="transformadores-image" />
       </div>
       <div className="transformadores-text">
-        <p><span className="green-highlight">Green T</span> es una línea de transformadores encapsulados en resina los cuales se diseñan (bajo requerimiento del cliente) y fabrican en Italia. El diseño, la alta calidad de sus componentes, los estrictos controles en la fabricación, así como el cumplimiento con los estándares internacionales, hacen de <span className="green-highlight">Green T</span> un aliado cuando se busca confiabilidad, seguridad, eficiencia con menor tiempo en el retorno de inversión.</p>
+        <p><strong> Green T</strong> es una línea de transformadores encapsulados en resina los cuales se diseñan (bajo requerimiento del cliente) y fabrican en Italia. El diseño, la alta calidad de sus componentes, los estrictos controles en la fabricación, así como el cumplimiento con los estándares internacionales, hacen de <strong>Green T</strong> un aliado cuando se busca confiabilidad, seguridad, eficiencia con menor tiempo en el retorno de inversión.</p>
       </div>
     </div>
 
@@ -1193,9 +1221,12 @@ const EquiposElectricos = () => {
               <div className="tolerancia-overlay">
               </div>
             </div>
-            <div className="tolerancia-text">
-              <p><strong>E2</strong> : Alta tolerancia a la condensación consistente y/o contaminación intensa.</p>
-              <p><strong>E3 y E4</strong> condiciones más severas.</p>
+            <div className="highlight-box">
+              <div className="tolerancia-text">
+                <p><strong>E2</strong> : Condensación consistente y/o contaminación importante, humedad relativa 93%.</p>
+                <p><strong>E3</strong> : Condensación casi total y/o contaminación importante, humedad relativa 95%.</p>
+                <p><strong>E4</strong> : Condiciones más severas.</p>
+              </div>
             </div>
           </div>
 
@@ -1205,14 +1236,98 @@ const EquiposElectricos = () => {
               <div className="tolerancia-overlay">
               </div>
             </div>
-            <div className="tolerancia-text">
-              <p><strong>C2</strong> : Posibilidad de operación, transporte y almacenamiento a -25°C.</p>
+            <div className="highlight-box">
+              <div className="tolerancia-text">
+                <p><strong>C2</strong> : Posibilidad de operación, transporte y almacenamiento a -25°C.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+<div className="transformadores-card impactos-card">
+  <div className="transformadores-header">
+    <h3 className="impactos-titulo">Impactos económicos</h3>
+  </div>
+
+  <div className="impactos-intro">
+    <p>Los transformadores de potencia se diseñan para alcanzar una vida útil promedio entre los 20-35 años y un mínimo de <strong>25 años</strong> a temperaturas nominales de operación, aunque en la práctica algunos transformadores podrán presentar fallos en un plazo más corto, algunos otros con mantenimiento adecuado podrían sobrepasar esos niveles de vida útil.</p>
+    
+    <p>El costo de operación de un transformador depende de la relación entre valor de sus pérdidas en vacío <strong>Po</strong> (sin carga) y las pérdidas con carga <strong>Pk</strong>.</p>
+    
+    <div className="formula-wrapper">
+      <p className="formula-label">Costo total durante la vida de un transformador de potencia = </p>
+      <span className="formula-item acquisition">+ 20% Costo de adquisición</span>
+      <span className="formula-item operation">+ 80% Costos de operación</span>
+    </div>
+  </div>
+
+  <div className="menores-costos-section">
+    <h4 className="menores-costos-titulo">Menores Costos de Operación</h4>
+    
+    <div className="costos-item">
+      <h5 className="costos-subtitle">✓ Bajo nivel de pérdidas</h5>
+      
+      <div className="costos-content">
+        <div className="costos-text">
+          <p>El diseño y los materiales del núcleo de Green T permiten reducir las pérdidas por <strong>Corrientes parásitas</strong>, pérdidas por <strong>Histéresis</strong>, pérdidas de <strong>Flujo magnético</strong> y los efectos por <strong>Magnetostricción</strong> lo que se traducirá en <strong>importantes ahorros económicos a través de la vida útil del transformador</strong>.</p>
+        </div>
+        <div className="costos-image">
+          <img src="impactos.jpg" alt="Transformador de potencia" className="impactos-image" />
+        </div>
+      </div>
+    </div>
+
+    <div className="costos-item">
+      <h5 className="costos-subtitle">✓ Bajo mantenimiento requerido</h5>
+      
+      <div className="mantenimiento-content">
+        <p>Ante la ausencia de aceites aislantes-refrigerantes, el mantenimiento preventivo de los transformadores encapsulados en resina solo requieren de inspección periódica:</p>
+        
+        <ul className="mantenimiento-list">
+          <li>Limpieza de polvo, grasa o partículas extrañas en los devanados y/suciedad (anual).</li>
+          <li>Verificación de centralita y sondas de control de temperatura (semestral)</li>
+          <li>Apriete de tornillería en conexiones eléctricas y de fijación al suelo (anual).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div className="costos-item">
+      <h5 className="instalacion-titulo">Menores Costos de Instalación</h5>
+      <h6 className="costos-subtitle">✓ Bajo costo de instalaciones requeridas</h6>
+      
+      <div className="instalacion-content">
+        <ul className="instalacion-list">
+          <li>No se requiere de fosas contenedoras de aceite, rejillas de apagado o barreras de separación resistentes al fuego.</li>
+          <li>Lo anterior permite instalarlo dentro de los edificios y más cercanos a las cargas, lo que implica una reducción en el costo de conexión y pérdidas de la línea de alimentación.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="transformadores-card seguridad-card">
+  <div className="transformadores-header">
+    <h3 className="seguridad-titulo">Seguridad</h3>
+  </div>
+
+  <div className="seguridad-section">
+    <div className="seguridad-item">
+      <h4 className="seguridad-subtitle">✓ Materiales autoextinguibles</h4>
+      
+      <div className="seguridad-content">
+        <div className="seguridad-text">
+          <p>El grado de inflamabilidad F1 se refiere a una clasificación de materiales en función de su resistencia al fuego, indicando que el material tiene baja propagación de llama y baja emisión de humos tóxicos. El fuego en el transformador se extinguirá dentro de los límites de tiempo preestablecidos.</p>
+        </div>
+        <div className="seguridad-image">
+          <img src="fuego.png" alt="Resistencia al fuego F1" className="fuego-image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
               </motion.div>
               

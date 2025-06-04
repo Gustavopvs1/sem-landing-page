@@ -259,9 +259,9 @@
 }
 
 .caracteristica-titulo {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   color: #5e2987;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
   text-align: center;
 }
 
@@ -809,7 +809,7 @@
 .caracteristicas-hpq .caracteristica-descripcion p {
   position: relative;
   padding-left: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #000; /* Negro como pediste */
 }
 
@@ -1329,6 +1329,111 @@
     justify-content: center;
   }
 }
+/* Asegurar que el contenedor padre permita el layout horizontal */
+.electroducto-content {
+  width: 100%;
+  max-width: none; /* Remove any max-width restriction */
+}
+
+/* Layout horizontal para NBAR */
+.electroducto-nbar-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+/* Imagen principal del tablero */
+.electroducto-nbar-image {
+  flex: 0 0 350px;
+  max-width: 350px;
+  min-width: 300px;
+}
+
+.electroducto-nbar-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenedor de características */
+.electroducto-specs-container {
+  flex: 1;
+  min-width: 0;
+  padding-left: 1rem;
+}
+
+.nbar-grid-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Estilo de imágenes nbar */
+.nbar-img-custom {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+.interruptores-img-custom {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Responsivo móvil */
+@media (max-width: 768px) {
+  .electroducto-nbar-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .electroducto-nbar-image {
+    max-width: 100%;
+    min-width: unset;
+  }
+
+  .nbar-grid-specs {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+
+  .electroducto-specs-container {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .nbar-img-custom,
+  .interruptores-img-custom {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .accesorios-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .accesorios-column {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* Transformadores de potencia encapsulados */
 .transformadores-seccion {
   max-width: 1200px;
@@ -1347,7 +1452,7 @@
 }
 
 .transformadores-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(94, 41, 135, 0.1);
   margin-bottom: 3rem;
@@ -1519,7 +1624,7 @@
 
 /* Tercera sección - Confiabilidad */
 .confiabilidad-card {
-  background: linear-gradient(135deg, #fefefe 0%, #f0f8ff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
 }
 
 .confiabilidad-titulo {
@@ -1605,7 +1710,7 @@
 
 .tolerancia-image {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -1762,5 +1867,359 @@
 
   .transformadores-text {
     text-align: justify;
+  }
+}
+/* Estilos para Impactos Económicos */
+.impactos-card {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+}
+
+.impactos-titulo {
+  color: #2980b9;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.impactos-intro p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  text-align: justify;
+  margin: 1rem 0;
+}
+
+.costo-formula {
+  background: linear-gradient(135deg, #e8f4f8, #d5e9f0);
+  border: 2px solid #2980b9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.costo-formula p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.formula-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.formula-item {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.formula-item.acquisition {
+  color: #2980b9;
+}
+
+.formula-item.operation {
+  color: #c0392b;
+}
+
+.menores-costos-section {
+  margin-top: 3rem;
+}
+.formula-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.formula-label {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.formula-item.acquisition {
+  color: #0078A9;
+  font-weight: bold;
+}
+
+.formula-item.operation {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.menores-costos-titulo {
+  color: #17241c;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.costos-item {
+  margin-bottom: 3rem;
+}
+
+.costos-subtitle {
+  color: #27ae60;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+}
+
+.instalacion-titulo {
+  color: #17241c;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 2rem 0 1rem 0;
+}
+.costos-contenedor {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .costos-contenedor {
+    flex-direction: column;
+  }
+}
+
+.costos-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #e8f8f1, #d5f4e6);
+  border: 2px solid #27ae60;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.costos-text {
+  flex: 2;
+}
+
+.costos-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  text-align: justify;
+  margin: 0;
+}
+
+.costos-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.impactos-image {
+  width: 100%;
+  max-width: 300px;
+  height: 150px;
+  border-radius: 8px;
+}
+
+.mantenimiento-content {
+  background: linear-gradient(135deg, #e8f8f1, #d5f4e6);
+  border: 2px solid #27ae60;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.mantenimiento-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  text-align: justify;
+  margin: 0 0 1rem 0;
+}
+
+.mantenimiento-list,
+.instalacion-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.mantenimiento-list li,
+.instalacion-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2c3e50;
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.mantenimiento-list li::before,
+.instalacion-list li::before {
+  content: "•";
+  color: #27ae60;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.instalacion-content {
+  background: linear-gradient(135deg, #e8f8f1, #d5f4e6);
+  border: 2px solid #27ae60;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* Estilos para Seguridad */
+.seguridad-card {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+}
+
+.seguridad-titulo {
+  color: #17241c;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.seguridad-section {
+  margin-top: 2rem;
+}
+
+.seguridad-item {
+  margin-bottom: 2rem;
+}
+
+.seguridad-subtitle {
+  color: #27ae60;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+}
+
+.seguridad-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: linear-gradient(135deg, #e8f8f1, #d5f4e6);
+  border: 2px solid #27ae60;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.seguridad-text {
+  flex: 2;
+}
+
+.seguridad-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  text-align: justify;
+  margin: 0;
+}
+
+.seguridad-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fuego-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .costos-content,
+  .seguridad-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formula-breakdown {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .impactos-titulo,
+  .seguridad-titulo {
+    font-size: 1.8rem;
+  }
+  
+  .menores-costos-titulo,
+  .instalacion-titulo {
+    font-size: 1.5rem;
+  }
+  
+  .costos-subtitle,
+  .seguridad-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .costo-formula {
+    padding: 1rem;
+  }
+  
+  .costos-content,
+  .mantenimiento-content,
+  .instalacion-content,
+  .seguridad-content {
+    padding: 1rem;
+  }
+  
+  .impactos-image,
+  .fuego-image {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .impactos-titulo,
+  .seguridad-titulo {
+    font-size: 1.5rem;
+  }
+  
+  .menores-costos-titulo,
+  .instalacion-titulo {
+    font-size: 1.3rem;
+  }
+  
+  .costos-subtitle,
+  .seguridad-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .formula-item {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .costo-formula p {
+    font-size: 1rem;
+  }
+  
+  .mantenimiento-list li,
+  .instalacion-list li {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+  }
+  
+  .impactos-image,
+  .fuego-image {
+    max-width: 200px;
   }
 }
