@@ -1161,12 +1161,12 @@ const EquiposElectricos = () => {
       <div className="gama-specs">
         <div className="gama-column">
           <ul className="gama-list">
-            <li><strong>Potencia nominal :</strong> 300 - 2500 MVA</li>
+            <li><strong>Potencia nominal :</strong> 300 - 2500 kVA</li>
             <li><strong>Tensión en el primario:</strong> Hasta 36 kV</li>
             <li><strong>Tensión en el secundario:</strong> a solicitud del cliente.</li>
             <li><strong>Taps en MT:</strong> ± 2 x 2.5%</li>
             <li><strong>Conexión:</strong> Dyn11</li>
-            <li><strong>Z%</strong> = 4 – 6 %</li>
+            <li><strong>Z%:</strong> A solicitud del cliente </li>
           </ul>
         </div>
         <div className="gama-column">
@@ -1190,11 +1190,63 @@ const EquiposElectricos = () => {
         </div>
       </div>
     </div>
+    <div className="gama-specs">
+      <div className="greent-info-block">
+        <img src="gabinete.png" alt="Gabinete Green T" className="greent-info-image2" />
+        <div className="greent-info-text">
+          <h4 className="greent-info-title">Gabinete de Lámina</h4>
+          <ul className="gama-list">
+            <li>9 distintas posibilidades dimensionales</li>
+            <li>2 tipos de rejilla de ventilación</li>
+            <li>Grado de protección IP31 e IP23</li>
+            <li>Color gris RAL 7035</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="greent-info-block greent-terminals-block extra-margin">
+        <img src="mtbt.png" alt="Terminales MT/BT" className="greent-terminals-image" />
+        <div className="greent-info-text2">
+          <h4 className="greent-info-title">Terminales de MT/BT</h4>
+          <p className="greent-info-description">
+            Terminales MT/BT orientadas para facilitar la conexión de primario y secundario.
+          </p>
+        </div>
+      </div>
+    </div>
 
     <div className="transformadores-brand">
       <img src="bticino.jpg" alt="Bticino" />
     </div>
   </div>
+
+  <div className="transformadores-card aplicaciones-card">
+  <h3 className="greent-titulo">Aplicaciones</h3>
+  <div className="aplicaciones-content">
+    <ul className="aplicaciones-lista">
+      <li>Hoteles</li>
+      <li>Hospitales</li>
+      <li>Centros comerciales</li>
+      <li>Escuelas</li>
+      <li>Teatros</li>
+      <li>Edificios</li>
+      <li>Subterráneos</li>
+      <li>Generadores eólicos</li>
+      <li>Industria en general</li>
+    </ul>
+
+    <div className="aplicaciones-galeria">
+      <img src="incendios.png" alt="Prevención de incendio" className="aplicacion-img" />
+      <p className="aplicacion-desc">Lugares en donde la prevención de incendio sea de alta prioridad (Centros comerciales, Hospitales, Estadios, Hoteles, etc).</p>
+
+      <img src="compacto.jpg" alt="Tamaño compacto" className="aplicacion-img2" />
+      <p className="aplicacion-desc">Lugares en donde se requiera de tamaño compacto y peso ligero</p>
+
+      <img src="industria.png" alt="Ambientes severos" className="aplicacion-img" />
+      <p className="aplicacion-desc">Lugares con ambientes contaminantes y severos (Industria automotriz, Industria química, Instalaciones subterráneas, etc).</p>
+    </div>
+  </div>
+</div>
 
   {/* Tercera sección - Confiabilidad */}
   <div className="transformadores-card confiabilidad-card">
@@ -1258,9 +1310,11 @@ const EquiposElectricos = () => {
     <p>El costo de operación de un transformador depende de la relación entre valor de sus pérdidas en vacío <strong>Po</strong> (sin carga) y las pérdidas con carga <strong>Pk</strong>.</p>
     
     <div className="formula-wrapper">
-      <p className="formula-label">Costo total durante la vida de un transformador de potencia = </p>
-      <span className="formula-item acquisition">+ 20% Costo de adquisición</span>
-      <span className="formula-item operation">+ 80% Costos de operación</span>
+      <p className="formula-label">Costo total durante la vida de un transformador de potencia =</p>
+      <div className="formula-costs">
+        <span className="formula-item acquisition">  20% Costo de adquisición</span>
+        <span className="formula-item operation">+  80% Costos de operación</span>
+      </div>
     </div>
   </div>
 
@@ -1308,26 +1362,46 @@ const EquiposElectricos = () => {
   </div>
 </div>
 
-<div className="transformadores-card seguridad-card">
-  <div className="transformadores-header">
-    <h3 className="seguridad-titulo">Seguridad</h3>
-  </div>
+  <div className="transformadores-card seguridad-card">
+    <div className="transformadores-header">
+      <h3 className="seguridad-titulo">Seguridad</h3>
+    </div>
 
-  <div className="seguridad-section">
-    <div className="seguridad-item">
-      <h4 className="seguridad-subtitle">✓ Materiales autoextinguibles</h4>
-      
-      <div className="seguridad-content">
-        <div className="seguridad-text">
-          <p>El grado de inflamabilidad F1 se refiere a una clasificación de materiales en función de su resistencia al fuego, indicando que el material tiene baja propagación de llama y baja emisión de humos tóxicos. El fuego en el transformador se extinguirá dentro de los límites de tiempo preestablecidos.</p>
-        </div>
-        <div className="seguridad-image">
-          <img src="fuego.png" alt="Resistencia al fuego F1" className="fuego-image" />
+    <div className="seguridad-section">
+      <div className="seguridad-item">
+        <h4 className="seguridad-subtitle">✓ Materiales autoextinguibles</h4>
+        
+        <div className="seguridad-content">
+          <div className="seguridad-text">
+            <p>El grado de inflamabilidad F1 se refiere a una clasificación de materiales en función de su resistencia al fuego, indicando que el material tiene baja propagación de llama y baja emisión de humos tóxicos. El fuego en el transformador se extinguirá dentro de los límites de tiempo preestablecidos.</p>
+          </div>
+          <div className="seguridad-image">
+            <img src="fuego.png" alt="Resistencia al fuego F1" className="fuego-image" />
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+    <div className="transformadores-card seguridad-card">
+    <div className="transformadores-header">
+      <h3 className="seguridad-titulo">Equipamiento</h3>
+    </div>
+
+    <div className="seguridad-section">
+      <div className="seguridad-item">
+        <h4 className="seguridad-subtitle">✓ Flexibilidad</h4>
+        
+        <div className="seguridad-content">
+          <div className="seguridad-text">
+            <p>La ventilación forzada permite sobrecargar el transformador hasta un 120% de su potencia nominal por periodos cortosde tiempo, así mismo es utilizada para compensar laselevaciones temporales de temperatura ambiente mayor a 40°C.</p>
+          </div>
+          <div className="seguridad-image">
+            <img src="flexibilidad.jpg" alt="Flexibilidad" className="fuego-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
               </motion.div>
               
