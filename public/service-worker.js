@@ -5,6 +5,7 @@ const DYNAMIC_CACHE = 'sem-dynamic-v2';
 // Archivos esenciales que siempre queremos cachear
 const ESSENTIAL_FILES = [
   '/',
+  '/index.html',
   '/manifest.json',
   '/favicon.ico',
   '/logo.png',
@@ -56,19 +57,20 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Estrategia diferente según el tipo de recurso
-  if (request.destination === 'document') {
-    // Para documentos HTML: Network First, luego Cache
+  // Estrategia según tipo o extensión
+  if (request.destination === 'document' || request.mode === 'navigate') {
     event.respondWith(networkFirstStrategy(request));
   } else if (
     request.destination === 'script' || 
     request.destination === 'style' ||
-    request.destination === 'image'
+    request.destination === 'image' ||
+    request.url.endsWith('.js') ||
+    request.url.endsWith('.css') ||
+    request.url.endsWith('.json') ||
+    request.url.endsWith('.html')
   ) {
-    // Para assets estáticos: Cache First, luego Network
     event.respondWith(cacheFirstStrategy(request));
   } else {
-    // Para otros recursos: Network First
     event.respondWith(networkFirstStrategy(request));
   }
 });
@@ -84,7 +86,6 @@ function cacheFirstStrategy(request) {
       
       return fetch(request)
         .then(networkResponse => {
-          // Solo cachear respuestas exitosas
           if (networkResponse.status === 200) {
             const responseClone = networkResponse.clone();
             caches.open(DYNAMIC_CACHE)
@@ -96,7 +97,6 @@ function cacheFirstStrategy(request) {
         })
         .catch(err => {
           console.log('SW: Network failed for:', request.url);
-          // Si es una imagen, podrías retornar una imagen placeholder
           if (request.destination === 'image') {
             return new Response('', { status: 204 });
           }
@@ -109,7 +109,6 @@ function cacheFirstStrategy(request) {
 function networkFirstStrategy(request) {
   return fetch(request)
     .then(response => {
-      // Si la respuesta es exitosa, cachearla
       if (response.status === 200) {
         const responseClone = response.clone();
         caches.open(DYNAMIC_CACHE)
@@ -121,18 +120,16 @@ function networkFirstStrategy(request) {
     })
     .catch(err => {
       console.log('SW: Network failed, trying cache for:', request.url);
-      // Si falla la red, intentar desde caché
       return caches.match(request)
         .then(cachedResponse => {
           if (cachedResponse) {
             return cachedResponse;
           }
-          
-          // Si es una navegación (documento HTML), servir la página principal desde caché
+
           if (request.mode === 'navigate') {
-            return caches.match('/');
+            return caches.match('/index.html');
           }
-          
+
           throw err;
         });
     });

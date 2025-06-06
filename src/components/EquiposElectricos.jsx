@@ -162,12 +162,21 @@ const EquiposElectricos = () => {
         ]
       },
       {
-        category: "Otras características:",
+        category: "Entradas y salidas digitales preprogramadas",
         items: [
-          "Entradas y salidas digitales preprogramadas",
-          "Múltiples módulos en paralelo",
-          "Configuración para lazos abiertos o cerrados",
-          "Clasificación UL508 y CSA"
+
+        ]
+      },
+      {
+        category: "Múltiples módulos en paralelo",
+        items: [
+          "Configuración para lazos abiertos o cerrados"
+        ]
+      },
+      {
+        category: "Clasificación UL508 y CSA",
+        items: [
+
         ]
       }
     ]
@@ -188,6 +197,16 @@ const EquiposElectricos = () => {
   
   // Bancos de capacitores
   const bancosCapacitores = [
+    {
+      id: 'banco-capacitores',
+      name: 'Banco de capacitores fijo',
+      image: 'banco.png',
+      ficha: '/Ficha técnica Bancos de capacitores fijos.pdf',
+      info: [
+        'Los bancos de capacitores fijos se utilizan en instalaciones eléctricas en donde la demanda de potencia reactiva en constante a través del tiempo.',
+        'La gama comprende capacidades desde 5 hasta 100 kVARs , acometida con o sin interruptor principal y voltajes de operación de 240,480 y 600Vca.',
+      ]
+    },
     {
       id: 'banco-fijo',
       name: 'Banco de capacitores fijo con reactores de rechazo',
@@ -227,16 +246,6 @@ const EquiposElectricos = () => {
         'Voltaje de bloqueo de 1.8 kV que alarga su vida útil.',
         'Componentes de alta calidad (Capacitores, Reactores, Tiristores y Módulo de control son de diseño y fabricación alemana).',
         'Ficha técnica'
-      ]
-    },
-    {
-      id: 'banco-capacitores',
-      name: 'Banco de capacitores fijo',
-      image: 'banco.png',
-      ficha: '/Ficha técnica Bancos de capacitores fijos.pdf',
-      info: [
-        'Los bancos de capacitores fijos se utilizan en instalaciones eléctricas en donde la demanda de potencia reactiva en constante a través del tiempo.',
-        'La gama comprende capacidades desde 5 hasta 100 kVARs , acometida con o sin interruptor principal y voltajes de operación de 240,480 y 600Vca.',
       ]
     }
   ];
@@ -469,7 +478,7 @@ const EquiposElectricos = () => {
                     
                   <div className="caracteristicas-slide caracteristicas-hpq">
                     <>
-                      <h4 className="caracteristica-titulo">Beneficios</h4>
+                      <h4 className="caracteristica-titulo">Sustituye los bancos de capacitores tradicionales y mejora la calidad de la energía</h4>
                       <div className="caracteristica-content">
                         <div className="caracteristica-descripcion">
                           <p>Ahorre dinero</p>
@@ -761,7 +770,7 @@ const EquiposElectricos = () => {
                         
                         {/* Descripción movida después del título */}
                         <div className="electroducto-description">
-                          <p>XCP-HP se caracteriza por su alta eficiencia dado su bajo nivel de pérdidas por efecto Joule y su capacidad para operar a temperatura ambiente de hasta 50°C. La sección de las barras internas permite ofrecer un tamaño compacto.</p>
+                          <p>XCP-HP se caracteriza por su <strong>alta eficiencia</strong> dado su <strong>bajo nivel de pérdidas</strong> por efecto Joule y su capacidad para operar a temperatura ambiente de hasta 50°C. La sección de las barras internas permite ofrecer un tamaño compacto.</p>
                           <p>Una línea de alto desempeño y confiabilidad para instalaciones con alta demanda de corriente, altas temperaturas o bajo requerimientos de eficiencia de energía.</p>
                         </div>
                       </div>
@@ -1001,6 +1010,7 @@ const EquiposElectricos = () => {
                         
                         {/* Columna de texto */}
                         <div className="servicios-ingenieria-texto">
+                          <h5 className="servicios-ingenieria-subtitle">Te apoyamos en la elaboración de proyecto</h5>
                           <p className="servicio-linea">Trazado de trayectorias</p>
                           <p className="servicio-linea">Volumetría de materiales (BOM)</p>
                           <p className="servicio-linea">Cotizaciones</p>
@@ -1209,7 +1219,10 @@ const EquiposElectricos = () => {
         <div className="greent-info-text2">
           <h4 className="greent-info-title">Terminales de MT/BT</h4>
           <p className="greent-info-description">
-            Terminales MT/BT orientadas para facilitar la conexión de primario y secundario.
+            Terminales MT/BT orientadas para facilitar
+          </p>
+          <p className="greent-info-description">
+            la conexión de primario y secundario.
           </p>
         </div>
       </div>
@@ -1220,7 +1233,7 @@ const EquiposElectricos = () => {
     </div>
   </div>
 
-  <div className="transformadores-card aplicaciones-card">
+<div className="transformadores-card aplicaciones-card">
   <h3 className="greent-titulo">Aplicaciones</h3>
   <div className="aplicaciones-content">
     <ul className="aplicaciones-lista">
@@ -1239,11 +1252,17 @@ const EquiposElectricos = () => {
       <img src="incendios.png" alt="Prevención de incendio" className="aplicacion-img" />
       <p className="aplicacion-desc">Lugares en donde la prevención de incendio sea de alta prioridad (Centros comerciales, Hospitales, Estadios, Hoteles, etc).</p>
 
-      <img src="compacto.jpg" alt="Tamaño compacto" className="aplicacion-img2" />
-      <p className="aplicacion-desc">Lugares en donde se requiera de tamaño compacto y peso ligero</p>
+      <div className="aplicaciones-grupo-inferior">
+        <div className="aplicacion-compacto">
+          <img src="compacto.jpg" alt="Tamaño compacto" className="aplicacion-img2" />
+          <p className="aplicacion-desc aplicacion-desc-compacto">Lugares en donde se requiera de tamaño compacto y peso ligero</p>
+        </div>
 
-      <img src="industria.png" alt="Ambientes severos" className="aplicacion-img" />
-      <p className="aplicacion-desc">Lugares con ambientes contaminantes y severos (Industria automotriz, Industria química, Instalaciones subterráneas, etc).</p>
+        <div className="aplicacion-industria">
+          <img src="industria.png" alt="Ambientes severos" className="aplicacion-img" />
+          <p className="aplicacion-desc aplicacion-desc-industria">Lugares con ambientes contaminantes y severos (Industria automotriz, Industria química, Instalaciones subterráneas, etc).</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

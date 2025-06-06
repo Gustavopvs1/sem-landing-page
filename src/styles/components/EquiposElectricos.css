@@ -159,7 +159,7 @@
 }
 .tooltip-title {
   font-size: 1.2rem;
-  color: #5e2987;
+  color: #0078a9;
   margin-bottom: 1rem;
   text-align: center;
   font-weight: 600;
@@ -175,7 +175,7 @@
 
 .tooltip-category {
   font-size: 1rem;
-  color: #0078a9;
+  color: #5e2987;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -822,6 +822,28 @@
   font-size: 1.4rem;
   line-height: 1.2;
 }
+@media (max-width: 768px) {
+  .caracteristicas-hpq .caracteristica-descripcion {
+    padding: 1rem;         /* Reduce el padding interno */
+    font-size: 1rem;        /* Reduce el tamaño de fuente en móvil */
+    word-wrap: break-word; /* Previene que palabras largas rompan el layout */
+    overflow-wrap: break-word;
+  }
+
+  .caracteristicas-hpq .caracteristica-descripcion p {
+    font-size: 1rem;       /* Tamaño más pequeño de texto en <p> */
+    padding-left: 1.5rem;  /* Menor sangría para el icono */
+  }
+
+  .caracteristicas-hpq .caracteristica-descripcion p::before {
+    font-size: 1.2rem;
+    top: 0.1rem; /* ligera alineación */
+  }
+
+  .caracteristicas-carousel {
+    overflow-x: hidden; /* Previene el desbordamiento general del carrusel */
+  }
+}
 
 
 .electroductos-seccion {
@@ -1251,6 +1273,23 @@
   padding: 1.5rem;
 }
 
+
+.servicios-ingenieria-subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0d4b81;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.servicios-ingenieria-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.2rem;
+}
+
+
 .servicios-ingenieria-texto {
   display: flex;
   flex-direction: column;
@@ -1308,6 +1347,11 @@
 
 /* Mobile: apilado vertical */
 @media (max-width: 768px) {
+  .electroductos-seccion {
+    padding: 0 1rem;
+    overflow-x: hidden;
+  }
+
   .servicios-ingenieria-grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1315,20 +1359,36 @@
 
   .servicios-ingenieria-texto {
     align-items: center;
+    max-width: 100%;
+    width: 100%;
   }
 
   .servicios-ingenieria-imagenes {
     grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
   }
 
+  .servicio-img,
   .servicio-img-wide {
-    grid-column: auto;
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .servicio-img-stack {
+    width: 100%;
+    align-items: center;
   }
 
   .servicio-correo {
     justify-content: center;
+    flex-wrap: wrap;
+    word-break: break-word;
+    max-width: 100%;
   }
 }
+
 /* Asegurar que el contenedor padre permita el layout horizontal */
 .electroducto-content {
   width: 100%;
@@ -1593,10 +1653,11 @@
   text-align: center;
 }
 .extra-margin {
-  margin-top: 10rem; /* Puedes aumentar si lo quieres más abajo */
+  margin-top: 15rem;
+  margin-left: 5rem;
 }
 .greent-terminals-image {
-  width: 400px;
+  width: 450px;
   max-width: 100%;
   border-radius: 10px;
   object-fit: cover;
@@ -1655,10 +1716,10 @@
   flex: 1;
   list-style: none;
   padding: 0;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: #145A32;
   font-weight: bold;
-  line-height: 3.2rem;
+  line-height: 3.1rem;
 }
 
 .aplicaciones-lista li {
@@ -1672,23 +1733,52 @@
   gap: 1.5rem;
 }
 
+/* Nuevo contenedor para agrupar compacto e industria */
+.aplicaciones-grupo-inferior {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.aplicacion-compacto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.aplicacion-industria {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
 .aplicacion-img {
   max-width: 100%;
   border-radius: 10px;
 }
+
 .aplicacion-img2 {
-  max-width: 20%;
-  height: 200px;
+  max-width: 70%;
+  height: 190px;
   border-radius: 10px;
-  margin-left: 15rem;
+  margin-left: 2rem;
 }
 
 .aplicacion-desc {
   font-size: 0.95rem;
   color: #1b1b1b;
-  margin-top: -1rem;
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   font-weight: 500;
+  text-align: justify;
+}
+
+.aplicacion-desc-compacto {
+  margin-right: 1rem; /* Separación entre textos */
+}
+
+.aplicacion-desc-industria {
+  margin-left: 1rem; /* Separación entre textos */
 }
 
 /* Responsivo */
@@ -1696,6 +1786,16 @@
   .greent-info-block,
   .aplicaciones-content {
     flex-direction: column;
+  }
+
+  .aplicaciones-grupo-inferior {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .aplicacion-compacto,
+  .aplicacion-industria {
+    flex: none;
   }
 
   .greent-info-image,
@@ -1709,20 +1809,25 @@
   /* Elimina el margin-top de terminales solo en móvil */
   .extra-margin {
     margin-top: 0;
+    margin-left: 0;
   }
 
-  /* Elimina el margin-left de aplicación solo en móvil */
+  /* Ajustes para móvil */
   .aplicacion-img2 {
     width: 60%;
-    height: auto; /* que la altura se ajuste al ancho */
-    margin-left: 0;
-    margin-right: auto;
-    margin-left: auto;
+    height: auto;
+    margin: 0 auto;
     display: block;
+    margin-left: 0;
+  }
+
+  .aplicacion-desc-compacto,
+  .aplicacion-desc-industria {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
   }
 }
-
-
 .clase-aislamiento {
   display: flex;
   flex-direction: column;

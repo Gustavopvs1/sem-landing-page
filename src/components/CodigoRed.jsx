@@ -46,10 +46,6 @@ const CodigoRed = () => {
                 Se busca el cabal cumplimiento con los criterios de eficiencia, calidad, confiabilidad, continuidad,
                 seguridad y sustentabilidad del Sistema Eléctrico Nacional <strong>(SEN)</strong>.
               </p>
-              <p className="codigo-red-text">
-                Debemos ser conscientes que mantener al <strong>SEN</strong> sano y robusto es un tema de seguridad nacional
-                y es responsabilidad de todos los que lo conforman.
-              </p>
             </div>
             
             <div className="codigo-red-block">
