@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../styles/components/Contacto.css';
+import { FaEnvelope } from 'react-icons/fa';
 
 const Contacto = () => {
   const controls = useAnimation();
@@ -78,9 +79,21 @@ const Contacto = () => {
                     </svg>
                   </a>
                   <div className="person-info">
-                    <p className="person-name">cotizaciones@semservicios.com.mx</p>
                     <p className="person-phone">442.392.86.67</p>
                   </div>
+                </div>
+              </div>
+              <div className="contact-person-wrapper">
+                <div className="contact-person">
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=cotizaciones@semservicios.com.mx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="servicio-correo"
+                    >
+                      <FaEnvelope size={20} />
+                        cotizaciones@semservicios.com.mx
+                    </a>
                 </div>
               </div>
 

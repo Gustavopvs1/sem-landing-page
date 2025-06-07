@@ -116,6 +116,68 @@
   color: #666;
   font-size: 1.3rem;
 }
+.servicio-correo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #363838 !important; /* Color azul más visible y forzado con !important */
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Estado hover para mejor interactividad */
+.servicio-correo:hover {
+  color: #363838 !important; /* Color más oscuro en hover */
+  transform: scale(1.02);
+  text-decoration: underline;
+}
+
+/* Si quieres que el ícono también cambie de color */
+.servicio-correo svg {
+  color: inherit;
+}
+
+/* Alternativa: Si prefieres un estilo más llamativo como botón */
+.servicio-correo-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white !important;
+  background-color: #0078a9;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-correo-button:hover {
+  background-color: #005c87;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white !important;
+}
+
+/* Estilo específico para el contenedor padre para evitar conflictos */
+.contact-person-wrapper .servicio-correo {
+  color: #363838 !important;
+}
+
+.contact-person-wrapper .servicio-correo:visited {
+  color: #363838 !important;
+}
+
+.contact-person-wrapper .servicio-correo:link {
+  color: #363838 !important;
+}
 
 .partner-logo-container {
   display: flex;
