@@ -78,7 +78,7 @@ const Contacto = () => {
                     </svg>
                   </a>
                   <div className="person-info">
-                    <p className="person-name">Ing. Gustavo Rivera</p>
+                    <p className="person-name">cotizaciones@semservicios.com.mx</p>
                     <p className="person-phone">442.392.86.67</p>
                   </div>
                 </div>

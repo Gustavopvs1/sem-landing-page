@@ -52,24 +52,29 @@ const ServiceCard = ({ title, icon, index, parentInView, imageUrl }) => {
 };
 
 // Nuevo componente para el diferenciador individual
+// Nuevo componente para el diferenciador individual
+// Nuevo componente para el diferenciador individual
 const DiferenciadorItem = ({ color, hoverColor, icon, title, position, description }) => {
-  const [isHovered, setIsHovered] = React.useState(false);
-  
   return (
-    <div 
-      className={`diferenciador-cuadrado ${position}`}
-      style={{ backgroundColor: isHovered ? hoverColor : color }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={() => setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
-    >
-      <div className="diferenciador-icon">
-        {icon}
+    <div className={`diferenciador-contenedor ${position}`}>
+      {(position === 'top-left' || position === 'bottom-left') && (
+        <div className="diferenciador-texto left">
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+      )}
+      
+      <div 
+        className="diferenciador-cuadrado"
+        style={{ backgroundColor: color }}
+      >
+        <div className="diferenciador-icon">
+          {icon}
+        </div>
       </div>
       
-      {isHovered && (
-        <div className="diferenciador-tooltip">
+      {(position === 'top-right' || position === 'bottom-right') && (
+        <div className="diferenciador-texto right">
           <h3>{title}</h3>
           <p>{description}</p>
         </div>
@@ -78,8 +83,7 @@ const DiferenciadorItem = ({ color, hoverColor, icon, title, position, descripti
   );
 };
 
-
-// Componente para el cuadrado de diferenciadores
+// Componente para el cuadrado de diferenciadores (se mantiene igual)
 const DiferenciadoresCuadrado = () => {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -111,38 +115,38 @@ const DiferenciadoresCuadrado = () => {
       <h2 className="section-title">Nuestros diferenciadores</h2>
       
       <div className="cuadrado-container">
-      <DiferenciadorItem 
-        color="#ffffff"
-        hoverColor="#ffffff"
-        icon={<FaUserGraduate size={35} />}
-        title="Experiencia"
-        description="Amplia trayectoria profesional en el sector"
-        position="top-left"
-      />
-      <DiferenciadorItem 
-        color="#ffffff"
-        hoverColor="#ffffff"
-        icon={<FaUserCheck size={35} />}
-        title="Conocimiento"
-        description="Expertise técnico especializado"
-        position="top-right"
-      />
-      <DiferenciadorItem 
-        color="#ffffff"
-        hoverColor="#ffffff"
-        icon={<FaGears size={35} />}
-        title="Accountability"
-        description="Responsabilidad en resultados"
-        position="bottom-left"
-      />
-      <DiferenciadorItem 
-        color="#ffffff"
-        hoverColor="#ffffff"
-        icon={<TbTargetArrow  size={35} />}
-        title="Resultados"
-        description="Soluciones con impacto medible"
-        position="bottom-right"
-      />
+        <DiferenciadorItem 
+          color="#ffffff"
+          hoverColor="#ffffff"
+          icon={<FaUserGraduate size={35} />}
+          title="Experiencia"
+          description="Amplia trayectoria profesional en el sector"
+          position="top-left"
+        />
+        <DiferenciadorItem 
+          color="#ffffff"
+          hoverColor="#ffffff"
+          icon={<FaUserCheck size={35} />}
+          title="Conocimiento"
+          description="Expertise técnico especializado"
+          position="top-right"
+        />
+        <DiferenciadorItem 
+          color="#ffffff"
+          hoverColor="#ffffff"
+          icon={<FaGears size={35} />}
+          title="Accountability"
+          description="Claridad, seguimiento, transparencia, resultados."
+          position="bottom-left"
+        />
+        <DiferenciadorItem 
+          color="#ffffff"
+          hoverColor="#ffffff"
+          icon={<TbTargetArrow size={35} />}
+          title="Resultados"
+          description="Soluciones con impacto medible"
+          position="bottom-right"
+        />
       </div>
     </motion.div>
   );

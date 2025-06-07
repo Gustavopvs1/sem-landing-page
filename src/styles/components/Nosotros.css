@@ -678,6 +678,7 @@
   padding: 2rem 1rem; /* Mucho más pequeño que el .about normal */
 }
 /* Reemplaza los estilos del rombo con estos estilos para el cuadrado */
+/* Estilos corregidos para diferenciadores */
 .diferenciadores-container {
   width: 100%;
   max-width: 900px;
@@ -687,153 +688,161 @@
 
 .cuadrado-container {
   display: grid;
-  grid-template-columns: repeat(2, 130px);
-  grid-template-rows: repeat(2, 130px);
-  justify-content: center;
-  align-items: center;
-  gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0; /* Eliminamos el gap para pegar los cuadrados */
   margin: 2rem auto;
+  position: relative;
+  width: 260px; /* Ancho fijo para el contenedor de cuadrados */
+  height: 260px; /* Alto fijo para el contenedor de cuadrados */
+}
+
+.diferenciador-contenedor {
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
+/* Posicionamiento de los textos */
+.diferenciador-contenedor.top-left,
+.diferenciador-contenedor.bottom-left {
+  justify-content: flex-start;
+}
+
+.diferenciador-contenedor.top-right,
+.diferenciador-contenedor.bottom-right {
+  justify-content: flex-end;
+}
+
+.diferenciador-texto {
+  width: 200px;
+  padding: 0 1.5rem;
+  position: absolute; /* Posicionamiento absoluto para los textos */
+}
+
+/* Posicionamiento específico para cada texto */
+.diferenciador-contenedor.top-left .diferenciador-texto {
+  right: 130px; /* A la izquierda del cuadrado */
+  text-align: center;
+}
+
+.diferenciador-contenedor.top-right .diferenciador-texto {
+  left: 130px; /* A la derecha del cuadrado */
+  text-align: center;
+}
+
+.diferenciador-contenedor.bottom-left .diferenciador-texto {
+  right: 130px; /* A la izquierda del cuadrado */
+  text-align: center;
+}
+
+.diferenciador-contenedor.bottom-right .diferenciador-texto {
+  left: 130px; /* A la derecha del cuadrado */
+  text-align: center;
+}
+
+.diferenciador-texto h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.diferenciador-texto p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Estilos del cuadrado - ahora pegados */
 .diferenciador-cuadrado {
   width: 130px;
   height: 130px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #074f97;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
   background-color: white;
+  z-index: 1;
+  flex-shrink: 0;
 }
 
-.diferenciador-cuadrado:hover {
-  transform: scale(1.1);
-  z-index: 2;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+/* Ajustes para que los bordes se vean bien cuando están pegados */
+.diferenciador-contenedor.top-left .diferenciador-cuadrado {
+  border-bottom-right-radius: 5px; /* Esquina interior menos redondeada */
 }
+
+.diferenciador-contenedor.top-right .diferenciador-cuadrado {
+  border-bottom-left-radius: 5px; /* Esquina interior menos redondeada */
+}
+
+.diferenciador-contenedor.bottom-left .diferenciador-cuadrado {
+  border-top-right-radius: 5px; /* Esquina interior menos redondeada */
+}
+
+.diferenciador-contenedor.bottom-right .diferenciador-cuadrado {
+  border-top-left-radius: 5px; /* Esquina interior menos redondeada */
+}
+
+/* Colores de iconos */
 .top-left .diferenciador-icon {
   color: #25a3b9;
 }
 .top-right .diferenciador-icon {
-  color: #680c9e; 
+  color: #680c9e;
 }
-
 .bottom-left .diferenciador-icon {
-  color: #00753b; 
+  color: #00753b;
 }
-
 .bottom-right .diferenciador-icon {
   color: #1976d2;
 }
-.top-left.diferenciador-cuadrado {
-  border-color: #074f97;
-}
-
-.top-right.diferenciador-cuadrado {
-  border-color: #074f97;
-}
-
-.bottom-left.diferenciador-cuadrado {
-  border-color: #074f97;
-}
-
-.bottom-right.diferenciador-cuadrado {
-  border-color: #074f97;
-}
-.diferenciador-icon {
-  font-size: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.diferenciador-tooltip {
-  white-space: normal;
-  word-break: break-word;
-  position: absolute;
-  top: 100%;
-  width: 220px;
-  background-color: white;
-  color: #333;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transform: translateY(10px);
-  animation: fadeIn 0.3s ease;
-  z-index: 10;
-  text-align: center;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Posicionamiento de tooltips para cada cuadrante */
-.top-left .diferenciador-tooltip {
-  top: 100%;
-  left: 0;
-}
-
-.top-right .diferenciador-tooltip {
-  top: 100%;
-  right: 0;
-}
-
-.bottom-left .diferenciador-tooltip {
-  bottom: 100%;
-  left: 0;
-}
-
-.bottom-right .diferenciador-tooltip {
-  bottom: 100%;
-  right: 0;
-}
-
-.diferenciador-tooltip h3 {
-  margin: 0 0 0.5rem 0;
-  color: #333;
-  font-size: 1.2rem;
-}
-
-.diferenciador-tooltip p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #666;
-}
 
 /* Diseño responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .cuadrado-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    row-gap: 1rem;
+    gap: 2rem; /* Restauramos el gap en móvil */
+    width: auto;
+    height: auto;
   }
-
-  .diferenciador-cuadrado {
+  
+  .diferenciador-contenedor {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .diferenciador-texto {
     width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-  }
-
-  .diferenciador-icon {
-    font-size: 1.5rem;
+    padding: 1rem 0;
+    text-align: center !important;
+    position: static !important; /* Volvemos a posición normal en móvil */
   }
   
-  .diferenciador-tooltip {
-    width: 150px;
-    padding: 0.8rem;
-  }
-  
-  .diferenciador-tooltip h3 {
-    font-size: 1rem;
-  }
-  
-  .diferenciador-tooltip p {
-    font-size: 0.8rem;
+  .diferenciador-cuadrado {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.5rem;
+    border-radius: 20px !important; /* Restauramos border-radius completo en móvil */
   }
 }
 
+@media (max-width: 480px) {
+  .diferenciador-cuadrado {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .diferenciador-texto h3 {
+    font-size: 1.1rem;
+  }
+  
+  .diferenciador-texto p {
+    font-size: 0.85rem;
+  }
+}
 .service-icon {
   display: flex;
   justify-content: center;

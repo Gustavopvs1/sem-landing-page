@@ -1234,7 +1234,7 @@ const EquiposElectricos = () => {
   </div>
 
 <div className="transformadores-card aplicaciones-card">
-  <h3 className="greent-titulo">Aplicaciones</h3>
+  <h3 className="greent-titulo2">Aplicaciones</h3>
   <div className="aplicaciones-content">
     <ul className="aplicaciones-lista">
       <li>Hoteles</li>
@@ -1416,6 +1416,20 @@ const EquiposElectricos = () => {
           </div>
           <div className="seguridad-image">
             <img src="flexibilidad.jpg" alt="Flexibilidad" className="fuego-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+        <div className="seguridad-section">
+      <div className="seguridad-item">
+        <h4 className="seguridad-subtitle">✓ Control</h4>
+        
+        <div className="seguridad-content">
+          <div className="seguridad-text">
+            <p>La centralita de control permite monitorear la temperatura a través de las termosondas PT100 o sensores (PTC) colocados en los puntos de mayor incremento en los devanados del transformador.</p>
+          </div>
+          <div className="seguridad-image">
+            <img src="control.png" alt="Control" className="fuego-image" />
           </div>
         </div>
       </div>
