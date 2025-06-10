@@ -1137,16 +1137,16 @@ const EquiposElectricos = () => {
 
 {/* Transformadores de potencia encapsulados */}
 <div className="transformadores-seccion" style={{ marginTop: "2rem" }}>
-  <h2 className="transformadores-titulo">Transformadores de potencia encapsulados</h2>
+  <h2 className="transformadores-titulo">Transformadores de distribución encapsulados</h2>
   
   {/* Primera sección - TPE */}
   <div className="transformadores-card tpe-card">
     <div className="transformadores-content">
       <div className="transformadores-image-container">
-        <img src="tpe.jpg" alt="Transformador de potencia encapsulado" className="transformadores-image" />
+        <img src="tpe.jpg" alt="Transformador de distribución encapsulado" className="transformadores-image" />
       </div>
       <div className="transformadores-text">
-        <p>Los transformadores de potencia encapsulados en resina CRT (Cast Resin Transformers) son ampliamente utilizados a nivel mundial para diversas aplicaciones. Durante la última década, en México se cuenta con una tendencia al alza en cuanto a su empleo en sistemas de distribución eléctrica para edificios, hospitales, centros comerciales, escuelas e industria en general..</p>
+        <p>Los transformadores de distribución encapsulados en resina CRT (Cast Resin Transformers) son ampliamente utilizados a nivel mundial para diversas aplicaciones. Durante la última década, en México se cuenta con una tendencia al alza en cuanto a su empleo en sistemas de distribución eléctrica para edificios, hospitales, centros comerciales, escuelas e industria en general..</p>
       </div>
     </div>
   </div>
@@ -1154,7 +1154,7 @@ const EquiposElectricos = () => {
   {/* Segunda sección - Green T */}
   <div className="transformadores-card greent-card">
     <div className="transformadores-header">
-      <h3 className="greent-titulo">Transformadores de potencia Green T</h3>
+      <h3 className="greent-titulo">Transformadores de distribución Green T</h3>
     </div>
     
     <div className="transformadores-content">
@@ -1175,7 +1175,7 @@ const EquiposElectricos = () => {
             <li><strong>Tensión en el primario:</strong> Hasta 36 kV</li>
             <li><strong>Tensión en el secundario:</strong> a solicitud del cliente.</li>
             <li><strong>Taps en MT:</strong> ± 2 x 2.5%</li>
-            <li><strong>Conexión:</strong> Dyn11</li>
+            <li><strong>Conexión:</strong> A solicitud del cliente</li>
             <li><strong>Z%:</strong> A solicitud del cliente </li>
           </ul>
         </div>
@@ -1324,12 +1324,12 @@ const EquiposElectricos = () => {
   </div>
 
   <div className="impactos-intro">
-    <p>Los transformadores de potencia se diseñan para alcanzar una vida útil promedio entre los 20-35 años y un mínimo de <strong>25 años</strong> a temperaturas nominales de operación, aunque en la práctica algunos transformadores podrán presentar fallos en un plazo más corto, algunos otros con mantenimiento adecuado podrían sobrepasar esos niveles de vida útil.</p>
+    <p>Los transformadores de distribución se diseñan para alcanzar una vida útil promedio entre los 20-35 años y un mínimo de <strong>25 años</strong> a temperaturas nominales de operación, aunque en la práctica algunos transformadores podrán presentar fallos en un plazo más corto, algunos otros con mantenimiento adecuado podrían sobrepasar esos niveles de vida útil.</p>
     
     <p>El costo de operación de un transformador depende de la relación entre valor de sus pérdidas en vacío <strong>Po</strong> (sin carga) y las pérdidas con carga <strong>Pk</strong>.</p>
     
     <div className="formula-wrapper">
-      <p className="formula-label">Costo total durante la vida de un transformador de potencia =</p>
+      <p className="formula-label">Costo total durante la vida de un transformador de distribución =</p>
       <div className="formula-costs">
         <span className="formula-item acquisition">  20% Costo de adquisición</span>
         <span className="formula-item operation">+  80% Costos de operación</span>
@@ -1412,7 +1412,7 @@ const EquiposElectricos = () => {
         
         <div className="seguridad-content">
           <div className="seguridad-text">
-            <p>La ventilación forzada permite sobrecargar el transformador hasta un 120% de su potencia nominal por periodos cortosde tiempo, así mismo es utilizada para compensar laselevaciones temporales de temperatura ambiente mayor a 40°C.</p>
+            <p>La ventilación forzada permite sobrecargar el transformador hasta un 120% de su potencia nominal por periodos cortosde tiempo, así mismo es utilizada para compensar las elevaciones temporales de temperatura ambiente mayor a 40°C.</p>
           </div>
           <div className="seguridad-image">
             <img src="flexibilidad.jpg" alt="Flexibilidad" className="fuego-image" />
