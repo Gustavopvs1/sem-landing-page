@@ -120,7 +120,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #363838 !important; /* Color azul más visible y forzado con !important */
+  color: #d35400 !important; /* Color azul más visible y forzado con !important */
   font-weight: 600;
   text-decoration: none;
   font-size: 1.1rem;
@@ -132,7 +132,7 @@
 
 /* Estado hover para mejor interactividad */
 .servicio-correo:hover {
-  color: #363838 !important; /* Color más oscuro en hover */
+  color: #d35400 !important; /* Color más oscuro en hover */
   transform: scale(1.02);
   text-decoration: underline;
 }
@@ -168,15 +168,15 @@
 
 /* Estilo específico para el contenedor padre para evitar conflictos */
 .contact-person-wrapper .servicio-correo {
-  color: #363838 !important;
+  color: #d35400 !important;
 }
 
 .contact-person-wrapper .servicio-correo:visited {
-  color: #363838 !important;
+  color: #d35400 !important;
 }
 
 .contact-person-wrapper .servicio-correo:link {
-  color: #363838 !important;
+  color: #d35400 !important;
 }
 
 .partner-logo-container {
